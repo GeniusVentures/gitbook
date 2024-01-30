@@ -1,4 +1,4 @@
-# Home Page of GeniusTokens Project
+# GNUS.ai Technicial Details
 
 The code is based on the following patent:
 
@@ -6,7 +6,7 @@ The code is based on the following patent:
 
 ## This is the general flow of the Genius Tokens system
 
-![Genius CryptoToken Process-Flow](<.gitbook/assets/Process Flow print.jpg>)
+![Genius CryptoToken Process-Flow](<../../.gitbook/assets/Process Flow print.jpg>)
 
 ## These are the components of the System
 

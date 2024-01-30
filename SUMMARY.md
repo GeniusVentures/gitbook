@@ -1,15 +1,17 @@
 # Table of contents
 
-* [AI Data Blocks](README.md)
-* [CPP Coding Standards](cpp-coding-standards.md)
-* [SG Consensus Algorithm Implementation](sg-consensus-algorithm-implementation.md)
-* [Faster Pallas Curve Mapping for Blinded Account Balances](faster-pallas-curve-mapping-for-blinded-account-balances.md)
-* [Home Page of GeniusTokens Project](home-page-of-geniustokens-project.md)
-* [IPFS Pub Sub](ipfs-pub-sub.md)
-* [This is a diagram of the internal blockchain, blocks and processing functionality](this-is-a-diagram-of-the-internal-blockchain-blocks-and-processing-functionality.md)
-* [Key Derivation Function - Shared Secret Generation](key-derivation-function-shared-secret-generation.md)
-* [Pedersen Commitments](pedersen-commitments.md)
-* [Pedersen Commitments Pairs for Blinding Factors and Values](pedersen-commitments-pairs-for-blinding-factors-and-values.md)
-* [Slicing Data for Macro MicroJobs](slicing-data-for-macro-microjobs.md)
-* [Verification and Hash Results from Processing](verification-and-hash-results-from-processing.md)
-* [Zokrates/ZKSnark Code and Solidity Contract Generator](zokrates-zksnark-code-and-solidity-contract-generator.md)
+* [About GNUS.ai](README.md)
+
+## Group 1
+
+* [Technical Information](group-1/technical-information/README.md)
+  * [GNUS.ai Technicial Details](group-1/technical-information/gnus.ai-technicial-details.md)
+  * [AI Data Blocks](group-1/technical-information/ai-data-blocks.md)
+  * [Slicing Data for Macro MicroJobs](group-1/technical-information/slicing-data-for-macro-microjobs.md)
+  * [Verification and Hash Results from Processing](group-1/technical-information/verification-and-hash-results-from-processing.md)
+  * [Diagram of the internal blockchain, blocks and processing functionality](group-1/technical-information/diagram-of-the-internal-blockchain-blocks-and-processing-functionality.md)
+  * [IPFS Pub Sub](group-1/technical-information/ipfs-pub-sub.md)
+  * [SG Consensus Algorithm Implementation](group-1/technical-information/sg-consensus-algorithm-implementation.md)
+  * [Pedersen Commitments Pairs for Blinding Factors and Values](group-1/technical-information/pedersen-commitments-pairs-for-blinding-factors-and-values.md)
+  * [Key Derivation Function - Shared Secret Generation](group-1/technical-information/key-derivation-function-shared-secret-generation.md)
+  * [C++ Coding Standards](group-1/technical-information/c++-coding-standards.md)

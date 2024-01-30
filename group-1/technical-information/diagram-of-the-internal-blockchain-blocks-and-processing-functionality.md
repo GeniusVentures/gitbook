@@ -1,6 +1,6 @@
-# This is a diagram of the internal blockchain, blocks and processing functionality
+# Diagram of the internal blockchain, blocks and processing functionality
 
-![Processing-Diagram](<.gitbook/assets/Processing Diagram.png>)
+![Processing-Diagram](<../../.gitbook/assets/Processing Diagram.png>)
 
 * Genius Tokens Flow
 * Super Genius Flow
