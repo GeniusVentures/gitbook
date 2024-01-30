@@ -1,24 +1,15 @@
 # Table of contents
 
-* [👋 Welcome to A Product](README.md)
-
-## Overview
-
-* [💡 What we do](overview/what-we-do.md)
-* [✨ Our Features](overview/our-features.md)
-
-## Product Guides
-
-* [📪 Making a post](product-guides/making-a-post.md)
-* [📎 Understanding Projects](product-guides/understanding-projects.md)
-
-## Fundamentals
-
-* [🛠 Getting set up](fundamentals/getting-set-up/README.md)
-  * [📝 Setting permissions](fundamentals/getting-set-up/setting-permissions.md)
-  * [🧑 Inviting Members](fundamentals/getting-set-up/inviting-members.md)
-
-## Use Cases
-
-* [🎨 For Designers](use-cases/for-designers.md)
-* [🖥 For Developers](use-cases/for-developers.md)
+* [AI Data Blocks](README.md)
+* [CPP Coding Standards](cpp-coding-standards.md)
+* [SG Consensus Algorithm Implementation](sg-consensus-algorithm-implementation.md)
+* [Faster Pallas Curve Mapping for Blinded Account Balances](faster-pallas-curve-mapping-for-blinded-account-balances.md)
+* [Home Page of GeniusTokens Project](home-page-of-geniustokens-project.md)
+* [IPFS Pub Sub](ipfs-pub-sub.md)
+* [This is a diagram of the internal blockchain, blocks and processing functionality](this-is-a-diagram-of-the-internal-blockchain-blocks-and-processing-functionality.md)
+* [Key Derivation Function - Shared Secret Generation](key-derivation-function-shared-secret-generation.md)
+* [Pedersen Commitments](pedersen-commitments.md)
+* [Pedersen Commitments Pairs for Blinding Factors and Values](pedersen-commitments-pairs-for-blinding-factors-and-values.md)
+* [Slicing Data for Macro MicroJobs](slicing-data-for-macro-microjobs.md)
+* [Verification and Hash Results from Processing](verification-and-hash-results-from-processing.md)
+* [Zokrates/ZKSnark Code and Solidity Contract Generator](zokrates-zksnark-code-and-solidity-contract-generator.md)
