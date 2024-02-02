@@ -1,6 +1,8 @@
 # Table of contents
 
-* [About GNUS.ai](README.md)
+* [🧠 GNUS.AI](README.md)
+* [Introduction](introduction/README.md)
+  * [Key Features and Benefits](introduction/key-features-and-benefits.md)
 
 ## 🖥 Technical Information
 

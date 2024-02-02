@@ -1,3 +1,25 @@
-# About GNUS.ai
+---
+description: >-
+  GNUS.AI is a revolutionary blockchain that harnesses the untapped computing
+  power of devices worldwide to process Artificial Intelligence (A.I.) and
+  Machine Learning (M.L.) data.
+cover: .gitbook/assets/Screen Shot 2024-02-01 at 12.55.05 PM.png
+coverY: 0
+layout:
+  cover:
+    visible: true
+    size: full
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
 
-Utilizing unused cycles of Compute Devices on computers, mobile devices, and IoT devices, the system processes Artificial Intelligence and Machine Learning data on an end-user device. The end-user is then paid in Genius Cryptotokens that can be reused for In-App purchases or converted back to other currencies. In addition, the entire system easily integrates into Computer and mobile games and applications.
+# 🧠 GNUS.AI
+
