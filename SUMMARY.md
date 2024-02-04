@@ -3,6 +3,7 @@
 * [🧠 GNUS.AI](README.md)
 * [Introduction](introduction/README.md)
   * [Key Features and Benefits](introduction/key-features-and-benefits.md)
+* [Whitepaper](https://www.gnus.ai/wp-content/uploads/2021/08/Genius-Tokens-Whitepaper-1.0\_Final.pdf)
 
 ## 🖥 Technical Information
 
@@ -16,3 +17,9 @@
 * [Pedersen Commitments Pairs for Blinding Factors and Values](technical-information/pedersen-commitments-pairs-for-blinding-factors-and-values.md)
 * [Key Derivation Function - Shared Secret Generation](technical-information/key-derivation-function-shared-secret-generation.md)
 * [C++ Coding Standards](technical-information/c++-coding-standards.md)
+
+## Resources
+
+* [Audits](resources/audits.md)
+* [Glossary](resources/glossary.md)
+* [Official Links](resources/official-links.md)
