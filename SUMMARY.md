@@ -14,6 +14,8 @@
 * [Why GNUS.AI](why-gnus.ai/README.md)
   * [Compatible](why-gnus.ai/compatible.md)
   * [Customizable](why-gnus.ai/customizable.md)
+  * [Secure](why-gnus.ai/secure/README.md)
+    * [Secure 2FA with TOTP and zk-SNARKs](why-gnus.ai/secure/secure-2fa-with-totp-and-zk-snarks.md)
 
 ## 🖥 Technical Information
 
