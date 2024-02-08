@@ -30,6 +30,7 @@
   * [El Gamal encryption](technical-information/gnus.ai-technicial-details/el-gamal-encryption.md)
   * [Prover specification](technical-information/gnus.ai-technicial-details/prover-specification.md)
   * [C++ Coding Standards](technical-information/gnus.ai-technicial-details/c++-coding-standards.md)
+  * [Account creation with ECSDA and El Gamal](technical-information/gnus.ai-technicial-details/account-creation-with-ecsda-and-el-gamal.md)
 
 ## Resources
 
