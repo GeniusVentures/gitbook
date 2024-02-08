@@ -21,5 +21,5 @@ layout:
     visible: true
 ---
 
-# 🧠 GNUS.AI
+# GNUS.AI
 
