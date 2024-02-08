@@ -1,10 +1,11 @@
 # Table of contents
 
+* [Public Roadmap](README.md)
 * [Whitepaper](https://www.gnus.ai/wp-content/uploads/2021/08/Genius-Tokens-Whitepaper-1.0\_Final.pdf)
 
 ## 🧠 About GNUS.AI
 
-* [GNUS.AI](README.md)
+* [GNUS.AI](<README (1).md>)
 * [Introduction](about-gnus.ai/introduction.md)
 
 ***
@@ -27,5 +28,6 @@
 ## Resources
 
 * [Audits](resources/audits.md)
+* [Contact Us](resources/contact-us.md)
 * [Glossary](resources/glossary.md)
 * [Official Links](resources/official-links.md)
