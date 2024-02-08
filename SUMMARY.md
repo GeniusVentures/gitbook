@@ -31,5 +31,6 @@
 
 * [Audits](resources/audits.md)
 * [Contact Us](resources/contact-us.md)
+* [Contracts](resources/contracts.md)
 * [Glossary](resources/glossary.md)
 * [Official Links](resources/official-links.md)
