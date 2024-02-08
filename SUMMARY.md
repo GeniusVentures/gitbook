@@ -5,8 +5,11 @@
 ## 🧠 About GNUS.AI
 
 * [GNUS.AI](README.md)
-* [Introduction](about-gnus.ai/introduction/README.md)
-  * [Key Features and Benefits](about-gnus.ai/introduction/key-features-and-benefits.md)
+* [Introduction](about-gnus.ai/introduction.md)
+
+***
+
+* [Features and Benefits](features-and-benefits.md)
 
 ## 🖥 Technical Information
 
