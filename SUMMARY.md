@@ -11,6 +11,9 @@
 ***
 
 * [Features and Benefits](features-and-benefits.md)
+* [Why GNUS.AI](why-gnus.ai/README.md)
+  * [Compatible](why-gnus.ai/compatible.md)
+  * [Customizable](why-gnus.ai/customizable.md)
 
 ## 🖥 Technical Information
 
