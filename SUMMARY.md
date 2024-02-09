@@ -27,7 +27,7 @@
   * [IPFS Pub Sub](technical-information/gnus.ai-technicial-details/ipfs-pub-sub.md)
   * [SG Consensus Algorithm Implementation](technical-information/gnus.ai-technicial-details/sg-consensus-algorithm-implementation.md)
   * [Account creation with ECSDA and El Gamal](technical-information/gnus.ai-technicial-details/account-creation-with-ecsda-and-el-gamal.md)
-  * [Key Derivation Function](technical-information/gnus.ai-technicial-details/key-derivation-function.md)
+  * [Key Derivation Function](technical-information/key-derivation-function-shared-secret-generation.md)
   * [El Gamal encryption](technical-information/gnus.ai-technicial-details/el-gamal-encryption.md)
   * [Prover specification](technical-information/gnus.ai-technicial-details/prover-specification.md)
   * [C++ Coding Standards](technical-information/gnus.ai-technicial-details/c++-coding-standards.md)

@@ -9,7 +9,7 @@ This system leverages the security and flexibility of cryptographic protocols to
 1. **Account Creation with ECDSA Keys**:
    * Upon creating an account, the system uses the ECDSA keys from the user's existing cryptocurrency wallet. These keys are instrumental in the initial phase of the cryptographic process, ensuring the user's identity is securely linked to their existing wallet.
 2. **KDF ETH/BTC Wallet Generation**:
-   * The system signs a predefined El Gamal public key value and feeds into a  [key-derivation-function.md](key-derivation-function.md "mention") (KDF), which deterministically returns a value to be used to generate a new ETH/BTC wallet. This KDF wallet utilizes ECDSA for signing, creating a derived set of keys (private and public) that are intrinsically connected to the user's original wallet through the KDF process.
+   * The system signs a predefined El Gamal public key value and feeds into a  [key-derivation-function-shared-secret-generation.md](../key-derivation-function-shared-secret-generation.md "mention") (KDF), which deterministically returns a value to be used to generate a new ETH/BTC wallet. This KDF wallet utilizes ECDSA for signing, creating a derived set of keys (private and public) that are intrinsically connected to the user's original wallet through the KDF process.
 3. **El Gamal Key Generation**:
    * The KDF-derived private key value is then used to generate El Gamal encryption keys as well. This step introduces an additional layer of cryptographic security, enabling secure message encryption and decryption capabilities.
 4. **Encryption with El Gamal Keys**:
