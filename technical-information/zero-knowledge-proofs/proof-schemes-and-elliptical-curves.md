@@ -10,9 +10,9 @@ These schemes can be implemented using a variety of elliptic curves, including B
 
 Proofs are generated into circuits that perform multiple arithmetization operations using arithmetic functions in what are known as gates of the circuits.  Those gates are then connected to form the proof.  There are several circuit arithmetization systems, including Rank One Constraint Systems (R1CS), Algebraic Intermediate Representation (AIR), Plonkish arithmetization (PLONK), and Customizable Constraint System (CCS) that can capture R1CS, Plonkish and AIR arithmetization without overhead.
 
-### Choosing an Arithmetization Circuit System <a href="#choosing-a-proving-system" id="choosing-a-proving-system"></a>
+### Choosing an Arithmetization Circuit System <a href="#choosing-an-arithmetization-circuit-system" id="choosing-an-arithmetization-circuit-system"></a>
 
-#### Arithmetization CircuitSystems Considered
+#### Arithmetization Circuit Systems Considered
 
 **R1CS**:  Rank-One Constraint System, is a mathematical construct used to encode polynomial equations in matrices 𝐴, 𝐵, and 𝐶, where each row of the matrices corresponds to a system of equations of the form:
 
@@ -39,7 +39,7 @@ Recently, many different optimizations have been presented to reduce the overhea
 
 We can also prove that we executed thousands of transactions or operations using recursive proof composition, [proof aggregation](https://blog.zk.link/nova-studies-i-exploring-aggregation-recursion-and-folding-23b9a67000cd), [folding schemes](https://medium.com/veridise/introduction-to-nova-and-zk-folding-schemes-4ef717574484), or [incrementally verifiable computing](https://docs.fluentlabs.xyz/learn/zkwasm-research/incrementally-verifiable-computation-nova/high-level-overview-of-nova#incrementally-verifiable-computation-ivc).
 
-### Our Proving Scheme's Architecture <a href="#why-we-are-using-groth16" id="why-we-are-using-groth16"></a>
+### Our Proving Scheme's Architecture <a href="#our-proving-schems-architecture" id="our-proving-schems-architecture"></a>
 
 1. **Performance Efficiency**: Performance is critical in blockchain applications, especially those involving frequent transactions or operations that require repeated proving of the same computational logic. We choose C++ and utilize the GPU for efficiency and cross-platform compatibility.\
    \
@@ -61,5 +61,7 @@ We can also prove that we executed thousands of transactions or operations using
    1. PLONK is used with PaSTA curves defined over a finite field, which were chosen to aggregate proofs similar to the [Halo2 commitment scheme](https://zcash.github.io/halo2/index.html?ref=blog.lambdaclass.com).&#x20;
    2. Parts of the [Kimchi Proving System](https://minaprotocol.com/blog/kimchi-the-latest-update-to-minas-proof-system) were also adopted to minimize the blockchain's storage requirements.
 6. **Compatibility with Ethereum and Other Platforms**: Since zkLLVM can also generate Solidity Smart Contract code for Ethereum Virtual Machines (EVMs) to verify via the Solidity Smart Contract, it can verify the aggregated proofs.  The verifier Smart Contract is compatible with major blockchains like Ethereum, which is crucial.&#x20;
+
+### Final Decision on Proving System
 
 Finally, after all the research, we decided that all these choices led us to use the [Placeholder Prover System](https://nil.foundation/blog/post/placeholder-proofsystem) that the =nil Foundation developed.  The Placeholder Prover System is a modular approach to a robust zkSnark proving system, which allowed us to build a fast custom proving system.
