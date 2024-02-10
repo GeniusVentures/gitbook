@@ -1,5 +1,10 @@
 ---
+cover: ../.gitbook/assets/GNUS evolution.jpg
+coverY: 45.17940717628705
 layout:
+  cover:
+    visible: true
+    size: hero
   title:
     visible: true
   description:
@@ -14,21 +19,6 @@ layout:
 
 # Why GNUS.AI
 
-### Works Everywhere
+GNUS.AI is an indispensable solution with a range of features designed to meet the evolving needs of various industries. &#x20;
 
-The flexibility of GNUS.AI is evident in its compatibility across a multitude of devices:
-
-* Windows
-* OSX
-* iOS
-* Android
-* Linux
-* Windows Mobile
-* XBOX
-* Playstation
-* Nintendo
-* IoT Devices
-
-This wide-ranging compatibility ensures that GNUS.AI can seamlessly integrate into existing infrastructure.
-
-###
+At its core, GNUS.AI not only offers integration into diverse devices but also ensures fast transactions, all secured with encrypted technology.
