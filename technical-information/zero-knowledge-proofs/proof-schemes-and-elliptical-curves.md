@@ -58,7 +58,8 @@ We can also prove that we executed thousands of transactions or operations using
 5. **Aggregate/Folding/IVC Proofs:**  Incrementally Verifiable Computing (**I**VC) is a technique that allows proving that a function was repeatedly applied to some initial state, producing a sequence of states,  \
    \
    PLONK can do  IVC using the Pallas and Vesta (PaSTA) Elliptical Curve Pair.
-   1. PLONK is used with PaSTA curves defined over a finite field, which were chosen to aggregate proofs very similar to the [Halo2 commitment scheme](https://zcash.github.io/halo2/index.html?ref=blog.lambdaclass.com).&#x20;
+   1. PLONK is used with PaSTA curves defined over a finite field, which were chosen to aggregate proofs similar to the [Halo2 commitment scheme](https://zcash.github.io/halo2/index.html?ref=blog.lambdaclass.com).&#x20;
    2. Parts of the [Kimchi Proving System](https://minaprotocol.com/blog/kimchi-the-latest-update-to-minas-proof-system) were also adopted to minimize the blockchain's storage requirements.
 6. **Compatibility with Ethereum and Other Platforms**: Since zkLLVM can also generate Solidity Smart Contract code for Ethereum Virtual Machines (EVMs) to verify via the Solidity Smart Contract, it can verify the aggregated proofs.  The verifier Smart Contract is compatible with major blockchains like Ethereum, which is crucial.&#x20;
 
+Finally, after all the research, we decided that all these choices led us to use the [Placeholder Prover System](https://nil.foundation/blog/post/placeholder-proofsystem) that the =nil Foundation developed.  The Placeholder Prover System is a modular approach to a robust zkSnark proving system, which allowed us to build a fast custom proving system.

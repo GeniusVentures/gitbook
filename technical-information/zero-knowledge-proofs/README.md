@@ -66,18 +66,18 @@ A zk-SNARK circuit consists of several key components:
 
 Arithmetic operations, such as addition, multiplication, and comparison, are frequently used in zk-SNARK circuits to define computations. Here's a simplified example in JavaScript.
 
-<pre class="language-cpp"><code class="lang-cpp">const num1 = 5; // Your secret number 1
-const num2 = 7; // Your secret number 2
-const sum = 12; // The sum you want to prove knowledge of
-const num1 = 5; // Your secret number 1
-const num2 = 7; // Your secret number 2
-const sum = 12; // The sum you want to prove knowledge of
+```cpp
+#include <nil/crypto3/algebra/curves/pallas.hpp>
 
-// Arithmetic circuit to check if num1 + num2 equals sum
-<strong>[[ circuit ]] bool isSumCorrect(uint256 num1, uint256 num2, uint256 sum) {
-</strong> return num1 + num2 === sum;
-};
-</code></pre>
+using namespace nil::crypto3::algebra::curves;
+
+[[circuit]] typename pallas::base_field_type::value_type
+    field_arithmetic_example([[private_input]] typename pallas::base_field_type::value_type a,
+                             typename pallas::base_field_type::value_type b) {
+
+    return a + b;
+}
+```
 
 #### Constraints <a href="#constraints" id="constraints"></a>
 
