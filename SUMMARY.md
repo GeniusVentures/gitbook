@@ -19,18 +19,20 @@
 
 ## 🖥 Technical Information
 
-* [GNUS.AI Technicial Details](technical-information/gnus.ai-technicial-details/README.md)
-  * [AI Data Blocks](technical-information/gnus.ai-technicial-details/ai-data-blocks.md)
-  * [Slicing Data for Macro MicroJobs](technical-information/gnus.ai-technicial-details/slicing-data-for-macro-microjobs.md)
-  * [Verification and Hash Results from Processing](technical-information/gnus.ai-technicial-details/verification-and-hash-results-from-processing.md)
-  * [Diagram of the internal blockchain, blocks and processing functionality](technical-information/gnus.ai-technicial-details/diagram-of-the-internal-blockchain-blocks-and-processing-functionality.md)
-  * [IPFS Pub Sub](technical-information/gnus.ai-technicial-details/ipfs-pub-sub.md)
-  * [SG Consensus Algorithm Implementation](technical-information/gnus.ai-technicial-details/sg-consensus-algorithm-implementation.md)
-  * [Account creation with ECSDA and El Gamal](technical-information/gnus.ai-technicial-details/account-creation-with-ecsda-and-el-gamal.md)
-  * [Key Derivation Function](technical-information/key-derivation-function-shared-secret-generation.md)
-  * [El Gamal encryption](technical-information/gnus.ai-technicial-details/el-gamal-encryption.md)
-  * [Prover specification](technical-information/gnus.ai-technicial-details/prover-specification.md)
-  * [C++ Coding Standards](technical-information/gnus.ai-technicial-details/c++-coding-standards.md)
+* [Zero Knowledge Proofs](technical-information/zero-knowledge-proofs/README.md)
+  * [Proof schemes and Elliptical Curves](technical-information/zero-knowledge-proofs/proof-schemes-and-elliptical-curves.md)
+* [Super Genius Blockchain Technicial Details](technical-information/super-genius-blockchain-technicial-details/README.md)
+  * [AI Data Blocks](technical-information/super-genius-blockchain-technicial-details/ai-data-blocks.md)
+  * [Slicing Data for Macro MicroJobs](technical-information/super-genius-blockchain-technicial-details/slicing-data-for-macro-microjobs.md)
+  * [Verification and Hash Results from Processing](technical-information/super-genius-blockchain-technicial-details/verification-and-hash-results-from-processing.md)
+  * [Diagram of the internal blockchain, blocks and processing functionality](technical-information/super-genius-blockchain-technicial-details/diagram-of-the-internal-blockchain-blocks-and-processing-functionality.md)
+  * [IPFS Pub Sub](technical-information/super-genius-blockchain-technicial-details/ipfs-pub-sub.md)
+  * [SG Consensus Algorithm Implementation](technical-information/super-genius-blockchain-technicial-details/sg-consensus-algorithm-implementation.md)
+  * [Account creation with ECSDA and El Gamal](technical-information/super-genius-blockchain-technicial-details/account-creation-with-ecsda-and-el-gamal.md)
+  * [Key Derivation Function](technical-information/super-genius-blockchain-technicial-details/key-derivation-function.md)
+  * [El Gamal encryption](technical-information/super-genius-blockchain-technicial-details/el-gamal-encryption.md)
+  * [Prover specification](technical-information/super-genius-blockchain-technicial-details/prover-specification.md)
+  * [C++ Coding Standards](technical-information/super-genius-blockchain-technicial-details/c++-coding-standards.md)
 
 ## Resources
 
