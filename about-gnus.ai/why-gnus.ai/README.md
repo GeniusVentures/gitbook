@@ -1,10 +1,10 @@
 ---
-cover: ../.gitbook/assets/GNUS evolution.jpg
+cover: ../../.gitbook/assets/GNUS evolution.jpg
 coverY: 45.17940717628705
 layout:
   cover:
     visible: true
-    size: hero
+    size: full
   title:
     visible: true
   description:

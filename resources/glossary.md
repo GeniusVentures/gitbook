@@ -14,10 +14,6 @@ layout:
 
 # Glossary
 
-#### Artificial Intelligence (AI)&#x20;
-
-The simulation of human intelligence in machines, capable of performing tasks that typically require human cognition.  [Machine Learning (ML)](glossary.md#machine-learning) is a crucial subset.
-
 #### **Blockchain**
 
 A decentralized ledger recording transactions transparently.
@@ -43,10 +39,6 @@ A decentralized computing setup extending cloud capabilities to the network's ed
 #### **Initial Token Offering (ITO)**
 
 A way to fundraise for new crypto projects. It involves offering a percentage of tokens in exchange for currencies.
-
-#### Machine Learning
-
-A subset of [Artificial Intelligence](glossary.md#artificial-intelligence-ai) that focuses on developing algorithms and statistical models that enable computers to learn from data and improve their performance. This allows systems to learn and make predictions or decisions based on patterns and insights.
 
 #### **Proof of Work (PoW)**
 

@@ -7,16 +7,13 @@
 
 * [GNUS.AI](<README (1).md>)
 * [Introduction](about-gnus.ai/introduction.md)
-
-***
-
-* [Features and Benefits](features-and-benefits.md)
-* [Why GNUS.AI](why-gnus.ai/README.md)
-  * [Compatible](why-gnus.ai/compatible.md)
-  * [Customizable](why-gnus.ai/customizable.md)
-  * [Fast](why-gnus.ai/fast.md)
-  * [Secure](why-gnus.ai/secure/README.md)
-    * [Secure 2FA with TOTP and zk-SNARKs](why-gnus.ai/secure/secure-2fa-with-totp-and-zk-snarks.md)
+* [Features and Benefits](about-gnus.ai/features-and-benefits.md)
+* [Why GNUS.AI](about-gnus.ai/why-gnus.ai/README.md)
+  * [Compatible](about-gnus.ai/why-gnus.ai/compatible.md)
+  * [Customizable](about-gnus.ai/why-gnus.ai/customizable.md)
+  * [Fast](about-gnus.ai/why-gnus.ai/fast.md)
+  * [Secure](about-gnus.ai/why-gnus.ai/secure/README.md)
+    * [Secure 2FA with TOTP and zk-SNARKs](about-gnus.ai/why-gnus.ai/secure/secure-2fa-with-totp-and-zk-snarks.md)
 
 ## 🖥 Technical Information
 
