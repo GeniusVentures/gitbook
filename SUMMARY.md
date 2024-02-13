@@ -38,5 +38,6 @@
 
 * [Contact Us](resources/contact-us.md)
 * [Contracts](resources/contracts.md)
+* [Multisig Wallets](resources/multisig-wallets.md)
 * [Glossary](resources/glossary.md)
 * [Official Links](resources/official-links.md)
