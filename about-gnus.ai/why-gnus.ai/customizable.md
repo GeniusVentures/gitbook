@@ -1,7 +1,7 @@
 ---
 layout:
   title:
-    visible: false
+    visible: true
   description:
     visible: false
   tableOfContents:
@@ -13,8 +13,6 @@ layout:
 ---
 
 # Customizable
-
-## Customizable
 
 Each user will be able to tailor their A.I. or Machine Learning algorithms according to their unique requirements.&#x20;
 

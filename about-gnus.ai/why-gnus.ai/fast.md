@@ -1,7 +1,7 @@
 ---
 layout:
   title:
-    visible: false
+    visible: true
   description:
     visible: false
   tableOfContents:
@@ -13,8 +13,6 @@ layout:
 ---
 
 # Fast
-
-## Fast
 
 GNUS.AI utilizes an internal [Directed Acyclic Graph (DAG)](../../resources/glossary.md#directed-acyclic-graph-dag) based blockchain, executing transactions in microseconds. &#x20;
 

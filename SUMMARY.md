@@ -9,11 +9,13 @@
 * [Introduction](about-gnus.ai/introduction.md)
 * [Features and Benefits](about-gnus.ai/features-and-benefits.md)
 * [Why GNUS.AI](about-gnus.ai/why-gnus.ai/README.md)
-  * [Compatible](about-gnus.ai/why-gnus.ai/compatible.md)
+  * [Works Everywhere](about-gnus.ai/why-gnus.ai/works-everywhere.md)
   * [Customizable](about-gnus.ai/why-gnus.ai/customizable.md)
   * [Fast](about-gnus.ai/why-gnus.ai/fast.md)
   * [Secure](about-gnus.ai/why-gnus.ai/secure/README.md)
     * [Secure 2FA with TOTP and zk-SNARKs](about-gnus.ai/why-gnus.ai/secure/secure-2fa-with-totp-and-zk-snarks.md)
+* [How Does It Work?](about-gnus.ai/how-does-it-work/README.md)
+  * [Decentralized Data Processing](about-gnus.ai/how-does-it-work/decentralized-data-processing.md)
 
 ## 🖥 Technical Information
 
@@ -34,7 +36,6 @@
 
 ## Resources
 
-* [Audits](resources/audits.md)
 * [Contact Us](resources/contact-us.md)
 * [Contracts](resources/contracts.md)
 * [Glossary](resources/glossary.md)

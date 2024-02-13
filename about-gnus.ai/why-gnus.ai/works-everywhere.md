@@ -1,7 +1,7 @@
 ---
 layout:
   title:
-    visible: false
+    visible: true
   description:
     visible: false
   tableOfContents:
@@ -12,9 +12,7 @@ layout:
     visible: true
 ---
 
-# Compatible
-
-## Works Everywhere
+# Works Everywhere
 
 The flexibility of GNUS.AI is evident in its compatibility across a multitude of devices:
 
