@@ -15,7 +15,7 @@
   * [Secure](about-gnus.ai/why-gnus.ai/secure/README.md)
     * [Secure 2FA with TOTP and zk-SNARKs](about-gnus.ai/why-gnus.ai/secure/secure-2fa-with-totp-and-zk-snarks.md)
 * [How Does It Work?](about-gnus.ai/how-does-it-work/README.md)
-  * [Idle Central Processing (CPU)](about-gnus.ai/how-does-it-work/idle-central-processing-cpu.md)
+  * [Idle Central Processing (GPU)](about-gnus.ai/how-does-it-work/idle-central-processing-gpu.md)
 
 ## 🖥 Technical Information
 
