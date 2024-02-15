@@ -18,6 +18,7 @@
 * [How Does It Work?](about-gnus.ai/how-does-it-work/README.md)
   * [Idle Central Processing (GPU)](about-gnus.ai/how-does-it-work/idle-central-processing-gpu.md)
   * [Distributed Computation](about-gnus.ai/how-does-it-work/distributed-computation.md)
+  * [Dynamically Adjusted Resource Allocation](about-gnus.ai/how-does-it-work/dynamically-adjusted-resource-allocation.md)
 
 ## 🖥 Technical Information
 
