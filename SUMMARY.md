@@ -2,6 +2,7 @@
 
 * [Public Roadmap](README.md)
 * [Whitepaper](https://www.gnus.ai/wp-content/uploads/2021/08/Genius-Tokens-Whitepaper-1.0\_Final.pdf)
+* [Meet the Team](https://www.gnus.ai/#team)
 
 ## 🧠 About GNUS.AI
 
