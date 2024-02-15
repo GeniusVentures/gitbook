@@ -14,6 +14,10 @@ layout:
 
 # Glossary
 
+#### Artificial Intelligence (A.I.)
+
+Creating computer systems capable of human-like tasks, such as learning, problem-solving, and understanding language, aiming to mimic cognitive functions.
+
 #### **Blockchain**
 
 A decentralized ledger recording transactions transparently.
@@ -34,11 +38,17 @@ A data structure without loops. In blockchains, it's an alternative to the tradi
 
 A decentralized computing setup extending cloud capabilities to the network's edge, closer to data sources.
 
-#### **Hybrid Cryptocurrency/Crypto-Token System:** A mix of cryptocurrencies and tokens for fast transactions.
+#### **Hybrid Cryptocurrency/Crypto-Token System**
+
+A mix of cryptocurrencies and tokens for fast transactions.
 
 #### **Initial Token Offering (ITO)**
 
 A way to fundraise for new crypto projects. It involves offering a percentage of tokens in exchange for currencies.
+
+#### Machine Learning (M.L.)
+
+A subset of A.I. focused on developing algorithms that enable computers to learn from data, improving their performance over time without explicit programming.
 
 #### **Proof of Work (PoW)**
 
