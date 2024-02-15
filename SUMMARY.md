@@ -17,6 +17,7 @@
     * [Secure 2FA with TOTP and zk-SNARKs](about-gnus.ai/why-gnus.ai/secure/secure-2fa-with-totp-and-zk-snarks.md)
 * [How Does It Work?](about-gnus.ai/how-does-it-work/README.md)
   * [Idle Central Processing (GPU)](about-gnus.ai/how-does-it-work/idle-central-processing-gpu.md)
+  * [Distributed Computation](about-gnus.ai/how-does-it-work/distributed-computation.md)
 
 ## 🖥 Technical Information
 
@@ -39,6 +40,7 @@
 
 * [Contact Us](resources/contact-us.md)
 * [Contracts](resources/contracts.md)
+* [FAQS](resources/faqs.md)
 * [Multisig Wallets](resources/multisig-wallets.md)
 * [Glossary](resources/glossary.md)
 * [Official Links](resources/official-links.md)
