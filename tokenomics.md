@@ -2,7 +2,7 @@
 
 Disclosure of Funds Raised, Token Distributions, and Funds Usage
 
-<div data-full-width="true">
+<div data-full-width="false">
 
 <figure><img src=".gitbook/assets/image.png" alt=""><figcaption><p>Tokenomics for Token Raise Distribution</p></figcaption></figure>
 
@@ -21,7 +21,7 @@ The following graph shows our Monte Carlo simulation using two Enterprises buyin
 * Monte-Carlo Analysis Simulation
   * Monte-Carlo Analysis shows the network effect. Faster network scaling increases GNUS token price faster.
 
-<div data-full-width="true">
+<div data-full-width="false">
 
 <figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption><p>Compute-Driven Token Growth over 700 days</p></figcaption></figure>
 
