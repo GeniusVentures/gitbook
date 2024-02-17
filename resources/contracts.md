@@ -28,6 +28,8 @@ Part of GNUS.AI uses the Diamond Standard, a versatile proxy outlined in [EIP-25
 
 [https://ordinals.hiro.so/protocols/brc-20/BGNS](https://ordinals.hiro.so/protocols/brc-20/BGNS)
 
+<table><thead><tr><th width="144">SYMBOL</th><th width="549">Treasury Wallet</th></tr></thead><tbody><tr><td>BGNUS</td><td><a href="https://ordinals.hiro.so/address/bc1p47jz7ss5s8j9w09cfvk5jklece7v96uc0slasqp5lklkdcq35y4s56r8ny">bc1p47jz7ss5s8j9w09cfvk5jklece7v96uc0slasqp5lklkdcq35y4s56r8ny</a></td></tr></tbody></table>
+
 <table><thead><tr><th width="144">SYMBOL</th><th width="556">Treasury Wallet</th></tr></thead><tbody><tr><td>BGNUS</td><td><a href="https://ordinals.hiro.so/address/bc1p47jz7ss5s8j9w09cfvk5jklece7v96uc0slasqp5lklkdcq35y4s56r8ny">bc1p47jz7ss5s8j9w09cfvk5jklece7v96uc0slasqp5lklkdcq35y4s56r8ny</a></td></tr></tbody></table>
 
 ### GNUS.AI on Ethereum, Solana, Cardano (ADA), Others

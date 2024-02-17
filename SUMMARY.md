@@ -38,7 +38,7 @@
   * [Prover specification](technical-information/super-genius-blockchain-technicial-details/prover-specification.md)
   * [C++ Coding Standards](technical-information/super-genius-blockchain-technicial-details/c++-coding-standards.md)
 
-## 📖 Resources
+## Resources
 
 * [Contact Us](resources/contact-us.md)
 * [Contracts](resources/contracts.md)
