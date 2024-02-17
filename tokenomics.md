@@ -26,5 +26,3 @@ The following graph shows our Monte Carlo simulation using two Enterprises buyin
 <figure><img src=".gitbook/assets/image (1).png" alt=""><figcaption><p>Compute-Driven Token Growth over 700 days</p></figcaption></figure>
 
 </div>
-
-*
