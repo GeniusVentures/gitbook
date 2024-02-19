@@ -19,3 +19,5 @@ GNUS.AI empowers end-users to participate in decentralized processing, earning G
 ## Purpose and Mission
 
 Our mission is to democratize AI/ML processing, allowing individuals to contribute their computing resources and be rewarded. GNUS.AI is creating a seamless ecosystem where users can easily integrate the system into various applications and games, fostering a new era of decentralized and organic growth.
+
+{% embed url="https://www.gnus.ai/wp-content/uploads/2024/02/Genius-A.I.mp4?autoplay=1&iframe=true" %}
