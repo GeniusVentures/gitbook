@@ -1,15 +1,14 @@
 # Table of contents
 
-* [Public Roadmap](README.md)
-* [Whitepaper](https://www.gnus.ai/wp-content/uploads/2021/08/Genius-Tokens-Whitepaper-1.0\_Final.pdf)
-* [Meet the Team](https://www.gnus.ai/#team)
-* [Tokenomics](tokenomics.md)
-
 ## 🧠 About GNUS.AI
 
-* [GNUS.AI](<README (1).md>)
+* [GNUS.AI](README.md)
 * [Introduction](about-gnus.ai/introduction.md)
 * [Features and Benefits](about-gnus.ai/features-and-benefits.md)
+* [Public Roadmap](about-gnus.ai/public-roadmap.md)
+* [Tokenomics](about-gnus.ai/tokenomics.md)
+* [Whitepaper](https://www.gnus.ai/wp-content/uploads/2021/08/Genius-Tokens-Whitepaper-1.0\_Final.pdf)
+* [Meet the Team](https://www.gnus.ai/#team)
 * [Why GNUS.AI](about-gnus.ai/why-gnus.ai/README.md)
   * [Works Everywhere](about-gnus.ai/why-gnus.ai/works-everywhere.md)
   * [Customizable](about-gnus.ai/why-gnus.ai/customizable.md)

@@ -1,5 +1,10 @@
 ---
+cover: .gitbook/assets/Screen Shot 2024-02-19 at 6.42.32 PM.png
+coverY: 0
 layout:
+  cover:
+    visible: true
+    size: hero
   title:
     visible: true
   description:
@@ -12,15 +17,8 @@ layout:
     visible: true
 ---
 
-# Public Roadmap
+# GNUS.AI
 
-* [ ] **March 2024**-  Official launch and release to the public.&#x20;
-* [x] **February 2024**-  Customer portal complete.  Presale customers can now redeem or buy more GNUS tokens for A.I. and. M.L. processing.&#x20;
-* [x] **October 2023**-  App user interface development.  App enters Beta phase.
-* [x] **August 2023-**  App development, including mobile wallet, mobile SDK for game integration, and a standalone app for desktops.
-* [x] **2021-2022**- The COVID-19 pandemic and the Russian/Ukrainian war hinder development.&#x20;
-* [x] **June 2021-**  Minimally viable product (MVP) and Initial Coin Offering (ICO) allow for continual development.&#x20;
-* [x] **May 2021**-  Dapps on the Ethereum network complete and ready for Initial Coin Offering (ICO)
-* [x] **April 2021**-  Hybrid blockchain development begins implementing fast and slow blockchain.
-* [x] **October 2020**-  Coding begins on implementing the Directed Acyclic Graph (DAG) fast blockchain.
-* [x] **January 2018**- Integration of blockchain into A.I. processing is started.  Sample game, shaders, and SDK development begin.&#x20;
+GNUS.AI is a revolutionary blockchain that harnesses the untapped computing power of devices worldwide to process [Artificial Intelligence (A.I.) ](resources/glossary.md#artificial-intelligence-a.i)and [Machine Learning (M.L.) data.](resources/glossary.md#machine-learning-m.l)
+
+{% embed url="https://www.gnus.ai/wp-content/uploads/2024/02/Genius-A.I.mp4?autoplay=1&iframe=true" %}
