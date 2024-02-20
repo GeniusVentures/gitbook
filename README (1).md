@@ -1,10 +1,10 @@
 ---
-cover: .gitbook/assets/Screen Shot 2024-02-01 at 12.55.05 PM.png
+cover: .gitbook/assets/Screen Shot 2024-02-19 at 6.42.32 PM.png
 coverY: 0
 layout:
   cover:
     visible: true
-    size: full
+    size: hero
   title:
     visible: true
   description:
