@@ -1,5 +1,5 @@
 ---
-cover: .gitbook/assets/Screen Shot 2024-02-19 at 6.42.32 PM.png
+cover: broken-reference
 coverY: 0
 layout:
   cover:

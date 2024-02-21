@@ -1,10 +1,10 @@
 ---
-cover: ../../.gitbook/assets/GNUS evolution.jpg
-coverY: 45.17940717628705
+cover: ../../.gitbook/assets/Screen Shot 2024-02-20 at 10.59.45 AM.png
+coverY: 0
 layout:
   cover:
     visible: true
-    size: full
+    size: hero
   title:
     visible: true
   description:
