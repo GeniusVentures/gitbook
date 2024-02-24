@@ -32,7 +32,7 @@ Part of GNUS.AI uses the Diamond Standard, a versatile proxy outlined in [EIP-25
 
 ### GNUS.AI on Ethereum (ETH Network)
 
-<table><thead><tr><th width="216">Contract</th><th>Address</th></tr></thead><tbody><tr><td>GeniusDiamond</td><td><a href="https://etherscan.io/address/0x614577036f0a024dbc1c88ba616b394dd65d105a">0x614577036F0a024DBC1C88BA616b394DD65d105a</a></td></tr></tbody></table>
+<table><thead><tr><th width="179">Contract</th><th width="531">Address</th></tr></thead><tbody><tr><td>GeniusDiamond</td><td><a href="https://etherscan.io/address/0x614577036f0a024dbc1c88ba616b394dd65d105a">0x614577036F0a024DBC1C88BA616b394DD65d105a</a></td></tr></tbody></table>
 
 ### Facets on Ethereum (ETH Network)
 

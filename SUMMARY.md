@@ -20,7 +20,7 @@
   * [Distributed Computation](about-gnus.ai/how-does-it-work/distributed-computation.md)
   * [Dynamically Adjusted Resource Allocation](about-gnus.ai/how-does-it-work/dynamically-adjusted-resource-allocation.md)
 
-## 🖥 Technical Information
+## 🖥️ Technical Information
 
 * [Zero Knowledge Proofs](technical-information/zero-knowledge-proofs/README.md)
   * [Proof schemes and Elliptical Curves](technical-information/zero-knowledge-proofs/proof-schemes-and-elliptical-curves.md)
