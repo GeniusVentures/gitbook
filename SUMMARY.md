@@ -36,6 +36,9 @@
   * [El Gamal encryption](technical-information/super-genius-blockchain-technicial-details/el-gamal-encryption.md)
   * [Prover specification](technical-information/super-genius-blockchain-technicial-details/prover-specification.md)
   * [C++ Coding Standards](technical-information/super-genius-blockchain-technicial-details/c++-coding-standards.md)
+  * [SuperGenius processing component information](technical-information/super-genius-blockchain-technicial-details/supergenius-processing-component-information/README.md)
+    * [Processing worker app workflow](technical-information/super-genius-blockchain-technicial-details/supergenius-processing-component-information/processing-worker-app-workflow.md)
+    * [Job Processing Flow](technical-information/super-genius-blockchain-technicial-details/supergenius-processing-component-information/job-processing-flow.md)
 
 ## Resources
 

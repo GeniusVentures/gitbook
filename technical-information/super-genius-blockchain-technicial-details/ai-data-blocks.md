@@ -4,6 +4,8 @@
 
 Chunk processing is similar to how jpeg blocks are processed but block size can be anything 4x4, 8x8, 12x16, etc.
 
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
 It also is very similar to how a GPU handles tiling.
 
 ![GPU-Tiling](<../../.gitbook/assets/GPU Tiling.png>)

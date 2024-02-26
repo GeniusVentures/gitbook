@@ -1,4 +1,4 @@
-# GNUS.ai Technicial Details
+# Super Genius Blockchain Technicial Details
 
 The code is based on the following patent:
 
@@ -9,6 +9,8 @@ The code is based on the following patent:
 ![Genius CryptoToken Process-Flow](<../../.gitbook/assets/Process Flow print.jpg>)
 
 ## These are the components of the System
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 * Generic BlockChain CryptoToken = Ethereum based smart contract using an Escrow like system that feeds the “Real” POW hash codes to Smart Contract to check consensus. Wiki/Repo
 * Communication Component = ipfs pub/sub using Gossip protocol. Wiki/Repo
