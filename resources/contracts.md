@@ -49,3 +49,10 @@ Part of GNUS.AI uses the Diamond Standard, a versatile proxy outlined in [EIP-25
 ### Facets on Solana, Cardano (ADA), Others
 
 <table><thead><tr><th width="221">Contract</th><th width="497">Address</th></tr></thead><tbody><tr><td>DiamondCutFacet</td><td>Coming Soon</td></tr><tr><td>DiamondLoupeFacet</td><td>Coming Soon</td></tr><tr><td>OwnershipFacet</td><td>Coming Soon</td></tr><tr><td>ERC1155ProxyOperator</td><td>Coming Soon</td></tr><tr><td>GNUSNFTFactory</td><td>Coming Soon</td></tr><tr><td>PolyGNUSBridge</td><td>Coming Soon</td></tr><tr><td>EscrowAIJob</td><td>Coming Soon</td></tr><tr><td>GeniusAI</td><td>Coming Soon</td></tr></tbody></table>
+
+### Audits
+
+{% file src="../.gitbook/assets/SmartContract_Audit_Solidproof_GNUSai.pdf" %}
+February 24, 2024 Audit
+{% endfile %}
+
