@@ -14,7 +14,7 @@ The following graph shows our Monte Carlo simulation using two Enterprises buyin
 
 * Multiple Revenue Streams
   * AI/ML Processing revenue, as well as Crypto & NFT trading fee revenue
-* Crypt Token Advantages
+* Crypto Token Advantages
   * Mint & Burn allows configurable profits.&#x20;
 * Investments Scale the Network
   * Investments are used to scale the network by adding nodes.
