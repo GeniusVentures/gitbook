@@ -10,7 +10,7 @@ Disclosure of Funds Raised, Token Distributions, and Funds Usage
 
 ## Compute-Driven Token Growth
 
-The following graph shows our Monte Carlo simulation using two Enterprises buying AI/ML processing and three games with 12 online players.
+The following graph shows our [Monte Carlo](https://my.machinations.io/d/gnus-economy/8683592da7e911eda2330626ff1c9bc8) simulation using two Enterprises buying AI/ML processing and three games with 12 online players.
 
 * Multiple Revenue Streams
   * AI/ML Processing revenue, as well as Crypto & NFT trading fee revenue
