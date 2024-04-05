@@ -24,7 +24,7 @@ layout:
 #### Secure
 
 * Each transaction is secured with Zero Knowledge (ZK) encryption, preventing your data from being sold.
-* Regular smart contract audits will be preformed as an integral security measure. &#x20;
+* Regular smart contract audits will be performed as an integral security measure. &#x20;
 
 #### Integration
 
