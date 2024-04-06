@@ -18,7 +18,7 @@ Website:[ ](https://www.gnus.ai/)[https://www.gnus.ai/](https://www.gnus.ai/)
 
 Github:[ ](https://github.com/GeniusVentures)[https://github.com/GeniusVentures](https://github.com/GeniusVentures)&#x20;
 
-Discord: [https://discord.com/invite/syqfajh](https://discord.com/invite/syqfajh)
+Discord: [https://discord.gg/gnusai](https://discord.gg/gnusai)
 
 Facebook: [https://www.facebook.com/geniusventures.io/](https://www.facebook.com/geniusventures.io/)
 
