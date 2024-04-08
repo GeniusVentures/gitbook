@@ -25,4 +25,8 @@ The following graph shows our [Monte Carlo](https://my.machinations.io/d/gnus-ec
 
 <figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Compute-Driven Token Growth over 700 days</p></figcaption></figure>
 
+<br/>
+
+<figure><img src="../.gitbook/assets/GNUS Tokenomics.jpg" alt=""><figcaption><p>Circulating Supply</p></figcaption></figure>
+
 </div>
