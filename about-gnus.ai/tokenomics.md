@@ -4,7 +4,7 @@ Disclosure of Funds Raised, Token Distributions, and Funds Usage
 
 <div data-full-width="false">
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Tokenomics for Token Raise Distribution</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/tokennomics.png" alt=""><figcaption><p>Tokenomics for Token Raise Distribution</p></figcaption></figure>
 
 </div>
 
