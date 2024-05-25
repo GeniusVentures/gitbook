@@ -20,7 +20,7 @@
    * Creator: (creator address)
    * ChildCurIndex: (current child count)
    * nftCreated: true
-3. **Game 1 Token (ID 0.1.1)**
+3. **Game 1 Token (ID 1.2)**
    * Name: Game 1
    * Symbol: G1T
    * URI: URI for Game 1 metadata
@@ -29,7 +29,7 @@
    * Creator: (creator address)
    * ChildCurIndex: (current child count)
    * nftCreated: true
-4. **NFT 3 (ID 0.1.1.1)**
+4. **NFT 3 (ID 2.3)**
    * Name: NFT 3
    * Symbol: NFT3
    * URI: URI for NFT 3 metadata
@@ -38,7 +38,7 @@
    * Creator: (creator address)
    * ChildCurIndex: (current child count)
    * nftCreated: true
-5. **Game 3 Token (ID 0.1.2)**
+5. **Game 3 Token (ID 1.4)**
    * Name: Game 3
    * Symbol: G3T
    * URI: URI for Game 3 metadata
@@ -47,7 +47,7 @@
    * Creator: (creator address)
    * ChildCurIndex: (current child count)
    * nftCreated: true
-6. **NFT 6 (ID 0.1.2.1)**
+6. **NFT 6 (ID 4.5)**
    * Name: NFT 6
    * Symbol: NFT6
    * URI: URI for NFT 6 metadata
@@ -56,7 +56,7 @@
    * Creator: (creator address)
    * ChildCurIndex: (current child count)
    * nftCreated: true
-7. **App 1 Token (ID 0.2)**
+7. **Assistance App 1 Token (ID 0.6)**
    * Name: App 1
    * Symbol: A1T
    * URI: URI for App 1 metadata
@@ -65,7 +65,7 @@
    * Creator: (creator address)
    * ChildCurIndex: 0
    * nftCreated: true
-8. **Solo Game 1 Token (ID 0.3)**
+8. **Solo Game 1 Token (ID 0.7)**
    * Name: Solo Game 1
    * Symbol: SGT
    * URI: URI for Solo Game 1 metadata
@@ -74,7 +74,7 @@
    * Creator: (creator address)
    * ChildCurIndex: (current child count)
    * nftCreated: true
-9. **NFT 1 (ID 0.3.1)**
+9. **NFT 1 (ID 7.8)**
    * Name: NFT 1
    * Symbol: NFT1
    * URI: URI for NFT 1 metadata
@@ -83,7 +83,7 @@
    * Creator: (creator address)
    * ChildCurIndex: (current child count)
    * nftCreated: true
-10. **NFT 2 (ID 0.3.2)**
+10. **NFT 2 (ID 7.9)**
     * Name: NFT 2
     * Symbol: NFT2
     * URI: URI for NFT 2 metadata
@@ -92,7 +92,16 @@
     * Creator: (creator address)
     * ChildCurIndex: (current child count)
     * nftCreated: true
-11. **Country 1 Token (ID 0.4)**
+11. Healthcare (0.A)
+    * Name: Healthcare
+    * Symbol: HCA
+    * URI: URI for Country 1 metadata
+    * Exchange Rate: (set value)
+    * Max Supply: (set value)
+    * Creator: (creator address)
+    * ChildCurIndex: (current child count)
+    * nftCreated: true
+12. **Country 1 Token (ID 0.B)**
     * Name: Country 1
     * Symbol: C1T
     * URI: URI for Country 1 metadata
@@ -101,7 +110,7 @@
     * Creator: (creator address)
     * ChildCurIndex: (current child count)
     * nftCreated: true
-12. **Game Studio 2 Token (ID 0.4.1)**
+13. **Game Studio 2 Token (ID B.C)**
     * Name: Game Studio 2
     * Symbol: GS2T
     * URI: URI for Game Studio 2 metadata
@@ -110,7 +119,7 @@
     * Creator: (creator address)
     * ChildCurIndex: (current child count)
     * nftCreated: true
-13. **Game 2 Token (ID 0.4.1.1)**
+14. **Game 2 Token (ID C.D)**
     * Name: Game 2
     * Symbol: G2T
     * URI: URI for Game 2 metadata
@@ -119,7 +128,7 @@
     * Creator: (creator address)
     * ChildCurIndex: (current child count)
     * nftCreated: true
-14. **NFT 4 (ID 0.4.1.1.1)**
+15. **NFT 4 (ID D.E)**
     * Name: NFT 4
     * Symbol: NFT4
     * URI: URI for NFT 4 metadata
@@ -128,7 +137,7 @@
     * Creator: (creator address)
     * ChildCurIndex: (current child count)
     * nftCreated: true
-15. **Game 4 Token (ID 0.4.1.2)**
+16. **Game 4 Token (ID C.F)**
     * Name: Game 4
     * Symbol: G4T
     * URI: URI for Game 4 metadata
@@ -137,7 +146,7 @@
     * Creator: (creator address)
     * ChildCurIndex: (current child count)
     * nftCreated: true
-16. **NFT 5 (ID 0.4.1.2.1)**
+17. **NFT 5 (ID F.10)**
     * Name: NFT 5
     * Symbol: NFT5
     * URI: URI for NFT 5 metadata
@@ -146,7 +155,16 @@
     * Creator: (creator address)
     * ChildCurIndex: (current child count)
     * nftCreated: true
-17. **App 2 Token (ID 0.4.2)**
+18. **ISP (ID B.11)**
+    * Name: ISP
+    * Symbol: ISP
+    * URI: URI for ISP metadata
+    * Exchange Rate: (set value)
+    * Max Supply: (set value)
+    * Creator: (creator address)
+    * ChildCurIndex: 0
+    * nftCreated: true
+19. **Finance App Token (ID 0.12)**
     * Name: App 2
     * Symbol: A2T
     * URI: URI for App 2 metadata
