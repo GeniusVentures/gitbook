@@ -25,6 +25,7 @@
 * [Zero Knowledge Proofs](technical-information/zero-knowledge-proofs/README.md)
   * [Proof schemes and Elliptical Curves](technical-information/zero-knowledge-proofs/proof-schemes-and-elliptical-curves.md)
 * [Super Genius Blockchain Technicial Details](technical-information/super-genius-blockchain-technicial-details/README.md)
+  * [SuperGenius DB Layout](technical-information/super-genius-blockchain-technicial-details/supergenius-db-layout.md)
   * [AI Data Blocks](technical-information/super-genius-blockchain-technicial-details/ai-data-blocks.md)
   * [Slicing Data for Macro MicroJobs](technical-information/super-genius-blockchain-technicial-details/slicing-data-for-macro-microjobs.md)
   * [Verification and Hash Results from Processing](technical-information/super-genius-blockchain-technicial-details/verification-and-hash-results-from-processing.md)

@@ -15,18 +15,15 @@ The following graph shows our [Monte Carlo](https://my.machinations.io/d/gnus-ec
 * Multiple Revenue Streams
   * AI/ML Processing revenue, as well as Crypto & NFT trading fee revenue
 * Crypto Token Advantages
-  * Mint & Burn allows configurable profits.&#x20;
+  * Mint & Burn allows configurable profits.
 * Investments Scale the Network
   * Investments are used to scale the network by adding nodes.
 * Monte-Carlo Analysis Simulation
   * Monte-Carlo Analysis shows the network effect. Faster network scaling increases GNUS token price faster.
 
-<div data-full-width="false">
-
 <figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Compute-Driven Token Growth over 700 days</p></figcaption></figure>
 
-<br/>
+\
+
 
 <figure><img src="../.gitbook/assets/GNUS Tokenomics.jpg" alt=""><figcaption><p>Circulating Supply</p></figcaption></figure>
-
-</div>
