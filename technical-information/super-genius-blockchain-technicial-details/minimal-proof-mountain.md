@@ -2,7 +2,7 @@
 
 The GNUS.ai blockchain architecture leverages a combination of Merkle Mountain Range (MMR) with Unspent Transaction Outputs (UTXOs) and Nova over PLONK for Incrementally Verifiable Computations (IVC). This design enhances scalability, security, and efficiency within the blockchain ecosystem.
 
-### **Key Components**
+### Key Components
 
 1. **Merkle Mountain Range (MMR) with UTXOs:**
    * MMR provides an efficient, append-only data structure via a CRDT database
@@ -26,13 +26,13 @@ graph TD
     A --> B
     A --> C
     B --> D
-    B --> E
+    D --> E
     C --> F
-    C --> G
+    F --> G
 
 ```
 
-### **Detailed Mechanism**
+### Detailed Mechanism
 
 1. **Genesis Node and Proof:**
    * The Genesis Node contains the initial state.
@@ -48,7 +48,7 @@ graph TD
    * New proofs build on previous proofs, ensuring efficiency.
    * Only the Genesis proof, branch proof, and recent UTXOs are needed for verification.
 
-### **Benefits**
+### Benefits
 
 1. **Scalability:**
    * Reduced storage requirements per node.
