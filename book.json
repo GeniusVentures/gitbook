@@ -1,0 +1,9 @@
+"plugins": [
+      "graphviz@git+https://github.com/darvasd/gitbook-plugin-graphviz.git"
+  ],
+"pluginsConfig": {
+    "graphviz": {
+        "format": "svg",
+        "engine": "dot"
+    }
+}
