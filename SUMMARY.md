@@ -40,7 +40,7 @@
   * [SuperGenius processing component information](technical-information/super-genius-blockchain-technicial-details/supergenius-processing-component-information/README.md)
     * [Processing worker app workflow](technical-information/super-genius-blockchain-technicial-details/supergenius-processing-component-information/processing-worker-app-workflow.md)
     * [Job Processing Flow](technical-information/super-genius-blockchain-technicial-details/supergenius-processing-component-information/job-processing-flow.md)
-  * [Minimal Proof Mountain](technical-information/super-genius-blockchain-technicial-details/minimal-proof-mountain.md)
+  * [Minimal MMR Proof System with UTXOs](technical-information/super-genius-blockchain-technicial-details/minimal-proof-mountain.md)
 * [Hybrid Smart Contract](technical-information/hybrid-smart-contract/README.md)
   * [Structure](technical-information/hybrid-smart-contract/structure/README.md)
     * [Structure Details](technical-information/hybrid-smart-contract/structure/structure-details.md)
