@@ -2,7 +2,7 @@
 
 Like MMR, the SuperGenius blockchain uses minimal storage and syncing for only the accounts UTXOs. It can be verified from the Genesis Block to the current UTXO(s) for an account.
 
-```graphviz
+{% graphviz %}
 digraph MMR_IVC {
     node [shape=rectangle, style=filled, color=lightblue];
     
@@ -31,3 +31,4 @@ digraph MMR_IVC {
     branch2 -> utxo2a;
     branch2 -> utxo2b;
 }
+{% endgraphviz %}
