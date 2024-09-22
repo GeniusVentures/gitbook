@@ -4,7 +4,8 @@
 
 * [GNUS.AI](README.md)
 * [Introduction](about-gnus.ai/introduction.md)
-* [Features and Benefits](about-gnus.ai/features-and-benefits.md)
+* [Features and Benefits](about-gnus.ai/features-and-benefits/README.md)
+  * [Scale and cost-efficiency](about-gnus.ai/features-and-benefits/scale-and-cost-efficiency.md)
 * [Public Roadmap](about-gnus.ai/public-roadmap.md)
 * [Tokenomics](about-gnus.ai/tokenomics.md)
 * [Whitepaper](https://www.gnus.ai/whitepaper)
