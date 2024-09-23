@@ -8,7 +8,7 @@ This approach completely redefines cost barriers associated with scaling machine
 
 | Provider                        | Approximate hourly cost for ML training work (V100-equivalent) | Scalability |
 | ------------------------------- | -------------------------------------------------------------- | ----------- |
-| GNUS.ai                         | $.01 or less                                                   | High        |
+| GNUS.ai                         | $.02                                                           | High        |
 | Single personal GPU             | $0.28                                                          | None        |
 | Gensyn (projected)              | $0.40                                                          | High        |
 | Single GPU in datacentre        | $0.40                                                          | None        |
