@@ -56,10 +56,3 @@
 * [Multisig Wallets](resources/multisig-wallets.md)
 * [Glossary](resources/glossary.md)
 * [Official Links](resources/official-links.md)
-
-* [Technical Information](technical-information/README.md)
-  * [Super Genius Blockchain Technical Details](technical-information/super-genius-blockchain-technicial-details/README.md)
-    * [Bridging Flow Overview](technical-information/super-genius-blockchain-technicial-details/overview.md)
-    * [Message Creation and Leader Election](technical-information/super-genius-blockchain-technicial-details/message_creation_leader_election.md)
-    * [Leader Ownership and Verification Channel Creation](technical-information/super-genius-blockchain-technicial-details/verification_channel_creation.md)
-    
