@@ -53,6 +53,7 @@
   * [Structure](technical-information/hybrid-smart-contract/structure/README.md)
     * [Structure Details](technical-information/hybrid-smart-contract/structure/structure-details.md)
   * [Encoded IDs](technical-information/hybrid-smart-contract/encoded-ids.md)
+* [Our Smart Contract Testing Philosophy](technical-information/our-smart-contract-testing-philosophy.md)
 
 ## Resources
 
