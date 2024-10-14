@@ -54,6 +54,12 @@
     * [Structure Details](technical-information/hybrid-smart-contract/structure/structure-details.md)
   * [Encoded IDs](technical-information/hybrid-smart-contract/encoded-ids.md)
 * [Our Smart Contract Testing Philosophy](technical-information/our-smart-contract-testing-philosophy.md)
+* [AI Systems](technical-information/ai-systems/README.md)
+  * [Overview](technical-information/ai-systems/overview.md)
+  * [Query Workflow](technical-information/ai-systems/query-workflow.md)
+  * [Data Storage](technical-information/ai-systems/data-storage.md)
+  * [Pub/Sub Communication](technical-information/ai-systems/pub-sub-communication.md)
+  * [Retraining Mechanism](technical-information/ai-systems/retraining-mechanism.md)
 
 ## Resources
 
