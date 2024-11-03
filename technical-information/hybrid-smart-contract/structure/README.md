@@ -36,6 +36,6 @@ Hierarchical Structure
       - Game 4 Token (ID C.F)
         - NFT 5 (ID F.10)
     - ISP Token (ID B.11)
-  - Fiance App Token (ID 0.12)
+  - Finance App Token (ID 0.12)
 
 ```

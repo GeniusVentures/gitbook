@@ -37,7 +37,7 @@ Recently, many different optimizations have been presented to reduce the overhea
 * Concurrent proof generation.
 * Hardware acceleration (such as using GPU or FPGA).
 
-We can also prove that we executed thousands of transactions or operations using recursive proof composition, [proof aggregation](https://blog.zk.link/nova-studies-i-exploring-aggregation-recursion-and-folding-23b9a67000cd), [folding schemes](https://medium.com/veridise/introduction-to-nova-and-zk-folding-schemes-4ef717574484), or [incrementally verifiable computing](https://docs.fluentlabs.xyz/learn/zkwasm-research/incrementally-verifiable-computation-nova/high-level-overview-of-nova#incrementally-verifiable-computation-ivc).
+We can also prove that we executed thousands of transactions or operations using recursive proof composition, [proof aggregation](https://blog.zk.link/nova-studies-i-exploring-aggregation-recursion-and-folding-23b9a67000cd), [folding schemes](https://medium.com/veridise/introduction-to-nova-and-zk-folding-schemes-4ef717574484), or [incrementally verifiable computing](https://blog.lambdaclass.com/incrementally-verifiable-computation-nova/).
 
 ### Our Proving Scheme's Architecture <a href="#our-proving-schems-architecture" id="our-proving-schems-architecture"></a>
 

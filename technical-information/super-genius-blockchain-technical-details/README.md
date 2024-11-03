@@ -1,4 +1,4 @@
-# Super Genius Blockchain Technicial Details
+# Super Genius Blockchain Technical Details
 
 The code is based on the following patent:
 

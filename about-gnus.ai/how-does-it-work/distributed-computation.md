@@ -26,4 +26,4 @@ Distributed Computation involves breaking down a task into smaller sub-tasks tha
 3. **Parallel Processing:**
    * Nodes work simultaneously on their allocated sub-tasks, leveraging parallel processing capabilities. This significantly accelerates the overall task completion time.
 
-Managing computational resources highlights the flexibilityof GNUS.AI to operate opportunistically during periods of device inactivity.
+Managing computational resources highlights the flexibility of GNUS.AI to operate opportunistically during periods of device inactivity.
