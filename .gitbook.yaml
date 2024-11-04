@@ -1,0 +1,28 @@
+root: ./
+
+redirects:
+  technical-information/super-genius-blockchain-technicial-detailss: technical-information/supergenius-blockchain-technical-details/README.md
+  technical-information/super-genius-blockchain-technicial-details/bridging-flow/destination-chain-submission-validation:   technical-information/super-genius-blockchain-technical-details/bridging-flow/destination-chain-submission-validation.md
+  technical-information/super-genius-blockchain-technicial-details/bridging-flow/message-creation-leader-election: technical-information/super-genius-blockchain-technicial-details/bridging-flow/message-creation-leader-election.md
+  technical-information/super-genius-blockchain-technicial-details/bridging-flow/node-verification-voting: technical-information/super-genius-blockchain-technical-details/bridging-flow/node-verification-voting.md
+  technical-information/super-genius-blockchain-technicial-details/bridging-flow/overview: technical-information/super-genius-blockchain-technical-details/bridging-flow/overview.md
+  technical-information/super-genius-blockchain-technicial-details/bridging-flow/signature-collection-aggregation:   technical-information/super-genius-blockchain-technical-details/bridging-flow/signature-collection-aggregation.md
+  technical-information/super-genius-blockchain-technicial-details/bridging-flow/verification-channel-creation: technical-information/super-genius-blockchain-technical-details/bridging-flow/verification-channel-creation.md
+  technical-information/super-genius-blockchain-technicial-details/supergenius-processing-component-information: technical-information/super-genius-blockchain-technical-details/supergenius-processing-component-information/README.md
+  technical-information/super-genius-blockchain-technicial-details/supergenius-processing-component-information/job-processing-flow: technical-information/super-genius-blockchain-technical-details/supergenius-processing-component-information/job-processing-flow.md
+  technical-information/super-genius-blockchain-technicial-details/supergenius-processing-component-information/processing-worker-app-workflow: technical-information/super-genius-blockchain-technical-details/supergenius-processing-component-information/processing-worker-app-workflow.md
+  technical-information/super-genius-blockchain-technicial-details/supergenius-processing-component-information/processing-worker-app-workflow: technical-information/super-genius-blockchain-technical-details/supergenius-processing-component-information/processing-worker-app-workflow.md
+  technical-information/super-genius-blockchain-technicial-details/account-creation-with-ecsda-and-el-gamal: technical-information/super-genius-blockchain-technical-details/account-creation-with-ecsda-and-el-gamal.md
+  technical-information/super-genius-blockchain-technicial-details/ai-data-blocks: technical-information/super-genius-blockchain-technicial-details/ai-data-blocks.md
+  technical-information/super-genius-blockchain-technicial-details/c++-coding-standards: technical-information/super-genius-blockchain-technical-details/c++-coding-standards.md
+  technical-information/super-genius-blockchain-technicial-details/cross-chain-bridging-to-supergenius: technical-information/super-genius-blockchain-technical-details/cross-chain-bridging-to-supergenius.md
+  technical-information/super-genius-blockchain-technicial-details/diagram-of-the-internal-blockchain-blocks-and-processing-functionality.md: technical-information/super-genius-blockchain-technical-details/diagram-of-the-internal-blockchain-blocks-and-processing-functionality.md
+  technical-information/super-genius-blockchain-technicial-details/el-gamal-encryption: technical-information/super-genius-blockchain-technical-details/el-gamal-encryption.md
+  technical-information/super-genius-blockchain-technicial-details/ipfs-pub-sub: technical-information/super-genius-blockchain-technical-details/ipfs-pub-sub.md
+  technical-information/super-genius-blockchain-technicial-details/key-derivation-function: technical-information/super-genius-blockchain-technical-details/key-derivation-function.md
+  technical-information/super-genius-blockchain-technicial-details/minimal-proof-mountain: technical-information/super-genius-blockchain-technical-details/minimal-proof-mountain.md
+  technical-information/super-genius-blockchain-technical-details/prover-specification: technical-information/super-genius-blockchain-technical-details/prover-specification.md
+  technical-information/super-genius-blockchain-technicial-details/sg-consensus-algorithm-implementation: technical-information/super-genius-blockchain-technical-details/sg-consensus-algorithm-implementation.md
+  technical-information/super-genius-blockchain-technicial-details/slicing-data-for-macro-microjobs: technical-information/super-genius-blockchain-technical-details/slicing-data-for-macro-microjobs.md
+  technical-information/super-genius-blockchain-technicial-details/supergenius-db-layout: technical-information/super-genius-blockchain-technical-details/supergenius-db-layout.md
+  technical-information/super-genius-blockchain-technicial-details/verification-and-hash-results-from-processing: technical-information/super-genius-blockchain-technical-details/verification-and-hash-results-from-processing.md
