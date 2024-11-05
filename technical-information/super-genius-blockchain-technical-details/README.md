@@ -10,7 +10,7 @@ The code is based on the following patent:
 
 ## These are the components of the System
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/dist-gp-comp-sys.png" alt=""><figcaption></figcaption></figure>
 
 * Generic BlockChain CryptoToken = Ethereum based smart contract using an Escrow like system that feeds the “Real” POW hash codes to Smart Contract to check consensus. Wiki/Repo
 * Communication Component = ipfs pub/sub using Gossip protocol. Wiki/Repo
