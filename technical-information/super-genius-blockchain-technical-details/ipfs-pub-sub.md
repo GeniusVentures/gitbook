@@ -50,7 +50,7 @@ typedef struct _PROCESSSUBCHUNKS {
 typedef struct _MICROJOB {
   UUID ipfsBlock;                 // source block data to be processed
   PROCESSSUBCHUNK chunksToProcess[]; // array of chunks to process
-  unsigned long datalen;          // length of ipfsBlock?
+  unsigned long datalen;          // length of ipfs Block?
   PUBSUBCHANNEL resultsChannel;   // channel to publish results to
 } MICROJOB;
 
