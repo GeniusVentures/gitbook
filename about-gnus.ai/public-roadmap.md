@@ -14,9 +14,9 @@ layout:
 
 # Public Roadmap
 
-* [ ] **2025 -** Make Games/Apps!  Start making our own games and apps that are fun to play and entertaining.
-* [ ] **Q4 2024 -** SuperGenius Blockchain Final. Live Network "final" Launched
-* [ ] **Q3 2024 -** Official Test Net Launch and release to the public. 200+ games and other apps integrated into the SuperGenius blockchain
+* [ ] **Q2 2025 -** Make Games/Apps!  Start making our own games and apps that are fun to play and entertaining.
+* [ ] **Q1 2025 -** SuperGenius Blockchain Final. Live Network "final" Launched
+* [ ] **Q4 2024 -** Official Test Net Launch and release to the public. 200+ games and other apps integrated into the SuperGenius blockchain
 * [x] **Q1 2024**-  Customer portal complete.  Presale customers can now redeem or buy more GNUS tokens for A.I. and. M.L. processing.&#x20;
 * [x] **October 2023**-  App user interface development.  App enters Beta phase.
 * [x] **August 2023-**  App development, including mobile wallet, mobile SDK for game integration, and a standalone app for desktops.

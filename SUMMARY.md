@@ -23,8 +23,6 @@
 
 ## 🖥️ Technical Information
 
-* [Zero Knowledge Proofs](technical-information/zero-knowledge-proofs/README.md)
-  * [Proof schemes and Elliptical Curves](technical-information/zero-knowledge-proofs/proof-schemes-and-elliptical-curves.md)
 * [Super Genius Blockchain Technical Details](technical-information/super-genius-blockchain-technical-details/README.md)
   * [SuperGenius DB Layout](technical-information/super-genius-blockchain-technical-details/supergenius-db-layout.md)
   * [AI Data Blocks](technical-information/super-genius-blockchain-technical-details/ai-data-blocks.md)
@@ -50,6 +48,7 @@
     * [Signature Collection and Aggregation](technical-information/super-genius-blockchain-technical-details/bridging-flow/signature-collection-aggregation.md)
     * [Destination Chain Submission and Validation](technical-information/super-genius-blockchain-technical-details/bridging-flow/destination-chain-submission-validation.md)
 * [Hybrid Smart Contract](technical-information/hybrid-smart-contract/README.md)
+  * [GNUS.ai Ecosystem: A Unified Network of Intelligence](technical-information/hybrid-smart-contract/gnus.ai-ecosystem-a-unified-network-of-intelligence.md)
   * [Structure](technical-information/hybrid-smart-contract/structure/README.md)
     * [Structure Details](technical-information/hybrid-smart-contract/structure/structure-details.md)
   * [Encoded IDs](technical-information/hybrid-smart-contract/encoded-ids.md)
@@ -60,6 +59,8 @@
   * [Data Storage](technical-information/ai-systems/data-storage.md)
   * [Pub/Sub Communication](technical-information/ai-systems/pub-sub-communication.md)
   * [Retraining Mechanism](technical-information/ai-systems/retraining-mechanism.md)
+* [Zero Knowledge Proofs](technical-information/zero-knowledge-proofs/README.md)
+  * [Proof schemes and Elliptical Curves](technical-information/zero-knowledge-proofs/proof-schemes-and-elliptical-curves.md)
 
 ## Resources
 
