@@ -39,7 +39,7 @@
   * [SuperGenius processing component information](technical-information/super-genius-blockchain-technical-details/supergenius-processing-component-information/README.md)
     * [Processing worker app workflow](technical-information/super-genius-blockchain-technical-details/supergenius-processing-component-information/processing-worker-app-workflow.md)
     * [Job Processing Flow](technical-information/super-genius-blockchain-technical-details/supergenius-processing-component-information/job-processing-flow.md)
-    * [Super Genius DAG Blockchain](technical-information/super-genius-blockchain-technical-details/supergenius-processing-component-information/super-genius-dag-blockchain.md)
+  * [Super Genius DAG Blockchain](technical-information/super-genius-blockchain-technical-details/super-genius-dag-blockchain.md)
   * [Minimal MMR Proof System with UTXOs](technical-information/super-genius-blockchain-technical-details/minimal-proof-mountain.md)
   * [Cross-chain Bridging through SuperGenius](technical-information/super-genius-blockchain-technical-details/cross-chain-bridging-to-supergenius.md)
     * [Overview of Technical Details for Cross-Chain Bridging Flow](technical-information/super-genius-blockchain-technical-details/bridging-flow/overview.md)
