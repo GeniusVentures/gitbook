@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Public Roadmap
 
 * [ ] **Q2 2025 -** Make Games/Apps!  Start making our own games and apps that are fun to play and entertaining.

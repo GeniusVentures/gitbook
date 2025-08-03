@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Multisig Wallets
 
 GNUS.AI Gnosis Safe Multisignature Wallets to protect against malicious attacks on the treasury and to deploy smart contracts and updates.  These wallets are public and can be viewed on any blockchain scanners, i.e., [https://www.etherscan.io](https://www.etherscan.io), [https://www.polygonscan.com](https://www.polygonscan.com).

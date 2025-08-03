@@ -1,16 +1,5 @@
 ---
 description: '-Where devices rests, but A.I. awakens.'
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Idle Central Processing (GPU)

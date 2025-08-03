@@ -1,20 +1,6 @@
 ---
 cover: .gitbook/assets/Screen Shot 2024-02-22 at 1.10.29 PM.png
 coverY: 0
-layout:
-  cover:
-    visible: true
-    size: hero
-  title:
-    visible: true
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # GNUS.AI

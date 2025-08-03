@@ -2,17 +2,6 @@
 description: >-
   GNUS.AI combines Artificial Intelligence (AI) and the blockchain to create a
   powerful and flexible system.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # How Does It Work?

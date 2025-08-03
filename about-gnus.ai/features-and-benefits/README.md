@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: false
-  description:
-    visible: false
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Features and Benefits
 
 ## Features And Benefits
@@ -24,7 +10,7 @@ layout:
 #### Secure
 
 * Each transaction is secured with Zero Knowledge (ZK) encryption, preventing your data from being sold.
-* Regular smart contract audits will be performed as an integral security measure. &#x20;
+* Regular smart contract audits will be performed as an integral security measure.
 
 #### Integration
 
@@ -37,5 +23,5 @@ layout:
 
 #### Compatibility
 
-* GNUS.AI works with everything from your phone to your game console and everything in between.&#x20;
+* GNUS.AI works with everything from your phone to your game console and everything in between.
 * It easily fits into various devices, allowing you to contribute to the network regardless of what type of device you're using.

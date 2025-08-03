@@ -47,7 +47,6 @@
   * [Key Derivation Function](technical-information/super-genius-blockchain-technical-details/key-derivation-function.md)
   * [El Gamal encryption](technical-information/super-genius-blockchain-technical-details/el-gamal-encryption.md)
   * [Prover specification](technical-information/super-genius-blockchain-technical-details/prover-specification.md)
-  * [C++ Coding Standards](technical-information/super-genius-blockchain-technical-details/c++-coding-standards.md)
   * [SuperGenius processing component information](technical-information/super-genius-blockchain-technical-details/supergenius-processing-component-information/README.md)
     * [Processing worker app workflow](technical-information/super-genius-blockchain-technical-details/supergenius-processing-component-information/processing-worker-app-workflow.md)
     * [Job Processing Flow](technical-information/super-genius-blockchain-technical-details/supergenius-processing-component-information/job-processing-flow.md)
@@ -74,6 +73,8 @@
   * [Retraining Mechanism](technical-information/ai-systems/retraining-mechanism.md)
 * [Zero Knowledge Proofs](technical-information/zero-knowledge-proofs/README.md)
   * [Proof schemes and Elliptical Curves](technical-information/zero-knowledge-proofs/proof-schemes-and-elliptical-curves.md)
+* [Software Engineering Handbook](technical-information/software-engineering-handbook/README.md)
+  * [C++ Coding Standards](technical-information/software-engineering-handbook/c++-coding-standards.md)
 
 ## Resources
 
