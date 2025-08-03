@@ -35,6 +35,8 @@
 
 ## 🖥️ Technical Information
 
+* [Software Engineering Handbook](technical-information/software-engineering-handbook/README.md)
+  * [C++ Coding Standards](technical-information/software-engineering-handbook/c++-coding-standards.md)
 * [Super Genius Blockchain Technical Details](technical-information/super-genius-blockchain-technical-details/README.md)
   * [SuperGenius DB Layout](technical-information/super-genius-blockchain-technical-details/supergenius-db-layout.md)
   * [AI Data Blocks](technical-information/super-genius-blockchain-technical-details/ai-data-blocks.md)
@@ -73,8 +75,6 @@
   * [Retraining Mechanism](technical-information/ai-systems/retraining-mechanism.md)
 * [Zero Knowledge Proofs](technical-information/zero-knowledge-proofs/README.md)
   * [Proof schemes and Elliptical Curves](technical-information/zero-knowledge-proofs/proof-schemes-and-elliptical-curves.md)
-* [Software Engineering Handbook](technical-information/software-engineering-handbook/README.md)
-  * [C++ Coding Standards](technical-information/software-engineering-handbook/c++-coding-standards.md)
 
 ## Resources
 
