@@ -94,3 +94,9 @@ From engineer job descriptions and project expectations:
 {% content-ref url="c++-coding-standards.md" %}
 [c++-coding-standards.md](c++-coding-standards.md)
 {% endcontent-ref %}
+
+#### Smart Contract Projects
+
+{% content-ref url="smart-contract-projects.md" %}
+[smart-contract-projects.md](smart-contract-projects.md)
+{% endcontent-ref %}
