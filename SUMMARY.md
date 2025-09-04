@@ -38,6 +38,7 @@
 * [Software Engineering Handbook](technical-information/software-engineering-handbook/README.md)
   * [C++ Coding Standards](technical-information/software-engineering-handbook/c++-coding-standards.md)
   * [Smart Contract Projects](technical-information/software-engineering-handbook/smart-contract-projects.md)
+  * [Recommended Pattern for LLM Usage in Team-GPT](technical-information/software-engineering-handbook/recommended-pattern-for-llm-usage-in-team-gpt.md)
 * [Super Genius Blockchain Technical Details](technical-information/super-genius-blockchain-technical-details/README.md)
   * [SuperGenius DB Layout](technical-information/super-genius-blockchain-technical-details/supergenius-db-layout.md)
   * [AI Data Blocks](technical-information/super-genius-blockchain-technical-details/ai-data-blocks.md)
