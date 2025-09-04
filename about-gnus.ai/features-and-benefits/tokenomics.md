@@ -17,7 +17,7 @@ The following graph shows our [Monte Carlo](https://my.machinations.io/d/gnus-ec
 * Monte Carlo Analysis Simulation
   * Monte Carlo Analysis shows the network effect. Faster network scaling increases GNUS token price faster.
 
-<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Compute-Driven Token Growth over 700 days</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption><p>Compute-Driven Token Growth over 700 days</p></figcaption></figure>
 
 
 
