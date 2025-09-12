@@ -82,7 +82,8 @@
 
 * [Contact Us](resources/contact-us.md)
 * [Contracts](resources/contracts.md)
-* [FAQS](resources/faqs.md)
+* [FAQS](resources/faqs/README.md)
+  * [Technical Deep Dive: How GNUS.ai Works](resources/faqs/technical-deep-dive-how-gnus.ai-works.md)
 * [Multisig Wallets](resources/multisig-wallets.md)
 * [Glossary](resources/glossary.md)
 * [Official Links](resources/official-links.md)
