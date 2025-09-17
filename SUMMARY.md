@@ -84,7 +84,6 @@
 * [Contracts](resources/contracts.md)
 * [FAQS](resources/faqs/README.md)
   * [Technical Deep Dive: How GNUS.ai Works](resources/faqs/technical-deep-dive-how-gnus.ai-works.md)
-  * [Why GNUS.ai?: A DePin That's Different and Disruptive](resources/faqs/why-gnus.ai-a-depin-thats-different-and-disruptive.md)
 * [Multisig Wallets](resources/multisig-wallets.md)
 * [Glossary](resources/glossary.md)
 * [Official Links](resources/official-links.md)
