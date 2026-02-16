@@ -35,6 +35,7 @@
 
 ## 🖥️ Technical Information
 
+* [SuperGenius API Reference](technical-information/supergenius-api-reference.md)
 * [Software Engineering Handbook](technical-information/software-engineering-handbook/README.md)
   * [C++ Coding Standards](technical-information/software-engineering-handbook/c++-coding-standards.md)
   * [Smart Contract Projects](technical-information/software-engineering-handbook/smart-contract-projects.md)
