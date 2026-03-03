@@ -1,7 +1,7 @@
 # Public Roadmap
 
-* [ ] **Q4 2025 -** SuperGenius Blockchain Final. Live Network "final" Launched
-* [ ] **Q2-Q3 2025 -** SuperGenius Blockchain Beta Phases and Security Audits.&#x20;
+* [ ] **Q2 2026 -** SuperGenius Blockchain Mainnet launched
+* [ ] **Q2-2025 - Q1 2026 -** SuperGenius Blockchain Beta Phases and Security Audits.&#x20;
 * [x] **Q1-Q2 2025 -** SuperGenius Blockchain Alpha Phases.&#x20;
 * [x] **Q4 2024 -** Official Test Net Launch and release to the public. 200+ games and other apps integrated into the SuperGenius blockchain
 * [x] **Q1 2024**-  Customer portal complete.  Presale customers can now redeem or buy more GNUS tokens for A.I. and. M.L. processing.&#x20;
