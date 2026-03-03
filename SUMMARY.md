@@ -34,7 +34,6 @@
         - [Distributed Computation](about-gnus.ai/how-does-it-work/distributed-computation.md)
         - [Dynamically Adjusted Resource Allocation](about-gnus.ai/how-does-it-work/dynamically-adjusted-resource-allocation.md)
 - 🖥️ Technical Information
-    - [SuperGenius API Reference](http://127.0.0.1:8000/hdocs/sg-hdoc/index.html)
     - [Software Engineering Handbook](technical-information/software-engineering-handbook/README.md)
         - [C++ Coding Standards](technical-information/software-engineering-handbook/c++-coding-standards.md)
         - [Smart Contract Projects](technical-information/software-engineering-handbook/smart-contract-projects.md)
