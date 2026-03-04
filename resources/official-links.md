@@ -2,7 +2,7 @@
 
 Website:[ ](https://www.gnus.ai/)[https://www.gnus.ai/](https://www.gnus.ai/)
 
-Github:[ ](https://github.com/GeniusVentures)[https://github.com/GeniusVentures](https://github.com/GeniusVentures)&#x20;
+Github:[ ](https://github.com/GeniusVentures)[https://github.com/GeniusVentures](https://github.com/GeniusVentures)
 
 Discord: [https://discord.gg/gnusai](https://discord.gg/gnusai)
 
@@ -12,14 +12,14 @@ Twitter (X):[ ](https://twitter.com/GNUSAI)[https://twitter.com/GNUSAI](https://
 
 LinkedIn:[ ](https://www.linkedin.com/company/geniusventuresio)[https://www.linkedin.com/company/geniusventuresio](https://www.linkedin.com/company/geniusventuresio)
 
-Youtube:[ ](https://www.youtube.com/channel/UC6UmxSK3U8DGzXEe7eguCkA)[https://www.youtube.com/@geniusventures4774](https://www.youtube.com/@geniusventures4774)
+Youtube:[ ](https://www.youtube.com/channel/UC6UmxSK3U8DGzXEe7eguCkA)[https://www.youtube.com/@gnusai](https://www.youtube.com/@gnusai)
 
-Telegram:[ ](https://t.me/geniustokens)[https://t.me/geniustokens](https://t.me/geniustokens)
+Telegram:[ ](https://t.me/geniustokens)[https://t.me/gnusai](https://t.me/gnusai)
 
 ## GNUS Trading Pairs Information
 
-DexTools: [https://www.dextools.io/app/en](https://www.dextools.io/app/en)\
-\
-DexScreener:  [https://www.dexscreener.com](https://www.dexscreener.com)\
-\
+DexTools: [https://www.dextools.io/app/en](https://www.dextools.io/app/en)
+
+DexScreener:  [https://www.dexscreener.com](https://www.dexscreener.com)
+
 CoinMarketCap: [https://coinmarketcap.com/currencies/genius-token-nft-collections/](https://coinmarketcap.com/currencies/genius-token-nft-collections/)
