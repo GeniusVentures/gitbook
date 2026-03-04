@@ -23,8 +23,7 @@ Primary node broadcasts Primary Propose message to all nodes to validate a trans
 **Pre Vote**\
 Nodes after receiving Primary Propose send Pre-Vote message (initial vote) to all other nodes.\
 **Pre Commit**\
-Nodes after receiving pre-votes from other nodes sends stronger commitment using pre-commit vote.\
-
+Nodes after receiving pre-votes from other nodes sends stronger commitment using pre-commit vote.<br>
 
 **Vote Message Format**\
 \| `Voting Round Number` | `Membership Counter` | `Message Data` |

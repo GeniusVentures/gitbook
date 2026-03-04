@@ -6,6 +6,7 @@ description: '-Where devices rests, but A.I. awakens.'
 
 ***
 
+\
 Any application can have periods of idle GPU, regardless of the device running it. If your device can download and process the information fast enough to run the application, it will inevitably have idle CPU and GPU periods. This is where GNUS.AI steps in. &#x20;
 
 Let's revisit the game application example: A user is playing a resource-intensive game on their device, utilizing the GPU for graphics rendering and the CPU for game logic.  While the user is exploring less demanding areas of the game or during loading screens, the GPU may experience idle capacity, triggering:
