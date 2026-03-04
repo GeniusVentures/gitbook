@@ -2,7 +2,7 @@
 
 Website:[ ](https://www.gnus.ai/)[https://www.gnus.ai/](https://www.gnus.ai/)
 
-Github:[ ](https://github.com/GeniusVentures)[https://github.com/GeniusVentures](https://github.com/GeniusVentures);
+Github:[ ](https://github.com/GeniusVentures)[https://github.com/GeniusVentures](https://github.com/GeniusVentures)
 
 Discord: [https://discord.gg/gnusai](https://discord.gg/gnusai)
 
