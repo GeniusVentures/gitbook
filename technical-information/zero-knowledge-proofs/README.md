@@ -39,8 +39,7 @@ outputs a pair of keys: a **proving key** (pk) and a **verification key** (vk). 
 \
 Next, the prover `P`, utilizing the proving key `pk`, public inputs `x`, and a secret witness `w`, produces proof `prf` that they know a witness `w,` which conforms to the constraints of program `C.` \
 \
-Finally, the verifier `V` checks the validity of the proof by executing `V(vk, w.pub(), prf)`, which confirms the truth of the claim if the proof prf is valid.\
-
+Finally, the verifier `V` checks the validity of the proof by executing `V(vk, w.pub(), prf)`, which confirms the truth of the claim if the proof prf is valid.<br>
 
 <figure><img src="../../.gitbook/assets/Proof System.png" alt=""><figcaption></figcaption></figure>
 
