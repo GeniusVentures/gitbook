@@ -1,1105 +1,779 @@
-# CPP Coding Standards
+# SuperGenius C++ Coding Standards
 
-## C++ Coding Standards
+Revision 2.0 — June 2026
 
-Revision 1.0 Created on June 26th, 2000 Last Revised on March 31st, 2020 Adapted from "C++ Coding Standards" The Corelinux Consortium
+Adapted from the Corelinux Consortium C++ Coding Standards (2000), modernized for C++17.
+
+---
 
 ## 1. Scope
 
-The principle function of this document is to establish a consistent standard, which will provide for easier maintenance of code. This will benefit the team and the project in that those who are new to the code can quickly orient themselves, and thereby sooner become productive members of the team. It is intended to be a dynamic document and can be reviewed as needed. It is recommended that each programmer keep a copy on hand also.
+This document defines the coding standards for the SuperGenius C++ codebase. Rules are classified as:
 
-### 1.1. Document Overview
+| Classification | Meaning | Enforcement |
+|---|---|---|
+| **Required** | Mandatory. Deviations must be approved by the team lead. | clang-tidy check (should pass clean) |
+| **Recommended** | Should be followed unless there is a compelling reason to deviate. | clang-tidy check (warnings may exist) |
 
-The following document sections contain standards, guidelines, and rationales. Guidelines must be adhered to unless there is compelling reason to deviate. Deviation from a guideline must be discussed and approved during the code walk-through. A standard is an item to which compliance is mandatory. Deviation from a standard must be discussed, approved, and signed-off on by the team lead during the code walk-through. Rationales have been used where necessary to explain the meaning of an item, or why it was chosen.
+The automated enforcement configuration lives in `.clang-tidy` and `.clang-format` at the repository root. See [§12 Tooling](#12-tooling) for usage.
 
-**General Principles -** This section contains the basic philosophy a developer should keep in mind while coding.
+### 1.1 General Principles
 
-**Comments -** This section deals with the placement and contents of comments in the code.
+The primary goal is **maintainability**. Other considerations in priority order: correctness, readability, consistency, clarity, portability, simplicity, and finally efficiency. When in doubt, strive for clarity first, then efficiency.
 
-**Code Layout** - This section has to do with the alignment of the code, white space, declarations and keywords, and where they should all be located.
+Think of the reader. Keep it simple. Break down complexity. Be explicit — avoid implicit or obscure language features. Be consistent. Minimize scope, both logical and visual.
 
-**Naming Conventions** - This section contains the structure for naming classes, functions, files, and directories.
+---
 
-**Usage** - This section concerns the 'how' and 'when' certain constructs should be used (for example, loops, inheritance, error handling, etc.)
+## 2. Comments
 
-**File Layout** - This section applies to where things should be located in header files and modules.
+### 2.1 File Headers
 
-**Coding Examples** - This section contains an example of a header file and module which conform to the C++ Coding Standard.
+**Required:** Every source and header file shall have a top-of-file comment. Use Doxygen-compatible format.
 
-## 2. General Principles
-
-The primary goal of the coding standard is maintainability. Other important considerations that relate to the spirit of the standard include correctness, readability, consistency, extensibility, portability, clarity, and simplicity. When in doubt, the programmer should strive for clarity first, then efficiency.
-
-Think of the reader. Do not just write for yourself. Keep it simple. Break down complexity into simpler chunks. Clearly comment necessary complexity. Be explicit. Avoid implicit or obscure language features. Be consistent. Minimize scope, both logical and visual.
-
-## 3. Comments
-
-**Guideline 1** - Be clear and concise. Say what is happening and why. Do not restate code.
-
-**Guideline 2** - Keep code and comments visually separate.
-
-**Standard 1** - Use top of file comments for all files. The comments should be JSDoc/Doxygen compatible
-
-Here is an example of a good header for a file:
-
-```
-JSDOC Style (preferred)
+```cpp
 /**
-* Header file for the Rendering contexts i.e. rendering surface inside windows
-* @author Kenneth Hurley
-*/
+ * @file MyClass.hpp
+ * @brief Brief description of the file's purpose.
+ * @author Jane Smith
+ */
 ```
 
-**Standard 2** - Use header comments for all functions. The size of the comment should mirror the size and complexity of the code. Class interface functions and procedures should be commented in the header.
+### 2.2 Function and Interface Comments
 
-**Standard 3 --** Include comment headers for interfaces inside the .h file. A well-formed .h file should look like the following:
+**Required:** All public functions and interfaces shall have header comments in the `.hpp` file. The comment size should match the function's size and complexity.
 
-```
+```cpp
 /**
-* Header file for the Rendering contexts i.e. rendering surface inside windows
-* @author Kenneth Hurley
-*/
+ * @brief Attaches a rendering window to the context.
+ * @param rendWin  The window to attach.
+ * @return false on failure.
+ */
+virtual bool AttachRenderWindow(IRenderWindow *rendWin) = 0;
+```
 
-    #ifndef IRENDERCONTEXT_H
-    #define IRENDERCONTEXT_H
+### 2.3 Inline Comments
 
-    class IConfig;
-    class IRenderView;
-    class IRenderWindow;
+**Required:** Use C++ single-line comments (`//`) for inline comments.
 
-    /** 
-    * Context for Rendering objects into.  
-    * Render contexts have rendering windows attached to them before they can be used.
-    */
+**Recommended:** Prefer block comments (on their own line) over trailing comments. Use trailing comments only for special annotations.
 
-    class IRenderContext
+**Required:** Trailing comments at a closing brace are indented one level from the brace.
+
+**Required:** Block comments are at the same indentation level as the code they describe.
+
+---
+
+## 3. Code Layout
+
+### 3.1 Braces
+
+**Required:** Use Allman / Ullman brace style. Braces are always on their own line, at the same indentation level as the statement that precedes them. The code within braces is indented one level.
+
+```cpp
+void DoSomething()
+{
+    if ( x != y )
     {
-    public:
-        /** Attach a Rendering windows to a rendering context.
-        * @param rendWin - The window to attach to the context
-        * @return false on failure
-        */
-    	virtual BOOL AttachRenderWindow(IRenderWindow *rendWin) = 0;
-        /**
-        * Get the number of rendering views inside the context
-        * @return the count of current rendering views
-        */
-    	virtual DWORD GetRenderViewCount() = 0;
-        /**
-        * Get one of the views associated with the context
-        * @param index - index # of the internal rendering view
-        * @param pRV - pointer to receive the IRenderView interface pointer
-        * @return false on failure
-        */
-    	virtual BOOL GetRenderView(DWORD index, IRenderView **pRV) = 0;
-    };
-
-    #endif	  // #ifndef IRENDERCONTEXT_H
-```
-
-**Standard (.cpp) 1** - Use only the C++ comment style (double slashes) for single line comments.
-
-**Guideline 3** - For block comment styles either C++ (double slashes) or C style (/\* ... \*/) can be used.
-
-```
-// \...
-```
-
-\- OR -
-
-```
-// \... //
-```
-
-\- OR -
-
-```
-/\* \... \*/
-```
-
-**Guideline 4** - Prefer block comments to trailing comments. Use block comments regularly. Only use trailing comments for special items.
-
-**Standard 4** - Trailing comments must all start in the same column in the function.
-
-**Standard 5** - Trailing comments at a closing brace are indented one level from brace.
-
-**Standard 6** - Block comments are at the same indentation level as the block they describe.
-
-**Standard 7** - Ensure comments are correct (and stay correct).
-
-## 4. Code Layout
-
-**Guideline 5** - Write code in a series of chunks.
-
-**Guideline 6** - Use block comments to separate the chunks.
-
-**Standard 8** - Put one statement per line, except with in-line code in a header file.
-
-**Guideline 7** - Functions shall have a single exit point.
-
-> Rationale: Multiple exit points usually add to the complexity of a function. Post conditions and invariant checks must also be performed prior to each return.
-
-**Standard 9** - Indentation level is (1) one tab or (4) four spaces.
-
-### 4.1. Braces and Parentheses
-
-Standard 10 Braces are recommended to be aligned using Ulman style where the braces are at the same scope as the statement that proceeds them and the code within the braces is indented one level. Braces are always on a line by themselves.
-
-```
-    void doSomething( void )
-    {
-    	if( x != y )
-    	{
-    	    y = x;
-    	}
-    	else
-    	{
-    	    ...
-    	}
+        y = x;
     }
-```
-
-\- NOT -
-
-```
-    void doSomething( void )
+    else
     {
-    	if( x != y )
-    	{
-    	y = x; // should be indented
-    	}
-    	else
-    	{
-    	...
-    	}
+        // ...
     }
+}
 ```
 
-\- OR -
+> **Enforced by:** `clang-format` (`BreakBeforeBraces: Allman`)
 
-```
-    void doSomething( void )
-    {
-    	if( x != y )
-    	    { // brace is not the same scope
-    	        y = x;
-    	    }
-    	else
-    	    {
-    	        ...
-            }
-    }
-```
+**Required:** Always use braces on `if`, `for`, `while`, and `do`/`while` statements, even when the body is a single statement.
 
-\- This is OK, but preferred Ulman style -
+```cpp
+// Correct
+if ( condition )
+{
+    DoWork();
+}
 
-```
-    void doSomething( void )
-    {
-    	if( x != y ){ // brace is not on a line by itself
-    	    y = x;
-    	}
-    	else {
-    	    ...
-    	}
-    }
+// Incorrect
+if ( condition )
+    DoWork();
 ```
-
-**Standard 11** - While, for and if statements shall always use braces, even if they are not syntactically required.
-
-**Guideline 8** - Use parenthesis to group within a statement and to emphasize evaluation order.
-
-**Guideline 9** - Avoid unnecessary parentheses.
-
-**Guideline 10** - Avoid deep (more than three) levels of parenthesis nesting.
 
-### 4.2. Declarations
+> **Enforced by:** `clang-tidy` (`readability-braces-around-statements`) [Required]
 
-**Standard 12** - Order declarations as storage class specifier, type specifier as described in ISO/IEC 14882 C++ standard, section 7.1.
+**Required:** Put the `while` in a `do`/`while` statement on the same line as the closing brace.
 
-**Standard 13** - Start each declaration on a new line.
-
-**Standard 14** - Enumeration declarations will be declared with named constants in upper case and the identifier specified as described in Naming conventions.
-
+```cpp
+do
+{
+    ++x;
+} while ( x < y );
 ```
-    enum Identifier
-    {
-    	ONE,
-    	TWO,
-    	THREE
-    };
-```
 
-\- OR -
+### 3.2 Indentation and Spacing
 
-```
-    enum Identifier
-    {
-    	ONE = 1,
-    	TWO,
-    	THREE
-    };
-```
+**Required:** Indentation is 4 spaces. Do not use tabs.
 
-**Standard 15** - All variables must be initialized.
+> **Enforced by:** `clang-format` (`IndentWidth: 4`, `UseTab: Never`)
 
-**Guideline 11** - Use vertical alignment to ease scanning of declarations.
+**Required:** Balance spacing inside parentheses — space after `(` and before `)` when arguments are present. No spaces in empty argument lists.
 
-```
-    String 	aStringToUse;
-    Int 	anInt;
-    Real 	aRealNumberToUse;
+```cpp
+void DoFunction();                  // no args — no spaces
+void DoFunction( ObjectRef aRef );  // args — spaces inside parens
 ```
 
-\- instead of -
+**Required:** Do not space between a function name and the opening parenthesis.
 
+```cpp
+DoFunction( arg );   // correct
+DoFunction ( arg );  // incorrect
 ```
-    String aStringToUse;
-    Int anInt;
-    Real aRealNumberToUse;
-```
-
-**Standard 16** - Do not create anonymous types (structs), except in a class declaration where a private structure is declared.
 
-### 4.3. Keyword Constructs
+> **Enforced by:** `clang-format` (`SpacesInParentheses: true`, `SpaceBeforeParens: ControlStatements`)
 
-**Guideline 12** - Most if statements should be followed by an else statement.
+**Required:** Do not use spaces between a dereference operator and its operand.
 
-**Standard 17** - Nested else if statements shall be indented as normal statements, the if shall appear on the same line as the else.
-
-**Standard 18** - Indent cases one level from the switch and indent the code one level beyond the case. The break statement is at the same indentation level as the code.
-
-**Standard 19** - All switch statements shall have a default case.
-
+```cpp
+val = *pFoo;   // correct
+val = * pFoo;  // incorrect
 ```
-    switch( variable )
-    {
-    	// ...
-    	case 1:
-    	    break;
-    	// ...
-    	case 2:
-    	    break;
-    	// ...
-    	default:
-    	    break;
-```
-
-### 4.4. Preprocessor
 
-**Standard 20** - Put the while in a do while statement on the same line as the closing brace.
-
-```
-    do
-    {
-        ++x;
-    } while(x < y);
-```
+> **Enforced by:** `clang-format` (`PointerAlignment: Left`)
 
-**Guideline 13** - Preprocessor directives should be avoided whenever possible.
+**Required:** Balance spacing on either side of binary operators.
 
-**Standard 21** -- For header files use the standard #include method:
+**Required:** Do not space before separators (semicolon, comma) but do space after them.
 
-```
-    #include <Common.hpp>
-```
+### 3.3 Column Limit
 
-**Standard 22** - Multi-statement macros shall have one statement per line.
+**Recommended:** Lines should not exceed 120 columns.
 
-```
-    #define MULTIPLE_LINE_MACRO( s ) \
-    ++(s); \
-    (s) = ((s) % 3 ? ++(s) : (s) )
-```
+> **Enforced by:** `clang-format` (`ColumnLimit: 120`)
+>
+> *Historical note: The original 2000 standard specified 78 columns. This was revised to 120 for modern displays and C++17 code density.*
 
-### 4.5. Spaces
+### 3.4 Line Wrapping
 
-**\[NOTE:]** Adhere to the indentation standard.
+**Required:** When wrapping a line, indent the continuation past the current indent column.
 
-**Standard 23** - Do not use spaces in object de-references.
+**Required:** Wrap conditional expressions after the logical operators.
 
-```
-    val = *pFoo; // ok
-    val = * pFoo; // wrong
+```cpp
+if ( theNameOfTheGame == aGameName &&
+     theTimeBeingPlayed > aLimit )
+{
+    // ...
+}
 ```
-
-**Standard 24** - Do not space between an unary operator and its operand, but do space the other side.
-
-**Standard 25** - Balance spacing on either side of binary operators.
 
-**Standard 26** - Do not space before separators ( semicolon, argument comma separator ) but do space the other side.
+> **Enforced by:** `clang-format` (`BreakBeforeBinaryOperators: None`)
 
-**Guideline 14** - It is acceptable to put a space before the semicolon that terminates a statement, as long as it is consistent throughout the function.
+**Required:** Wrap long function signatures after a parameter comma, with indentation.
 
-**Standard 27** - Balance spacing inside parenthesis.
-
-**Standard 28** - Do not space between function name and parenthesis, but space after open parenthesis and before close parenthesis with the exception of no arguments. e.g.
-
-```
-    void doFunction( void ) // ok
-    void doFunction( ObjectRef aRef ) // ok
-    void doFunction(ObjectRef aRef) // wrong
-    void doFunction( ObjectRef aRef) // wrong
-    void doFunction() // ok
+```cpp
+void ClassMethod::SetValues( ObjectCref a1, ObjectCref a2, StringCref aName,
+                             IntCref aValue )
+{
+    // ...
+}
 ```
-
-**Standard 29** - Use blank lines before and after block comments.
-
-**Standard 30** - Use vertical alignment to indicate association.
-
-### 4.6. Wrapping
-
-**Guideline 15** - No line of code should extend beyond column 78.
 
-Rationale: When the audience for the source and headers of a project may reach thousands, if not more, readability and continuity become prime factors for comprehension. Additionally, in a multideveloper environment, the potential for disjoint style is personified with no restrictions on column length.
+> **Enforced by:** `clang-format` (`BinPackParameters: false`)
 
-**Standard 31** - When wrapping lines, indent the continuation line past the current indent column.
+### 3.5 Declarations
 
-```
-    Int val(2);
-    cout << "This is an example where I wrap "
-    	<< val
-    	<< " lines of code" << endl;
-```
-
-**Standard 32** - Wrap assignments past the equal sign.
-
-```
-    ObjectMapConstIterator aItr;
+**Required:** Start each declaration on a new line.
 
-    aItr = theMapOfObjects.begin();
-```
+**Required:** Put one statement per line (except for trivial in-line accessors in headers).
 
-**Standard 33 -** Wrap conditional expressions after the operators.
+### 3.6 Switch Statements
 
-```
-    if( theNameOfTheGame == aGameName &&
-    	theTimeBeingPlayed > aLimit )
-    {
-    	// ...
-    }
-```
+**Required:** All `switch` statements shall have a `default` case.
 
-**Standard 34** - Wrap for statements after the semi-colons.
+**Required:** Indent `case` labels one level from the `switch`. Indent the case body one level from the `case`. The `break` is at the same indentation as the body.
 
+```cpp
+switch ( variable )
+{
+    case 1:
+        DoSomething();
+        break;
+    case 2:
+        DoOther();
+        break;
+    default:
+        break;
+}
 ```
-    for (itMass = mass.begin(); itMass != mass.end(); 
-    	itMass++)
-```
 
-**Standard 35** - Wrap long function signatures after a parameter comma with indentation.
-
-```
-    void ClassMethod::setValues(ObjectCref a1, ObjectCref a2, StringCref aName,
-    	IntCref aValue, ...)
-    {
-    	...
-    }
-```
+> **Enforced by:** `clang-format` (`IndentCaseLabels: true`)
 
-## 5. Naming Conventions
+### 3.7 Access Modifiers
 
-**Standard 36** - Spell words using correct English spelling. For the most part, avoid abbreviations.
+**Required:** `public`, `protected`, and `private` appear flush with the `class` keyword (no additional indentation).
 
-Rationale: The reader much better understands the semantics of a type when they have names like "SpeakerCabinet" instead of "spkcb".
+> **Enforced by:** `clang-format` (`AccessModifierOffset: 0`)
 
-**Guideline 16** - Make names clearly unique. Avoid similar-sounding names and similarly-spelled names.
+**Required:** Access controls appear in this order: `public`, `protected`, `private` (methods), then `protected`, `private` (data members). Empty access-control sections may be omitted.
 
-```
-    Int 	aCount;
-    String 	aName;
-    Object 	aPerson;
-```
+### 3.8 Namespaces
 
-\- INSTEAD OF -
+**Required:** Namespace bodies are indented one level. Use nested namespace syntax (C++17).
 
-```
-    Int x1;
-    String x2;
-    Object x3;
+```cpp
+namespace sgns::storage
+{
+    // indented one level
+}
 ```
 
-**Standard 37 -** Make all identifiers unique within a function.
+> **Enforced by:** `clang-format` (`NamespaceIndentation: All`, `CompactNamespaces: false`)
 
-**Standard 38** - Use mixed case to distinguish name segments instead of underscores.
+### 3.9 Blank Lines
 
-```
-    WellFormedObject 	aObject; // ok
-    non_standard_form aObject; // wrong
-```
+**Recommended:** Use blank lines before and after block comments to visually separate code chunks.
 
-**Standard 39 -** Types start with an upper case letter and use mixed case to separate name segments. (i.e. String, BigCar).
+> **Enforced by:** `clang-format` (`MaxEmptyLinesToKeep: 1`)
 
-**Standard 40** - Variables and objects names that are data members of a class start with a \`m\_' and use mixed case thereafter:
+---
 
-```
-    class Foo
-    {
-    public:
-    	//
-    protected:
-    	String m_Name;
-    };
-```
+## 4. Naming Conventions
 
-**Standard 41** - Variables and objects names that are arguments or locals start with lower case \`a'. (i.e. String aName; ).
+### 4.1 Summary Table
 
-**Guideline 17 -** Only use short variable names when they have limited scope and obvious meaning. Beware of them causing confusion.
+| Entity | Case | Prefix | Example | Enforced |
+|---|---|---|---|---|
+| Classes | PascalCase | — | `ProcessingNode` | Required |
+| Structs | PascalCase | — | `CrdtOptions` | Required |
+| Enums | PascalCase | — | `DatabaseError` | Required |
+| Enum constants | `UPPER_CASE` | — | `NOT_FOUND` | Recommended |
+| Functions (free) | PascalCase | — | `CreateLogger` | Recommended |
+| Methods (member) | PascalCase | — | `GetValue()` | Recommended |
+| Variables (local) | camelCase | — | `localVar` | Recommended |
+| Parameters | camelCase | — | `nodeId` | Recommended |
+| Member variables | camelCase | `m_` | `m_nodeId` | Recommended |
+| Compile-time constants | PascalCase | `k` | `kMaxRetryCount` | Recommended |
+| Global constants | PascalCase | `k` | `kDefaultPort` | Recommended |
 
-**Standard 42** Use capital letters to begin new name segments within the name.
+> **Enforced by:** `clang-tidy` (`readability-identifier-naming`) [Recommended]
+>
+> *Note: Naming is classified as Recommended because the codebase is transitioning. Some files still use trailing-underscore members (`node_id_`) or camelCase free functions (`createLogger`). New code shall follow this table.*
 
-**Guideline 18** - Name functions with verb-noun (verb object) combinations.
+### 4.2 Type Names
 
-**Guideline 19** - Name variables and structures with noun, adjective noun combinations.
+**Required:** Types start with an uppercase letter and use PascalCase (also known as UpperCamelCase).
 
-**Standard 43** - Accessor methods start with the word 'Get' and should be const.
+```cpp
+class TokenAmount { };
+struct CrdtOptions { };
+enum class DatabaseError : uint8_t { };
+```
 
-**Standard 44** - Boolean accessor functions start with 'Is' and return bool.
+### 4.3 Variables and Parameters
 
-**Standard 45** - Mutator procedures start with the word 'Set' and don't return values.
+**Recommended:** Local variables and parameters use camelCase (lowerCamelCase) — first word lowercase, subsequent words capitalized.
 
+```cpp
+int itemCount = 0;
+void Process( const std::string &nodeId );
 ```
-    class Foo
-    {
-    public:
-    	//
-    	// Accessor
-    	//
-    	String GetName( void ) const;
 
-    	bool IsNameEmpty( void ) const;
-    	//
-    	// Mutator
-    	//
-    	void SetName( String aName );
+**Recommended:** Do not use Hungarian notation or type prefixes (`a`, `p`, `l`, etc.).
 
-    protected:
-    	String m_Name;
-    };
-```
+### 4.4 Member Variables
 
-**Standard 46 -** Factory instantiation functions start with the word 'Create'.
+**Recommended:** Non-public member variables use `m_` prefix followed by camelCase.
 
+```cpp
+class ProcessingNode
+{
+private:
+    std::string m_nodeId;
+    std::chrono::seconds m_ttl;
+};
 ```
-    ThreadPtr CreateThread( void );
-```
 
-**Standard 47** - Factory destruction functions start with the word 'Destroy'.
+**Recommended:** Do not use `m_` prefix for public members of simple structs used as data carriers.
 
-```
-    void DestroyThread( ThreadPtr );
+```cpp
+struct Point
+{
+    double x;
+    double y;
+};
 ```
 
-### 5.1. Files and Directories
+### 4.5 Compile-Time Constants
 
-**Standard 48** - Use project names in source include statements:
+**Recommended:** Compile-time constants use `k` prefix followed by PascalCase.
 
+```cpp
+constexpr int kMaxRetryCount = 3;
+inline constexpr size_t kPublicKeySize = 32;
+static constexpr uint64_t kDefaultPort = 3000;
 ```
-    #if !defined(__SOMETHING_HPP)
-    #define (__SOMETHING_HPP)
-    #if !defined(__COMMON_HPP)
-    #include <corelinux/Common.hpp> // Correct
-    #include <Common.hpp> // While also correct,
-    	// there is too much assumption on environment
-    #endif
-    ...
-    #endif
-```
-
-**Guideline 20** - Name files like variables, describing the functions they contain. Long file names are encouraged.
-
-**Standard 49** - Use .cpp and .hpp for class definition source and header file suffixes.
-
-**Guideline 21** - Use .c and .h extensions for 'C' style source and header files. 'C' code is discouraged.
-
-**Guideline 22** - Any procedural code written should be compiled in C++.
-
-> Rationale: C++ compilers provide much stricter type checking than C compilers. The stronger type checking is well worth using, even if the code does not take advantage of the object oriented features of C++.
-
-**Guideline 23 -** Name directories like nested structures.
 
-## 6. Usage
+Do not use `#define` for value constants. Do not use `UPPER_CASE` for constants.
 
-**Guideline 24** - There are no circumstances where goto is allowed.
+> **Enforced by:** `clang-tidy` (`cppcoreguidelines-avoid-magic-numbers`) [Required], with `0`, `1`, `-1`, and `2` allowed in trivial contexts.
 
-**Guideline 25** - Avoid deep nesting of statements, parentheses, and structures.
+### 4.6 Functions and Methods
 
-**Guideline 26** - All assignments shall stand alone, unless a series of variables are being assigned to the same value.
+**Recommended:** Functions and methods use PascalCase with a verb-noun pattern.
 
-**Standard 50** - Do not use comparisons in mathematical expressions.
-
-```
-    numberOfDays = ( isLeapYear() == TRUE ) + 28; // not OK
+```cpp
+void SetName( const std::string &name );
+bool IsEmpty() const;
+int GetCount() const;
+std::shared_ptr<Thread> CreateThread();
+void DestroyThread( std::shared_ptr<Thread> t );
 ```
 
-**Guideline 27** - All non-boolean comparison expressions should use a comparison operator. Do not use implicit ! = 0.
-
-```
-    REQUIRE( aObjectPtr != NULLPTR ); // good
-    REQUIRE( aObjectPtr ); // bad
-```
+**Required:** Accessor methods (returning a value) start with `Get` and should be `const`.
 
-**Guideline 28** - Avoid assignment in comparisons, except where the alternative is significantly more complex.
+**Recommended:** Boolean accessor methods start with `Is` or `Has` and return `bool`.
 
-**Standard 51** - Use explicit casting, instead of the compiler default.
+**Required:** Mutator methods (setting a value) start with `Set` and do not return values.
 
-```
-    Dword aUnsignedValue(0);
-    Real 	aRealValue(3.7);
-    aBigValue = Dword(aRealValue);
-```
+**Required:** Factory creation functions start with `Create`. Factory destruction functions start with `Destroy`.
 
-Also note that the class operator overloads should be used as a preference for upcasting and downcasting:
+### 4.7 Spelling and Clarity
 
-```
-    class Foo
-    {
-    public:
-    	//
-    	// Accessor
-    	//
-    	operator Dword( void ) const
-    	{
-    		return Dword( m_Value );
-    	}
-    	operator Short( void ) const
-    	{
-    		return Short( m_Value );
-    	}
-    	//
-    	// Mutator
-    	//
-    protected:
-    	Real m_Value;
-    };
-```
+**Required:** Use correct English spelling. Avoid abbreviations except for well-known domain terms.
 
-**Guideline 29** - Default to pre-increment and pre-decrement unless the post-increment/decrement operators are logically necessary.
+**Recommended:** Make names clearly unique within their scope. Avoid similar-sounding names.
 
-**Guideline 30 -** Minimize negative comparisons.
+**Required:** Make all identifiers unique within a function.
 
-**Guideline 32** - Minimize use of the comma operator.
+---
 
-### 6.1. Conditionals
+## 5. Language Usage
 
-**Guideline 33** - Use if (cond) . . . else rather than conditional expressions ( (cond) ? : ) if only to clarify the intended operation.
+### 5.1 C++ Standard
 
-**Guideline 34** - Use nested if only to clarify the intended order of evaluation.
+**Required:** Code targets C++17. Do not use C++20 (or later) features.
 
-```
-    if ( foo() == true )
-    {
-    	if ( bar() == true )
-    	{
-    	}
-    }
-```
+### 5.2 Initialization
 
-_- VERSUS -_
+**Required:** All variables must be initialized at the point of declaration. If the value is not yet known, initialize pointers to `nullptr` and arithmetic types to `0`.
 
+```cpp
+int count = 0;
+std::string name;
+Logger logger = nullptr;
 ```
-    if ( foo() && bar() )
-    {
-    }
-```
-
-**Standard 52** - In a switch statement, make all cases independent by using break at the end of each. All switch statements should have a default. This is also true for if...else if...else blocks.
 
-**Standard 53** Use if...else for two alternative actions. Put the major action first.
+> **Enforced by:** `clang-tidy` (`cppcoreguidelines-init-variables`) [Required]
 
-### 6.2. Loop Constructs
+**Recommended:** Prefer member initializer lists over assignment in the constructor body.
 
-**Guideline 35** - Count for loops in ascending.
+```cpp
+// Preferred
+MyClass::MyClass( int value, const std::string &name )
+    : m_value( value )
+    , m_name( name )
+{ }
 
-**Standard 54** - Use for loops when the loop control needs initializing or recalculating; otherwise, use while.
+// Acceptable but not preferred
+MyClass::MyClass( int value, const std::string &name )
+{
+    m_value = value;
+    m_name = name;
+}
+```
 
-**Standard 55** - Use while( 1 ) to implement an infinite loop. Make its usage clear with comments.
+> **Enforced by:** `clang-tidy` (`cppcoreguidelines-prefer-member-initializer`) [Recommended]
 
-**Guideline 36 -** Be careful with the logic of do loops. Use do...while( !(...) ) to loop until a comparison becomes true.
+**Required:** List members in a constructor initialization list in the order they are declared in the class header.
 
-**Guideline 37** - Minimize use of break in loops. Only use it for abnormal escape.
+> **Enforced by:** `clang-format` (`BreakConstructorInitializers: BeforeComma`, `ConstructorInitializerIndentWidth: 4`)
 
-**Guideline 38** - Use continue sparingly. Clearly comment why continue is used.
+### 5.3 Pointers and Null
 
-3# 6.3. Data
+**Required:** Use `nullptr`, never `NULL`, `0`, or `NULLPTR` for null pointers.
 
-**Standard 56** - Use NULLPTR with pointers only. ( #define NULLPTR 0 should declared in types.hpp ).
+> **Enforced by:** `clang-tidy` (`modernize-use-nullptr`) [Required]
 
-**Guideline 39** - Use RTTI where appropriate.
+### 5.4 Casts
 
-Rationale: The developer may not want to compile with RTTI for whatever reason. You should consider using templates if type reasoning is required. On the other hand, RTTI is part of the C++ 14882 (1998E) standard.
+**Required:** Use explicit C++-style casts. Never rely on implicit compiler conversions for pointer or arithmetic narrowing.
 
-**Guideline 40** - Beware of operations with constants going out of range.
+```cpp
+auto value = static_cast<uint32_t>( rawValue );
+auto ptr = dynamic_cast<Derived *>( basePtr );
+```
 
-**Standard 57** - Use single-quoted characters for character constants, but never single-quote more than one character (or hex for non-printing).
+> **Enforced by:** `clang-tidy` (`google-readability-casting`) [Required]
 
-**Standard 58** - Use sizeof rather than a constant.
+### 5.5 `const` Correctness
 
-**Standard 59** - Do not compare floating-point numbers for equality.
+**Required:** Use `const` on every function, parameter, return value, and variable that will not be modified.
 
-**Standard 60** - Assign to all data members in operator=.
+**Recommended:** All accessor (getter) member functions should be `const`.
 
-**Standard 61** - Check for assignment to this in operator=. If assignment to this is attempted, simply return from the function.
+> **Enforced by:** `clang-tidy` (`readability-make-member-function-const`) [Recommended]
 
-```
-    MyClassRef MyClass::operator=( MyClassCref aRef )
-    {
-    	if ( this != &aRef )
-    	{
-    		// do the assignment
-    		...
-    	}
-    	else
-    	{
-    		...
-    	}
+**Required:** Pass non-modifiable objects by `const` reference, not by value.
 
-    	return *this;
-    }
+```cpp
+void Process( const Transaction &txn );
 ```
-
-**Standard 62** - Make sure operator= invokes any parents' operator=, except with virtual inheritance.
 
-### 6.4. Constructors and Destructor
+**Required:** Never return handles (references, pointers, iterators) to private object internals from `const` member functions. If a handle must be returned, make it `const`.
 
-**Standard 63** - Always define a default and copy constructor as well as an assignment operator for a class. Make these functions private if they should not be used.
+### 5.6 `noexcept`
 
-Rationale: The compiler will create these for you if you don't. It is the side effects and tracking down of such that is avoided with explicitly defining them.
+**Recommended:** Declare functions `noexcept` if they are guaranteed not to throw. This is especially important for move constructors, move assignment, destructors, and simple accessors.
 
-**Guideline 41** - Prefer assignment in constructor over initialization.
-
-```
-    MyClass::MyClass( void )
-    {
-    	theAlpha = 0;
-    	theBeta = 0;
-    	theGamma = 0;
-    }
+```cpp
+uint64_t Value() const noexcept;
+~MyClass() = default;  // destructors are implicitly noexcept
 ```
 
-_- INSTEAD OF -_
+> **Enforced by:** `clang-tidy` (`modernize-use-noexcept`) [Recommended]
+>
+> *Note: The project uses `outcome::result<T>` for error propagation rather than exceptions in hot paths. Functions using `outcome::result` should still be declared `noexcept` when they don't throw.*
 
-```
-    MyClass::MyClass( void ) :
-    	theAlpha(0),
-    	theBeta(0),
-    	theGamma(0)
-    {
-    	...
-    }
-```
+### 5.7 `auto`
 
-**Standard 64** - Make destructor virtual in all polymorphic classes, or classes where the potential is high.
+**Recommended:** Prefer `auto` for variable declarations where the type is obvious from the initializer. Avoid `auto` where the type is not immediately clear to the reader.
 
-**Standard 65** - A constructor should put its object in a well-defined state. At the end of the constructor, the object must satisfy its class invariant.
-
-**Standard 66** - A constructor that fails shall throw an exception.
+```cpp
+auto logger = base::createLogger( "Tag" );          // clear
+auto it = map.find( key );                           // clear
+uint64_t count = GetCount();                          // better than auto when type matters
+```
 
-### 6.5. Initialization
+### 5.8 Range-Based `for` and Algorithms
 
-**Standard 67** - Explicitly initialize static data.
+**Recommended:** Prefer range-based `for` loops over iterator-based loops where possible.
 
-**Standard 68** - Initialize all variables at the time they are declared to the appropriate value. If the value is not yet known, initialize pointers to NULLPTR and simple types to zero.
+**Recommended:** Prefer standard algorithms over hand-written loops.
 
-**Standard 69** - List members in a constructor initialization list in order in which they are declared in the class header.
+### 5.9 Enums
 
-### 6.6. Declaration
+**Required:** Prefer `enum class` (scoped enumerations) over unscoped `enum`.
 
-**Guideline 42** - All data should be defined toward the top of a function.
+**Recommended:** Specify the underlying type for `enum class` when size matters.
 
-**Standard 70** - Use floating-point numbers only where necessary.
+```cpp
+enum class DatabaseError : uint8_t
+{
+    OK,
+    NOT_FOUND,
+    CORRUPTION
+};
+```
 
-**Standard 71** - Do not use global data. Consider putting global information in the context of a static class.
+**Recommended:** Enum constant names use `UPPER_CASE`.
 
-### 6.7. Programming
+> **Enforced by:** `clang-tidy` (`readability-identifier-naming.EnumConstantCase`) [Recommended]
+>
+> *Note: Some code uses PascalCase for scoped enum constants (e.g., `ParseMode::Strict`). This produces warnings under the current tooling; new code should use `UPPER_CASE`.*
 
-**Guideline 43** - Make sure interface definitions are clear and sufficient.
+### 5.10 `goto`
 
-**Guideline 44** - Defend against system, program and user errors. Heavy use of assertions and exceptions are encouraged.
+**Required:** `goto` is never permitted.
 
-**Guideline 45** - Enable the user and the maintainer to find sufficient information to understand an error. Include enough diagnostic information to give an accurate picture of why the error occurred.
+> **Enforced by:** `clang-tidy` (`cppcoreguidelines-avoid-goto`) [Required]
 
-**Guideline 46** - Do not use arbitrary, predefined limits ( e.g. on symbol table entries, user names,
+### 5.11 Switch Statements
 
-file names).
+**Required:** All `switch` statements shall have a `default` case.
 
-**Guideline 47** - Make code more testable by reducing complexity.
+**Required:** Each non-empty `case` shall end with a `break`, `return`, or explicit comment documenting intentional fall-through.
 
-**Standard 72 -** When coding, use exactly the same names as in the object model.
+### 5.12 Conditional Expressions
 
-**Standard 73 -** Use the same form in corresponding calls to new and delete (i.e. new Foo uses delete FooPtr and new Foo\[ 100 ] uses delete \[] FooArray.)
+**Required:** All non-boolean comparison expressions shall use an explicit comparison operator. Do not rely on implicit conversion to `bool`.
 
-**Guideline 48** - Know what C++ silently creates and calls (e.g. default constructor, copy constructor, assignment operator, address-of operators(const and not), and the destructor for a derived class where the base class's destructor is defined.)
+```cpp
+if ( ptr != nullptr )  // correct
+if ( ptr )             // incorrect
+```
 
-**Standard 73** - Ensure that objects (both simple and class) are initialized before they are used.
+> **Enforced by:** `clang-tidy` (`readability-implicit-bool-conversion`) [Required]
 
-**Standard 74 -** Eradicate all compiler warnings. Any unavoidable warnings must be explicitly commented in the code. Unavoidable compiler warnings should be extremely rare.
+**Recommended:** Minimize negative comparisons; prefer positive logic.
 
-### 6.8. Class and Functions
+**Recommended:** Use `if`/`else` blocks rather than the ternary operator (`?:`) when the intent is to execute code for side effects, not just to select a value.
 
-**Guideline 49** - Strive for class interfaces that are complete and minimal.
+### 5.13 Loops
 
-**Guideline 50** - The programmer should only have to look at the .hpp file to use a class.
+**Recommended:** Use `for` loops when the loop control needs initialization or recalculation; otherwise use `while`.
 
-**Standard 75** - Do not put data members in the public interface.
+**Recommended:** Count `for` loops in ascending order.
 
-**Standard 76** - Pass and return objects be reference instead of value whenever possible.
+**Recommended:** Minimize use of `break` in loops. Use it only for abnormal early exit.
 
-**Standard 77** - If the passed object is not going to be modified then pass it as a const reference.
+**Recommended:** Use `continue` sparingly, with a comment explaining why.
 
-**Standard 78** - The keyword class will appear in the left most column. If declaring the class in the scope of a namespace, then class will be indented appropriately.
+### 5.14 Operators
 
-**Standard 79** - The member access controls appear flush with the class keyword.
+**Recommended:** Default to pre-increment (`++i`) and pre-decrement (`--i`) unless post-increment/decrement semantics are logically required.
 
-**Standard 80** - Access controls that have no members may be omitted.
+### 5.15 Floating-Point
 
-**Standard 81** - Access controls appear in the following order
+**Required:** Do not compare floating-point numbers for equality.
 
-```
-    public: 		// Public method declarations
-    protected: 	// Protected method declarations
-    private: 	// Private method declarations
-    protected: 	// Protected class data members
-    private: 	// Private class data members
-```
+**Recommended:** Use floating-point numbers only where necessary (graphics, physics).
 
-_comments here are for clarification._
+### 5.16 Macros
 
-**Standard 82** The virtual or static declarations appear in the first indentation level from the class declaration.
+**Required:** Replace `#define` value constants with `constexpr` or `inline constexpr`. Use macros only for include guards and unavoidable platform/compiler integration.
 
-**Standard 83** - The return type of a class method or the storage type of a class data member appear after the first tab position beyond the space were virtual applied.
+**Required:** Multi-statement macros shall have one statement per line, properly backslash-continued.
 
-**Standard 84** Method identifiers follow the return type and should be reasonably lined with other method declarations.
+### 5.17 Stack vs Heap
 
-**Standard 85** - In each access control group for methods, Constructors are followed by destructor, followed by operator overloads, followed by accessors followed by mutators.
+**Required:** Match `new` with `delete` and `new[]` with `delete[]`.
 
-```
-    class MyClass
-    {
-    public:
-    	// Default constructor
-    	MyClass( void )
+**Required:** Prefer stack allocation. When heap allocation is needed, use `std::unique_ptr` (or `std::shared_ptr` when shared ownership is required). Never use raw `new`/`delete` in application code — wrap in smart pointers at the point of allocation.
 
-    	// Copy constructor
-    	// \param Object constant reference
-    	MyClass( ObjectCref );
+---
 
-    	// Destructor
-    	virtual ~MyClass( void );
+## 6. Class Design
 
-    	// Equality operator overload
-    	// \param MyClass constant reference
-    	// \returns bool - true if equal, false otherwise
-    	bool operator==( MyClassCref );
+### 6.1 Interfaces
 
-    	//
-    	// Accessors
-    	//
-    	
-    	// Get the number of MyClass instantiations.
-    	// \returns Int const reference to count
-    	*/
-    	static IntCref getInstanceCount( void );
+**Required:** Program to an interface, not an implementation. Define abstract interfaces (pure virtual classes) and depend on them.
 
-    	
-    	// Return the object data member
-    	// \returns Object const reference
-    	ObjectCref getObject( void ) const;
+**Required:** Keep class interfaces minimal and complete. A developer should only need the `.hpp` file to use the class.
 
-    	//
-    	// Mutators
-    	//
+**Required:** Data members shall never be `public`.
 
-    	// Sets the something thing
-    	// \param Something const reference
-    	virtual void setSomething( SomethingCref );
+> **Enforced by:** `clang-tidy` (`misc-non-private-member-variables-in-classes`) [Required]
 
-    protected:
-    	// Copy never allowed
-    	MyClass( MyClassCref ) throw(Assertion)
-    	{
-    		...
-    	}
+**Required:** Prefer non-member, non-friend free functions over member functions to increase encapsulation. Member functions should only be used when they need access to private data.
 
-    	// Assignment operator denied
-    	MyClassRef operator=( MyClassCref ) throw(Assertion)
-    	{
-    		...
-    		return *this;
-    	}
-    private:
-    	// No private methods
-    protected:
-    	// No protected data members
-    private:
-    	/// Class instance counter
-    	static Int theInstanceCount;
-    };
-```
+### 6.2 Special Member Functions
 
-**Guideline 51** - Don't return a reference, or pointer, when you must return an object, and don't return an object when you mean a reference.
+**Recommended:** Follow the Rule of Zero/Five:
+- **Rule of Zero:** If a class does not manage resources directly, do not declare any of the special member functions (destructor, copy/move constructors, copy/move assignment). Let the compiler generate them.
+- **Rule of Five:** If a class manages resources directly, declare all five: destructor, copy constructor, copy assignment, move constructor, and move assignment.
 
-**Guideline 52** - Avoid overloading on a pointer and a numerical type. (i.e. foo( char \* ) vs. foo( int ) { a call to foo( 0 ) is ambiguous).
+> **Enforced by:** `clang-tidy` (`cppcoreguidelines-special-member-functions`) [Recommended]
 
-**Guideline 53** - Use static classes to partition the global namespace. (dated with C++ namespace )
+**Required:** Declare destructors `virtual` in all polymorphic base classes.
 
-**Standard 86** - Do not return handles to internal data from const member functions. If a handle must be returned, make it const.
+> **Enforced by:** `clang-tidy` (`bugprone-*` virtual-destructor checks) [Required]
 
-**Standard 87** - Avoid member functions that return pointers or references to members less accessible
+### 6.3 Inheritance
 
-than themselves. Use const!
+**Required:** Public inheritance shall model "is-a" relationships.
 
-**Standard 88** Never return a reference to a local object or a de-referenced pointer initialized by new within the function.
+**Required:** Never redefine an inherited non-virtual function.
 
-Rationale: Obviously, when a function ends, the local object goes out of scope, and the reference is no longer valid. One might attempt to NEW the object in the function instead, but then who would call the corresponding DELETE?
+> **Enforced by:** `clang-tidy` (`modernize-use-override`) [Required]
 
-**Standard 89** - Use enums for integral class constants.
+**Required:** Never redefine an inherited default parameter value.
 
-**Guideline 54 -** Use inlining judiciously.
+**Recommended:** Differentiate between inheritance of interface and inheritance of implementation. Prefer composition over implementation inheritance.
 
-**Guideline 55** - Inlines cause code bloat, slow down compile times, eat up name space, and not all compilers handle them the same way.
+### 6.4 Composition over Inheritance
 
-### 6.9. Templates and Template Functions
+**Recommended:** Favor object composition over class inheritance. Composition allows behavior to be combined at runtime and reduces rigid dependencies.
 
-As per sourceware.cygnus.com with the standards in this guide applied
+### 6.5 Encapsulation
 
-**Standard 90** - Template function indentation should follow the form
+**Required:** Keep internal class structure hidden. Do not expose implementation details in the public interface.
 
-```
-    template<class T> void doSomethingFunction( args )
-    {
-    	//
-    }
-```
+**Required:** Do not traverse multiple links or member functions in a single statement. Use named temporaries.
 
-_- NOT -_
+```cpp
+// Incorrect — hard to read and debug
+auto name = obj->GetDepartment()->GetManager()->GetName();
 
-```
-    template<class T> void template_function( args ) {};
+// Correct
+auto *dept = obj->GetDepartment();
+auto *mgr = dept->GetManager();
+auto name = mgr->GetName();
 ```
 
-Rationale: In class definitions, without indentation white space is needed both above and below the declaration to distinguish it visually from other members.
+---
 
-**Standard 91** Template class indentation should follow the form with what is not shown following the Section 6.8 on page 20.
+## 7. Error Handling
 
-```
-    template<class T> class Base 
-    {
-    public: // Types:
-    };
-```
+### 7.1 Outcome Pattern
 
-_- NOT-_
+**Required:** The project uses `outcome::result<T>` for fallible operations rather than C++ exceptions in hot paths.
 
+```cpp
+outcome::result<Blob<32>> Blob::fromHex( std::string_view hex );
 ```
-    template<class T> class Base { public: // Types:
-    };
-```
-
-### 6.10. Inheritance
-
-**Guideline 56** - Make sure public inheritance models 'is-a'.
-
-**Guideline 57** Differentiate between inheritance of the interface and of the implementation, and prefer delegation to implementation inheritance.
 
-Rationale: Inheritance of the interface only is forced by making a function pure virtual-its implementation must be defined by the derived class. Inheritance of implementation occurs when the function is declared as simple virtual-derived classes may or may not override the implementation.
+All functions returning `outcome::result<T>` shall be declared `noexcept` unless they have a specific reason to throw.
 
-**Standard 92 -** Never redefine an inherited non-virtual function.
+### 7.2 Assertions
 
-**Standard 93** - Never redefine an inherited default parameter value.
+**Recommended:** Use assertions liberally to document invariants and detect programming errors.
 
-**Standard 94** - A virtual function cannot strengthen a pre-condition or weaken a postcondition. Use the BASE\_INVARIANT in the INVARIANT of the derived class.
+### 7.3 Exception Safety
 
-**Guideline 58** - Use private inheritance judiciously.
+**Required:** Destructors must never throw exceptions. Catch and handle any exceptions that could escape a destructor.
 
-**Guideline 59** - Differentiate between inheritance and templates.
+**Required:** If a constructor fails, it shall leave the object in a well-defined state. In `outcome::result`-based code, use factory functions that return `outcome::result<T>` rather than throwing from constructors.
 
-Rationale: If the type of the object being manipulated does not affect the behavior or the class, then a template will do. However, if the type of the object DOES affect the behavior, then virtual functions should be used through inheritance.
+---
 
-### 6.11. Object-Oriented Considerations
+## 8. File Layout
 
-**Standard 95** - Factor our common code into an ancestor.
+### 8.1 File Extensions
 
-**Guideline 60** - Encapsulate external code within an operation or class.
+**Required:** Use `.hpp` for C++ header files and `.cpp` for C++ source files.
 
-**Guideline 61** - Keep member functions small, coherent and consistent.
+**Recommended:** Use `.h` and `.c` for C-style files only (discouraged).
 
-**Guideline 62** - Separate policy member functions (e.g. error and status checkers) from implementation member functions (computational).
+### 8.2 One Class Per Header
 
-**Standard 96** - Do not use indirect function calls unless absolutely necessary.
+**Required:** A class shall have a single header file. Closely related helper types may be co-located.
 
-**Standard 97 -** Write member functions for all combinations of input conditions. Avoid using modes to distinguish between conditions. Use member function overloading instead.
+**Recommended:** Classes with a large number of member functions may split their implementation across multiple `.cpp` files organized by functional area.
 
-**Standard 98 -** Avoid case statements on object type; use member functions instead.
+### 8.3 Include Order
 
-**Standard 99** - Keep internal class structure hidden from other classes. Do not use global or public data.
+**Recommended:** Order includes as: (1) own header, (2) project headers, (3) third-party headers, (4) standard library headers.
 
-**Standard 100 -** Do not traverse multiple links or member functions in a single statement. Invoke each member function via a temporary pointer or reference.
+> **Enforced by:** `clang-format` (`SortIncludes: true`, `IncludeBlocks: Preserve`)
 
-**Standard 101** - Use const wherever a function, parameter or return value will not change.
+**Required:** Minimize header file interdependence. Use forward declarations where possible instead of `#include`.
 
-**Guideline 63** - All accessor functions should be const.
+### 8.4 Function Length
 
-### 6.12. Error Handling
+**Recommended:** Functions should fit within approximately 100 lines.
 
-**Standard 102** - Use exceptions rather than returning a failure status.
+**Recommended:** Module files should not exceed 10–15 pages.
 
-**Standard 103 -** Use assertions liberally.
+---
 
-**Standard 104** - Derived classes must maintain the base class's invariant. This is to be verified by a call to
+## 9. Header File Layout
 
-### 6.13. Exception Specification
+### 9.1 Include Guards
 
-**Standard 105 -** Exceptions are to be specified in the signature of a class method declaration and definition.
+**Required:** All headers must be guarded against multiple inclusion.
 
-**Standard 106** - Exception type hierarchies should be created which reflect the domain.
-
-Rationale: It is easier to reason with an Exception type rather than figuring out what the exception was through a text message.
-
+```cpp
+#ifndef SUPERGENIUS_MYCLASS_HPP
+#define SUPERGENIUS_MYCLASS_HPP
+// ...
+#endif // SUPERGENIUS_MYCLASS_HPP
 ```
-    class Bridge : public CoreLinuxObject 
-    {
-    public:
-    	/**
-    	Bridge assignment operator
-    	@param Bridge constant reference
-    	@return Reference to *this
-    	@exception Exception
-    	*/
-    	BridgeRef operator=( BridgeCref ) throw(Exception);
-    };
-
-    //
-    // can't be reasoned with compared to:
-    //
-    class BridgeException : public Exception {..};
 
-    class Bridge : public CoreLinuxObject
-    {
-    public:
-    	/**
-    	Bridge assignment operator
-    	@param Bridge constant reference
-    	@return Reference to *this
-    	@exception BridgeException
-    	*/
-    	BridgeRef operator=( BridgeCref ) throw(BridgeException);
-    };
+`#pragma once` is an acceptable alternative for headers that are not part of the public API, but traditional guards are preferred for portability.
 
-    //
-    // at a minimum, and
-    //
-    class BridgeException : public Exception {..};
+### 9.2 Header Content
 
-    class SetImplementationException : public BridgeException {..};
+**Required:** Do not allocate memory (define static storage) in header files.
 
-    class Bridge : public CoreLinuxObject
-    {
-    public:
-    	/**
-    	Bridge assignment operator
-    	@param Bridge constant reference
-    	@return Reference to *this
-    	@exception SetImplementationException
-    	*/
-    	BridgeRef operator=( BridgeCref ) throw(SetImplementationException);
-    };
+**Required:** Include only what the header directly needs. Forward-declare types that are used only by reference or pointer.
 
-    //
-    // being the most useful
-    //
-```
-
-## 7. File Layout
+### 9.3 Order Within a Class
 
-**Guideline 64** - Use functional cohesion to group similarly items.
+**Required:** Within a class definition, members appear in this order:
 
-**Guideline 65** Source files may be split up along boundaries between class administrator, accessor, mutator and provider functions.
+1. `public:` — constructors, destructor, operator overloads, accessors, mutators
+2. `protected:` — protected methods
+3. `private:` — private methods
+4. `protected:` — protected data members
+5. `private:` — private data members
 
-**Standard 107 -** A class shall have a single header file.
+---
 
-**Guideline 66** - Lay out data files to reflect the systems they serve.
+## 10. Platform Abstraction
 
-**Standard 108** - Do not reserve memory in header files.
+**Required:** Do not use `#ifdef` OS-specific checks (`WINDOWS`, `OSX`, `ANDROID`, etc.) in source files. Instead, include a `Platform.hpp` header that provides platform-specific abstractions.
 
-**Standard 109** Minimize header file interdependence.
+```cpp
+// Incorrect
+#ifdef WINDOWS
+    // Windows-specific code
+#elif __APPLE__
+    // Mac-specific code
+#endif
 
-**Guideline 67** - Keep function length in code files to within one or two pages (100 lines).
+// Correct
+#include "Platform.hpp"
+// Platform.hpp handles the OS-specific includes
+```
 
-**Guideline 68** - Keep modules small. Each module should be functionally cohesive and should be as small as possible. Modules should not exceed 10-15 pages in length.
+Use the build system (CMake) to select per-platform include directories and source files.
 
-**Guideline 69** - Classes with a large number of functions should break the implementation into several .CPP files. These files should be functionally cohesive.
+---
 
-## 8. Header File Layout
+## 11. Includes
 
-**Standard 110** - All headers must be wrapped to prevent multiple inclusion.
+**Required:** Use project-root-relative paths for internal includes.
 
-```
-    #if !defined(MYHEADER_HPP)
-    #define MYHEADER_HPP
-    ...
-    #endif /* MYHEADER_HPP */
+```cpp
+#include "base/logger.hpp"
+#include "storage/face/readable.hpp"
 ```
 
-_- OR -_
+**Required:** Use angle-bracket includes for third-party and standard library headers.
 
+```cpp
+#include <spdlog/spdlog.h>
+#include <boost/asio.hpp>
+#include <string>
 ```
-    #if !defined(MYHEADER_HPP)
-    #define MYHEADER_HPP
-    ...
-    #endif /* MYHEADER_HPP */
-```
 
-**Standard 111 -** public, protected and private line appear between column 1 and 3 inclusive within a class definition.
+---
 
-**Standard 112** - Types, returns, member names, functions must be lined up consistently in header.
+## 12. Tooling
 
-**Standard 113** - Trailing comments must be aligned within the module.
+### 12.1 clang-format
 
-## 9. Special Care and Handling
+The repository root contains `.clang-format` encoding the formatting rules from [§3 Code Layout](#3-code-layout) and [§8–9 File Layout](#8-file-layout). Run:
 
-In some cases, you may need to handle situations where a conflict arises between the use of both your class and header files, and installed system or third-party files. This may result in either failed compilation or run-time library resolution problems.
+```bash
+clang-format -i <file>           # apply formatting
+clang-format --dry-run <file>    # check only
+```
 
-**Guideline 70** - Order system, or third party, includes before local header files.
+All code shall be formatted before commit. Most IDEs can be configured to run clang-format on save.
 
-**Guideline 71** - Make use of namespaces defined by the provider.
+### 12.2 clang-tidy
 
-**Standard 114 --** Do not include #ifdef operating system into include files.
+The repository root contains `.clang-tidy` encoding the static analysis rules from [§4–7](#4-naming-conventions). Each check is annotated as `[Required]` or `[Recommended]` and mapped to the corresponding standard section. Run:
 
-This pollutes the include files and makes them unreadable.
+```bash
+clang-tidy <file> -- -std=c++17
+```
 
-Instead of code like this:
+For full project analysis, use the CMake-generated `compile_commands.json`:
 
-```
-    	#ifdef WINDOWS
-    		…
-    	#elif OSX
-    		…
-    	#endif
+```bash
+cd build/OSX/Debug
+cmake .. -G "Ninja" -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+ninja
+run-clang-tidy -p .
 ```
 
-Use this
+Required checks should pass clean on new and modified code. Recommended checks may produce warnings; developers should address warnings where practical but are not required to clear all warnings in legacy files.
 
-```
-    	#include “Platform.h”
-```
+### 12.3 Build Verification
 
-Which will contain the includes/defines for a particular OS. This also has the added benefit of using fast precompiled headers that speed up the build process.
+Before committing, always:
 
-And then setup the solution/make/cmake files to include per operating system include directories like this:
+1. Format with clang-format
+2. Run clang-tidy on changed files
+3. Build without errors or warnings
+4. Run tests
 
-```
-    Windows.mk
+Use the repository's build instructions in `README.md` for platform-specific commands.
 
-    $(INCLUDE) = “platform/windows/”
+---
 
-    Android.mk
+## 13. References
 
-    $(INCLUDE) = “platform/android/”
-```
+- The Corelinux Consortium. *The Corelinux C++ Coding Standards*. Version 1.6, May 2000.
+- Gamma, E., Helm, R., Johnson, R., and Vlissides, J. *Design Patterns: Elements of Reusable Object-Oriented Software*. Addison Wesley, 1995.
+- Meyers, S. *Effective C++*, *More Effective C++*, *Effective STL*, and *Effective Modern C++*. Addison Wesley.
+- Reddy, M. *API Design for C++*. Morgan Kaufmann, 2011.
+- ISO/IEC 14882:2017 — *Programming Language C++* (C++17 Standard).
 
-## 10. References
+---
 
-The Corelinux Consortium. The Corelinux C++ Coding Standards. [The Corelinux Consortium, 1.6 edition, May 2000a.](http://corelinux.sourceforge.net/cppstnd.php).\
-Erich Gamma, et. Al. [Design Patterns -- Elements of Reusable Object-Oriented Software](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612). Addison Wesley, Boston, MA, 1995.\
-Alan Shalloway. [Design Patterns Explained](https://www.amazon.com/Design-Patterns-Explained-Perspective-Oriented/dp/0321247140). Addison Wesley, Boston, MA. 2002.
+*Revision 2.0 — June 2026. This document supersedes Revision 1.0 (June 2000, last revised March 2020).*
