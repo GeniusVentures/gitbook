@@ -25,16 +25,4 @@ The code is based on the following patent:
 * Software Development Kit API = work to be done for interface to Processing Component and checking wallet balance for In-App Purchases. Wiki/Repo
 * (Not Shown) Third Party support library, includes cross Platform libraries for Boost, GSL, GTest, Curl, Cryptopp, 25519, flutter, Parabeac, gnostic, grpc, hat-trie, ipfs-lite-cpp, openssl, json, leveldb, libp2p, lmdb rapidjson, restclient-cpp, spdlog Repo
 
-### Please adhere to the coding standards documentation
 
-C++ Coding Standards
-
-### Preferred contributor guidelines
-
-* Use the develop branch unless you are working on a major change that you think will be hard to fix breaking the develop branch, or is a major feature then use a feature branch and do a pull request to the develop branch.
-* Use git rebase instead of merge [Here's Why](https://spin.atomicobject.com/2017/04/23/maintain-clean-git-history/)
-* Pulls to master will be done on an as-needed basis, since we are in MVP, this won't be very often.
-
-### Also please read this blog about the appropriate way to use git rebase workflows.
-
-[Git Rebase Workflow](https://nvie.com/posts/a-successful-git-branching-model/)

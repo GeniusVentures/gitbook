@@ -2,6 +2,18 @@
 
 This handbook outlines core software engineering principles, coding standards, and best practices for the GNUS.AI team. It is designed to be language-agnostic, applicable to technologies like TypeScript, Java, C++, Solidity, React, and others used in our blockchain and cryptography projects. These guidelines emphasize maintainable, readable code, adherence to SOLID principles, data-driven design, thorough unit testing, and responsible use of AI and code generation tools with human oversight. They align with expectations from engineer job descriptions (e.g., Senior Engineers mentoring on architecture, Junior Engineers building foundational habits) and project prompts emphasizing clear requirements, modularity, and iterative development.
 
+### Preferred contributor guidelines
+
+* Use the develop branch unless you are working on a major change that you think will be hard to fix breaking the develop branch, or is a major feature then use a feature branch and do a pull request to the develop branch.
+* Use git rebase instead of merge [Here's Why](https://spin.atomicobject.com/2017/04/23/maintain-clean-git-history/)
+* Pulls to master will be done on as-needed, since we operate on develop branches, this won't be very often.
+
+### Git Rebase Workflows
+
+Please read this blog about the appropriate way to use git rebase workflows.
+
+[Git Rebase Workflow](https://nvie.com/posts/a-successful-git-branching-model/)
+
 ### Coding Standards
 
 Follow these standards to ensure consistency, readability, and maintainability across all languages:
