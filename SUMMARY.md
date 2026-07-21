@@ -34,6 +34,8 @@
 ## 🖥️ Technical Information
   - [Software Engineering Handbook](technical-information/software-engineering-handbook/README.md)
     - [C++ Coding Standards](technical-information/software-engineering-handbook/c++-coding-standards.md)
+    - [Python Coding Standards](technical-information/software-engineering-handbook/python-coding-standards.md)
+    - [TypeScript Coding Standards](technical-information/software-engineering-handbook/typescript-coding-standards.md)
     - [Smart Contract Projects](technical-information/software-engineering-handbook/smart-contract-projects.md)
     - [Recommended Pattern for LLM Usage in Team-GPT](technical-information/software-engineering-handbook/recommended-pattern-for-llm-usage-in-team-gpt.md)
   - [Super Genius Blockchain Technical Details](technical-information/super-genius-blockchain-technical-details/README.md)

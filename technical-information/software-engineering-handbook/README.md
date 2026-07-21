@@ -109,7 +109,7 @@ From engineer job descriptions and project expectations:
 
 ### Python Coding Standards
 
-{% content-ref url="c++-coding-standards.md" %}
+{% content-ref url="python-coding-standards.md" %}
 [python-coding-standards.md](python-coding-standards.md)
 {% endcontent-ref %}
 
