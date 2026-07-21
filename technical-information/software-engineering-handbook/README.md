@@ -107,6 +107,18 @@ From engineer job descriptions and project expectations:
 [c++-coding-standards.md](c++-coding-standards.md)
 {% endcontent-ref %}
 
+### Python Coding Standards
+
+{% content-ref url="c++-coding-standards.md" %}
+[python-coding-standards.md](python-coding-standards.md)
+{% endcontent-ref %}
+
+### Typescript Coding Standards
+
+{% content-ref url="typescript-coding-standards.md" %}
+[typescript-coding-standards.md](typescript-coding-standards.md)
+{% endcontent-ref %}
+
 #### Smart Contract Projects
 
 {% content-ref url="smart-contract-projects.md" %}
