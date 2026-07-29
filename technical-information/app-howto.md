@@ -93,9 +93,19 @@ Key conventions:
 
 Your `cmake/CommonBuildParameters.cmake` locates the workspace (walk up from the
 checkout until a dir containing GeniusSDK, SuperGenius, and thirdparty is found),
-then includes `GeniusSDK/cmake/CommonBuildParameters.cmake`, which imports every
-thirdparty package and the installed SuperGenius/GeniusSDK CMake configs.
-Your targets then link the imported targets (e.g. `GeniusSDK::GeniusSDK`).
+prepends each platform repo's installed build tree
+(`<repo>/build/<Platform>/<Config>/<Repo>`) to `CMAKE_PREFIX_PATH`, and then
+`find_package(... CONFIG REQUIRED)`s the platform packages
+(`GeniusSDK`, `SuperGenius`, ...). Your targets link the imported targets
+(e.g. `sgns::GeniusSDK`). GeniusWallet's `cmake/CommonBuildParameters.cmake`
+is the reference consumer.
+
+Platform code is consumed **only** as installed CMake packages. Every repo
+builds and installs itself with the universal pattern, and consumers use
+`find_package` against that installed tree. Do not `add_subdirectory()` or
+`include()` another repository's source-level CMake — that builds a second,
+divergent copy of the platform inside your app and breaks the moment the two
+repos drift.
 
 Rules of engagement:
 
@@ -136,6 +146,14 @@ Add Flutter when the app has a UI.
 * FFI boundary tests run under ASan/UBSan; LeakSanitizer watches key buffers.
   Fuzz the parsers and validators your app owns.
 * clang-format / clang-tidy before commit (Allman braces, workspace naming).
+
+All code follows the workspace coding standards in
+[`software-engineering-handbook/`](software-engineering-handbook/):
+[C++ Coding Standards](software-engineering-handbook/c++-coding-standards.md)
+for the native core and
+[Dart Coding Standards](software-engineering-handbook/dart-coding-standards.md)
+for the Flutter layer. The Dart standard is a small delta on the C++ one —
+read the C++ standard first, then the delta.
 
 ## 8. Checklist for a new app
 

@@ -119,6 +119,12 @@ From engineer job descriptions and project expectations:
 [typescript-coding-standards.md](typescript-coding-standards.md)
 {% endcontent-ref %}
 
+#### Dart Coding Standards
+
+{% content-ref url="dart-coding-standards.md" %}
+[dart-coding-standards.md](dart-coding-standards.md)
+{% endcontent-ref %}
+
 #### Smart Contract Projects
 
 {% content-ref url="smart-contract-projects.md" %}
