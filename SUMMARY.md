@@ -32,6 +32,8 @@
     - [Distributed Computation](about-gnus.ai/how-does-it-work/distributed-computation.md)
     - [Dynamically Adjusted Resource Allocation](about-gnus.ai/how-does-it-work/dynamically-adjusted-resource-allocation.md)
 ## 🖥️ Technical Information
+  - [Master Architecture](technical-information/MASTER_ARCHITECTURE.md)
+  - [How to Build an App on the GeniusNetwork](technical-information/app-howto.md)
   - [Software Engineering Handbook](technical-information/software-engineering-handbook/README.md)
     - [C++ Coding Standards](technical-information/software-engineering-handbook/c++-coding-standards.md)
     - [Python Coding Standards](technical-information/software-engineering-handbook/python-coding-standards.md)
