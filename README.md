@@ -5,6 +5,12 @@ coverY: 0
 
 # GNUS.AI
 
-GNUS.AI is a revolutionary blockchain that harnesses the untapped computing power of devices worldwide to process [Artificial Intelligence (A.I.)](resources/glossary.md#artificial-intelligence-ai) and [Machine Learning (M.L.) data.](resources/glossary.md#machine-learning-ml)
+**GNUS.ai combines a distributed compute platform with a modular AI architecture.** SuperGenius provides the native peer-to-peer runtime, processing, trust and settlement layers. [Genius Cognitive System (GCS)](https://gcs.gnus.ai/) supplies orchestration: a Semantic Core, specialized Expert Language Models (ELMs), governed agentic memory (GAML), and verification. Applications such as Genius AI Boss are built on these systems.
+
+This is **not simply one large AI model split across devices**, nor is GCS just a collection of generic agents. GCS chooses the smallest effective combination of reasoning, domain experts, memory, tools, and checks for a request. Work can run on a single device, a private network, or eligible GNUS nodes as needed.
+
+**Release status (October 2026):** SuperGenius mainnet implementation is complete, but the **public mainnet has not launched**. Public activation is being coordinated with GCS, Genius AI Boss, and other launch applications. [Read the current platform status](about-gnus.ai/release-status.md) and [public roadmap](about-gnus.ai/public-roadmap.md).
+
+Learn more in the [Introduction](about-gnus.ai/introduction.md), [AI Systems](technical-information/ai-systems/README.md), and [Master Architecture](technical-information/MASTER_ARCHITECTURE.md).
 
 {% embed url="https://enodes.gnus.ai/why-gnus-ai.mp4?autoplay=1&iframe=true" %}

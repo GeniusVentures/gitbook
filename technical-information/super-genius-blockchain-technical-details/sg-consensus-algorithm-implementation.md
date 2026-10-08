@@ -1,5 +1,7 @@
 # SG Consensus Algorithm Implementation
 
+> **Current implementation note (October 2026):** The message sequence below is an earlier protocol illustration, not a full specification of current validator admission or quorum. The current SuperGenius code has a genesis-seeded `TrustedPeerRegistry`, quorum-controlled membership updates, and `ValidatorRegistry` logic. General participation in compute jobs must not be confused with the validator/signer set. Consult the pinned source for current configuration and security assumptions. See [Platform Status](../../about-gnus.ai/release-status.md).
+
 * SG Consensus algorithm is based on GOSSIP protocol.
 * System uses libp2p library for P2P Gossip messaging.
 

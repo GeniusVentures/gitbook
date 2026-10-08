@@ -33,6 +33,10 @@ This document is the platform-level ownership map. Detailed implementation docum
 
 ## 2. Platform at a Glance
 
+> **Release status (October 2026):** SuperGenius mainnet implementation is complete, but public mainnet is not yet activated. The launch is coordinated with GCS, Genius AI Boss, and other applications. Implementation completion is distinct from public deployment, audit status, and demonstrated network scale. See [Platform Status](../about-gnus.ai/release-status.md).
+>
+> **Architecture boundary:** SuperGenius supplies distributed execution and settlement. GCS supplies the controller, Semantic Core, routed ELM specialists, GAML memory, and cognitive checks. Some GCS tasks run locally or in private deployments and do not require public swarm participation.
+
 ```mermaid
 flowchart TB
     User[User / Player / Developer / API Client]

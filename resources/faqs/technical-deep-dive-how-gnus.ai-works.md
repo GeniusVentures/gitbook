@@ -1,3 +1,5 @@
+> **Status and source note (October 2026):** This FAQ includes historical and illustrative statements written before mainnet implementation was complete. The native SuperGenius mainnet implementation is now complete, while **public activation is held** for GCS, Genius AI Boss, and other launch applications. Dates, token economics, consensus rules, audit claims, expected prices, node counts, and performance figures below may be obsolete. Use the [current Platform Status](../../about-gnus.ai/release-status.md), [Master Architecture](../../technical-information/MASTER_ARCHITECTURE.md), and [Tokenomics](../../about-gnus.ai/features-and-benefits/tokenomics.md) for current references. A quoted historical claim is not a verified production result.
+
 # Technical Deep Dive: How GNUS.ai Works
 
 ### 1. How does GNUS.ai enable users in emerging markets to offset device costs by contributing to the AI network through apps?
@@ -88,7 +90,7 @@ Becoming a compute provider is simple for beginners, using the Genius Wallet sof
    * Telegram community (t.me/geniustokens) for support, with testers noting minimal resource impact.
    * GitHub repo for advanced users, but beginners use the wallet.
 
-Start with Testnet to earn risk-free; mainnet (Q4 2025) will enable full rewards. No upfront costs beyond your device.
+Public SuperGenius mainnet has not yet launched. Check current official onboarding instructions, reward eligibility, and program terms before joining; the former Q4 2025 mainnet target is obsolete.
 
 ### 10. Has GNUS.ai undergone security audits, and how are funds kept secure?
 
@@ -97,10 +99,10 @@ GNUS.ai prioritizes security with robust mechanisms and testing during Testnet p
 * **Smart Contract Security**: Built on the ERC-2535 Diamond Standard for modular contracts (fungible $GNUS ERC-20 and ERC-1155 NFTs), using burn-on-mint and facet-based logic to isolate risks. The Super Genius blockchain ensures secure transactions, with bridging to Layer 1 chains (e.g., Ethereum, Polygon, Solana) secured by zk-SNARK proofs and Solidity verification.
 * **Privacy and Verification**: zk-SNARKs enable privacy-preserving federated learning, with secure 2FA via TOTP and encrypted transactions using SSL/public keys.
 * **Fund Protection**: The 10% token burn per compute cycle increases value by 11.1%, with tokens held in non-custodial wallets. Distributed nodes eliminate single points of failure.
-* **Audits and Roadmap**: GNUS.ai completed two third-party smart contract audits, with results on docs.gnus.ai. Internal C++ code audits are ongoing, and a comprehensive third-party audit is planned before the Q4 2025 mainnet launch to validate the Super Genius blockchain and SDK integrations. Phase 3 Testnet (live since July 2025) includes public stress-testing, with community bug bounties via GitHub enhancing security. The GNUS.ai DAO, launching soon, strengthens governance, and partnerships like Volume for automated payments add trust.
+* **Audits and Roadmap**: GNUS.ai completed two third-party smart contract audits, with results on docs.gnus.ai. Internal C++ code audits are ongoing, and a comprehensive third-party audit is planned before a planned mainnet launch (the historical Q4 2025 target has passed) to validate the Super Genius blockchain and SDK integrations. Phase 3 Testnet (live since July 2025) includes public stress-testing, with community bug bounties via GitHub enhancing security. The GNUS.ai DAO, launching soon, strengthens governance, and partnerships like Volume for automated payments add trust.
 
 Funds are secured via user-controlled wallets and on-chain transparency. Check docs.gnus.ai or Telegram for audit details.
 
 ### 11. Is a physical GNUS.ai device planned soon?
 
-Based on GNUS.ai’s roadmap and announcements (up to September 2025), no dedicated physical device is planned. The focus is software-driven, using existing hardware (smartphones, PCs, consoles, IoT) via the GNUS SDK and Genius Wallet for accessibility. The roadmap (docs.gnus.ai) prioritizes mainnet launch (Q4 2025), SDK integrations (200+ apps/games), and ecosystem growth. Founder Kenneth Hurley emphasizes partnerships for mobile/IoT GPUs (e.g., Volume on Paloma Blockchain), enhancing existing devices. Future demand may lead to optimized hardware, but currently, it’s about software leveraging user-owned devices. Check Telegram or X for updates.
+Based on GNUS.ai’s roadmap and announcements (up to September 2025), no dedicated physical device is planned. The focus is software-driven, using existing hardware (smartphones, PCs, consoles, IoT) via the GNUS SDK and Genius Wallet for accessibility. The roadmap (docs.gnus.ai) described a historical Q4 2025 mainnet target and SDK integrations (200+ apps/games), and ecosystem growth. Founder Kenneth Hurley emphasizes partnerships for mobile/IoT GPUs (e.g., Volume on Paloma Blockchain), enhancing existing devices. Future demand may lead to optimized hardware, but currently, it’s about software leveraging user-owned devices. Check Telegram or X for updates.
