@@ -11,6 +11,7 @@
       - [Secure 2FA with TOTP and zk-SNARKs](about-gnus.ai/why-gnus.ai/secure/secure-2fa-with-totp-and-zk-snarks.md)
   - [Features and Benefits](about-gnus.ai/features-and-benefits/README.md)
     - [Scale and cost-efficiency](about-gnus.ai/features-and-benefits/scale-and-cost-efficiency.md)
+    - [Pricing Methodology and Status](about-gnus.ai/features-and-benefits/pricing-methodology.md)
     - [GNUS.ai Network vs. Centralized xAI 100k Cluster](about-gnus.ai/features-and-benefits/gnus.ai-network-vs.-centralized-xai-100k-cluster/README.md)
       - [1. Executive Summary](about-gnus.ai/features-and-benefits/gnus.ai-network-vs.-centralized-xai-100k-cluster/1.-executive-summary.md)
       - [2. Introduction](about-gnus.ai/features-and-benefits/gnus.ai-network-vs.-centralized-xai-100k-cluster/2.-introduction.md)
