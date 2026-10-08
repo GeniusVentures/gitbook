@@ -52,10 +52,10 @@ Examples using the proposed unit: one external ELM active for one hour = **$0.00
 
 These costs **exclude** potentially chargeable Semantic Core computation, data transfer, memory/retrieval, verification, queuing/retries, operations, node compensation policies, margin, taxes, token conversion, and any minimum charge. If billing is later denominated in GNUS tokens, USD-equivalent conversions and rounding must be specified separately.
 
-The higher-level [GCS/OpenAI-compatible API](https://gcs.gnus.ai/developer-api-and-compute-bridge/) may eventually charge by tokens, requests, subscriptions or resource budgets, but **no one of those retail models is committed here**.
+The higher-level [GCS OpenAI-compatible API Router](https://gcs.gnus.ai/openai-compatible-api-router-and-gcs-job-queue/) may eventually charge by tokens, requests, subscriptions or resource budgets, but **no one of those retail models is committed here**.
 
 ## Historical comparisons and token claims
 
 The [older $0.005/hour comparison](scale-and-cost-efficiency.md) and the [xAI 100k-cluster scenario](gnus.ai-network-vs.-centralized-xai-100k-cluster/README.md) contain historical node counts, GPU price assumptions, and sometimes **fixed 10% burn or token-price projections**. Those are **not current network parameters or financial forecasts**. Current native `BurnConfig` has a **1% genesis default subject to trusted-peer quorum changes**; EVM bridge/conversion burns are distinct. See [Tokenomics](tokenomics.md).
 
-Use [Platform Status](../release-status.md), the [GCS developer bridge](https://gcs.gnus.ai/developer-api-and-compute-bridge/), and the [GCS API Router Specification](https://github.com/GeniusVentures/GeniusCognitiveSystem/blob/main/docs/architecture/openai-compatible-api-router-and-gcs-job-queue.md) for release and API-delivery status.
+Use [Platform Status](../release-status.md), the [GCS developer bridge](https://gcs.gnus.ai/openai-compatible-api-router-and-gcs-job-queue/), and the [GCS API Router Specification](https://github.com/GeniusVentures/GeniusCognitiveSystem/blob/main/docs/architecture/openai-compatible-api-router-and-gcs-job-queue.md) for release and API-delivery status.

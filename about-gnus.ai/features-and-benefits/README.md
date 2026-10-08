@@ -26,4 +26,4 @@
 #### Compatibility
 
 * GNUS is designed for integration across device classes; actual platform support depends on the SDK, runtime, application, and hardware.
-* GCS also aims to serve existing OpenAI-compatible applications through a planned API gateway that routes cognition locally, privately, or to eligible distributed nodes. See [Developer API and Compute Bridge](https://gcs.gnus.ai/developer-api-and-compute-bridge/).
+* GCS also aims to serve existing OpenAI-compatible applications through a planned API gateway that routes cognition locally, privately, or to eligible distributed nodes. See [OpenAI-compatible API Router specification](https://gcs.gnus.ai/openai-compatible-api-router-and-gcs-job-queue/).
