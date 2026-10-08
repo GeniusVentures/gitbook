@@ -1,5 +1,7 @@
 # Features and Benefits
 
+> **Status (October 2026):** Native SuperGenius mainnet implementation is complete, but public activation has not occurred. The GCS/OpenAI-compatible cognitive API remains a planned interface, and token rewards and compute prices below are not presently announced live services. See [Pricing Methodology](pricing-methodology.md) and [Platform Status](../release-status.md).
+
 ## Features And Benefits
 
 #### Decentralized
@@ -9,7 +11,7 @@
 
 #### Secure
 
-* Each transaction is secured with Zero Knowledge (ZK) encryption, preventing your data from being sold.
+* Data protection depends on the application, encryption, access controls, and processing mode; neither zero-knowledge proofs nor on-chain signatures alone guarantee prompt confidentiality.
 * Regular smart contract audits will be performed as an integral security measure.
 
 #### Integration
@@ -18,10 +20,10 @@
 
 #### Rewards
 
-* You get special digital coins (cryptocurrency) as a reward for letting GNUS.AI use your device's brainpower.
+* Eligible contributors may receive GNUS under future activated public-network program rules; public native network rewards are not yet available.
 * When your device helps with AI calculations, you earn GNUS tokens, which you can use to buy things in apps or convert into other cryptocurrency.
 
 #### Compatibility
 
-* GNUS.AI works with everything from your phone to your game console and everything in between.
-* It easily fits into various devices, allowing you to contribute to the network regardless of what type of device you're using.
+* GNUS is designed for integration across device classes; actual platform support depends on the SDK, runtime, application, and hardware.
+* GCS also aims to serve existing OpenAI-compatible applications through a planned API gateway that routes cognition locally, privately, or to eligible distributed nodes. See [Developer API and Compute Bridge](https://gcs.gnus.ai/developer-api-and-compute-bridge/).

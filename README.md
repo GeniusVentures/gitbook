@@ -11,6 +11,8 @@ This is **not simply one large AI model split across devices**, nor is GCS just 
 
 **Release status (October 2026):** SuperGenius mainnet implementation is complete, but the **public mainnet has not launched**. Public activation is being coordinated with GCS, Genius AI Boss, and other launch applications. [Read the current platform status](about-gnus.ai/release-status.md) and [public roadmap](about-gnus.ai/public-roadmap.md).
 
-Learn more in the [Introduction](about-gnus.ai/introduction.md), [AI Systems](technical-information/ai-systems/README.md), and [Master Architecture](technical-information/MASTER_ARCHITECTURE.md).
+Learn more in the [Introduction](about-gnus.ai/introduction.md), [AI Systems](technical-information/ai-systems/README.md), [Master Architecture](technical-information/MASTER_ARCHITECTURE.md), and [Pricing Methodology and Status](about-gnus.ai/features-and-benefits/pricing-methodology.md).
+
+**Developer bridge (planned):** GCS is designing an OpenAI-compatible API so existing inference clients can use GNUS services with familiar request formats. See [GCS Developer API and Distributed Compute Bridge](https://gcs.gnus.ai/developer-api-and-compute-bridge/) for the proposed interface, readiness, and pricing-unit distinctions.
 
 {% embed url="https://enodes.gnus.ai/why-gnus-ai.mp4?autoplay=1&iframe=true" %}

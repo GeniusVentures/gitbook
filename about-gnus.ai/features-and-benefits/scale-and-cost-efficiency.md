@@ -1,10 +1,14 @@
 # Scale and cost-efficiency
 
-Building the GNUS.ai marketplace as a Web3 protocol eliminates centralized overheads, allowing for unprecedented scalability and reduces barriers to entry for new supply participants. This enables GNUS.ai to connect potentially every computing device globally, creating a decentralized network that scales far beyond the limits of traditional providers. By forming a network from the available billions of worldwide consumer compute devices, GNUS.ai offers on-demand access to boundless compute supply at a transparent and minimal cost—often as low as $0.01 per hour or less.
+The GNUS.ai platform aims to make specialist AI and distributed processing more economical by using capable hardware already owned by participants. That can reduce dedicated capital costs, but actual cost per useful unit of compute depends on **device efficiency, utilization, network overhead, work type, and payment terms**.
 
-GNUS.ai's pricing is driven by an automated supply and demand function, ensuring that costs remain at least 80% lower than other systems. This dynamic pricing structure allows GNUS.ai to stay highly competitive while offering users massive savings. Unlike traditional providers with centralized infrastructure and inflated costs, GNUS.ai operates with no CapEx and minimal OpEx, further driving down prices. Operational expenses are taken as a small percentage of the already low hourly cost, enabling the system to approach near-zero costs.
+GNUS's commercial model includes two different kinds of services: **distributed compute execution** and the planned **GCS OpenAI-compatible cognitive API**. Both can use the network, but API inference may also run locally or inside a private deployment.
 
-This approach completely redefines cost barriers associated with scaling machine learning workloads, as GNUS.ai guarantees users access to affordable compute without compromising on scalability. By efficiently utilizing global compute resources and capturing latent capacity, GNUS.ai offers a flexible, decentralized solution that meets the needs of both developers and end-users, all while maintaining cost advantages unmatched by other systems.
+**Pricing status (October 2026):** There is **no verified live public native-mainnet tariff or guaranteed percentage saving**. Older marketing and comparison scenarios used approximately **$0.005 per node-hour**, while newer small-expert GCS planning explores **$0.0003 per active external ELM-hour**. These are different units and must not be compared as if each buys a V100-equivalent GPU-hour. See [Pricing Methodology and Status](pricing-methodology.md).
+
+## Historical hourly-provider comparison (not current quotes)
+
+This legacy illustrative comparison was written before public mainnet activation. The figures are **not** independently normalized to the same precision, device capability, sustained throughput, or data-center cost coverage, and cannot substantiate a fixed savings guarantee. Review current provider pricing and run matched-workload benchmarks before using the table for procurement.
 
 | Provider                        | Approximate hourly cost for ML training work (V100-equivalent) | Scalability |
 | ------------------------------- | -------------------------------------------------------------- | ----------- |
@@ -22,3 +26,4 @@ This approach completely redefines cost barriers associated with scaling machine
 | Ethereum                        | $15,700                                                        | Low         |
 
 #### &#x20; <a href="#protocol-evaluation" id="protocol-evaluation"></a>
+
