@@ -1,5 +1,7 @@
 # Verification and Hash Results from Processing
 
+> **Historical processing-flow draft:** The examples and pseudocode below explain an early sampled-block verification idea; they are not a current production contract, completed security audit, or proof that floating-point outputs match bit-for-bit on different GPUs. GCS execution-integrity checks and cognitive answer validation are different layers; see [GCS architecture](https://gcs.gnus.ai/) and [Platform Status](../../about-gnus.ai/release-status.md). Runtime proof and validation claims must be supported by the current code and cross-device tests.
+
 ## Jobs/Macro Jobs/Micro Jobs, oh my!
 
 A job is a set of data that will be processed using AI/ML learning/inference models and the results stored back into a stream (IPFS, websockets, FTP, etc). Currently, we will only support IFPS.
