@@ -23,4 +23,8 @@ The following graph shows our [Monte Carlo](https://my.machinations.io/d/gnus-ec
 
 <figure><img src="../../.gitbook/assets/GNUS Tokenomics.jpg" alt=""><figcaption><p>Circulating Supply</p></figcaption></figure>
 
-The GNUS token is itself subdivided into units called "Minions".  1 GNUS = 10^9 Minions.  Internal SuperGenius ledgers use 64 bit values to hold Minions, which translates to a single GNUS wallet address being able to hold a max balance of 18.4 billion GNUS (with a fractional/decimal precision of 10^9).
+The GNUS token is subdivided into units called **Minions**. The current SuperGenius `TokenAmount` implementation represents **1 GNUS as 1,000,000 Minions (six decimal places)** using an unsigned 64-bit integer. The earlier nine-decimal and 18.4-billion-GNUS-per-wallet figures are outdated for that internal representation. Confirm the precision used by each EVM token contract separately; the native ledger unit does not determine ERC-20 or ERC-1155 decimals.
+
+**Burn configuration:** The SuperGenius `BurnConfig` implementation defines a **100-basis-point (1%) genesis default**, with quorum-controlled changes by trusted peers. It does **not** establish a fixed 10% burn for every processing payout. A default is not proof of the current live network setting. Token burning does not, by itself, guarantee an increase in token price.
+
+See [Platform Status](../release-status.md) for the distinction between completed native mainnet implementation and public activation.
