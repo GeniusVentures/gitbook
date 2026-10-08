@@ -6,7 +6,7 @@ GNUS Tokens are tokens used in a unique, secure, smart, and easy-to-use platform
 
 **What blockchain are the GNUS Tokens on?**
 
-GNUS tokens are slated to launch on Bitcoin as (BGNS BRC-20), Ethereum, and Polygon, and others as (GNUS ERC-20/ERC-1155 Hybrid), Solana (SPL Token), and Cardano Native Token.
+GNUS has EVM token contracts, documented under [Contracts](../contracts.md). References to Bitcoin BRC-20, Solana, and Cardano in earlier plans should not be read as evidence of deployment on those networks.
 
 **What benefits do I gain from GNUS Token?**
 
@@ -18,7 +18,7 @@ GNUS tokens are a bridging mechanism between other Cryptocurrencies and Fiat cur
 
 **Are GNUS Tokens traded on a big exchange?**
 
-GNUS Tokens are not yet trading on a major exchange. We plan on listing to a major CEX exchange after the launch around March 31, 2024
+This entry previously described an anticipated March 2024 exchange listing and is no longer a reliable statement of current market availability. Confirm current exchange and chain availability through official announcements and contract addresses.
 
 **How do GNUS and SGNUS relate?**
 
@@ -26,23 +26,23 @@ GNUS Tokens are blockchain tokens that are used to open AI/ML requests and act a
 
 **What is the difference between GNUS and SGNUS tokens?**
 
-GNUS (Genius) tokens are currently on the Polygon mainnet, and SGNUS (Super Genius) Tokens are used in a private network for fast transactions. The SGNUS Tokens will roll up to multiple blockchains for cross-chain compatibility.
+GNUS token contracts exist on EVM networks, while SGNUS refers to the native SuperGenius network accounting and bridging design. Do not confuse live EVM token contracts with activation of the native public SuperGenius mainnet, which has not launched. See [Contracts](../contracts.md) and [Platform Status](../../about-gnus.ai/release-status.md).
 
 **Why is there a burn function in the smart contract?**
 
-We implemented a burn function so that when AI/ML processing is done, the GNUS tokens will increase in value by destroying 10% of the GNUS tokens. This may seem counterintuitive, but from our research, doing this increases the value of your tokens by 12%.
+SuperGenius has a configurable processing burn mechanism. The current native `BurnConfig` defines a 1% genesis default and requires trusted-peer quorum approval for changes. It is not a guaranteed fixed 10% burn, and no burn mechanism guarantees token-price appreciation. See [Tokenomics](../../about-gnus.ai/features-and-benefits/tokenomics.md) and [Platform Status](../../about-gnus.ai/release-status.md).
 
 **Will this token be considered a security?**
 
-We don’t believe it will. We’ve been cautious not to do the ICO until we have the software in a minimally viable state. The tokens are also for prepurchasing AI/ML processing, so the token has a utility value. We’ve analyzed our offering based on the Howey test and scored very well not to be considered a security.
+GNUS is intended for network utility, including payment for AI/ML processing. A legal classification cannot be determined from that purpose alone; it depends on the specific offering, transactions, representations, and applicable law. This documentation is not a legal opinion.
 
 **Can I invest in the company by buying these tokens?**
 
-No, these tokens are being used for AI/ML processing. However, please don’t hesitate to use the contact form if you are interested in investing in the company, as we do have a prospectus for a SAFE & SAFT offering for accredited investors.
+GNUS tokens and equity in Genius Ventures are different instruments. Buying GNUS tokens is not the same as acquiring company shares. Contact Genius Ventures directly for any current securities offering and its applicable documents; older SAFE/SAFT descriptions may no longer apply.
 
 **Would anybody be able to buy your tokens?**
 
-Anyone can purchase the tokens, as they are utility tokens for use in AI/ML processing and not securities.
+Availability varies by venue and jurisdiction. The intended utility of GNUS tokens for AI/ML processing does not by itself determine their legal status or whether every person may purchase them. Seek qualified legal advice for specific jurisdictions.
 
 **Are you worried about the U.S. crackdown on Cryptocurrencies?**
 
