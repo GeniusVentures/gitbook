@@ -28,9 +28,19 @@ GNUS Tokens are blockchain tokens that are used to open AI/ML requests and act a
 
 GNUS token contracts exist on EVM networks, while SGNUS refers to the native SuperGenius network accounting and bridging design. Do not confuse live EVM token contracts with activation of the native public SuperGenius mainnet, which has not launched. See [Contracts](../contracts.md) and [Platform Status](../../about-gnus.ai/release-status.md).
 
-**Why is there a burn function in the smart contract?**
+**Why do the GNUS EVM smart contracts burn tokens?**
 
-SuperGenius has a configurable processing burn mechanism. The current native `BurnConfig` defines a 1% genesis default and requires trusted-peer quorum approval for changes. It is not a guaranteed fixed 10% burn, and no burn mechanism guarantees token-price appreciation. See [Tokenomics](../../about-gnus.ai/features-and-benefits/tokenomics.md) and [Platform Status](../../about-gnus.ai/release-status.md).
+The EVM contracts use burning for token conversion and cross-chain transfers, **not as the native SuperGenius processing-payout burn**:
+
+- **Minting certain child tokens:** `GNUSNFTFactory.beforeMint` burns an exchange-rate-defined amount of GNUS when minting a direct child token of GNUS.
+- **Bridging:** `GNUSBridge.bridgeOut` burns the tokens on the source chain and emits an event for the bridge flow. A source-chain burn in a bridge transfer should not be counted as a permanent reduction in total cross-chain supply without checking the corresponding destination mint.
+- **Redemption and controlled burns:** `GNUSBridge.withdraw` burns child tokens when converting them back to GNUS on the same EVM network; the bridge contract also provides a role-restricted GNUS burn function.
+
+These operations serve different purposes and **do not guarantee token-price appreciation**. The descriptions come from [GNUSNFTFactory](https://github.com/GeniusVentures/gnus-ai-contracts/blob/main/GNUSNFTFactory.sol) and [GNUSBridge](https://github.com/GeniusVentures/gnus-ai-contracts/blob/main/GNUSBridge.sol) source; confirm the deployed contract facets and configuration for a specific network using [Contracts](../contracts.md).
+
+**Is the native SuperGenius processing burn the same mechanism?**
+
+No. The native SuperGenius `BurnConfig` governs a separate processing-payout burn. Its current implementation defines a **1% genesis default**, with changes requiring trusted-peer quorum approval. The source does **not** establish a permanent 10% payout burn, nor does a default establish the value used by a particular deployed network. See [Tokenomics](../../about-gnus.ai/features-and-benefits/tokenomics.md) and [Platform Status](../../about-gnus.ai/release-status.md).
 
 **Will this token be considered a security?**
 
