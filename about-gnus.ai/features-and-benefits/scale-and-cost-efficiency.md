@@ -4,7 +4,7 @@ The GNUS.ai platform aims to make specialist AI and distributed processing more 
 
 GNUS's commercial model includes two different kinds of services: **distributed compute execution** and the planned **GCS OpenAI-compatible cognitive API**. Both can use the network, but API inference may also run locally or inside a private deployment.
 
-**Pricing status (October 2026):** There is **no verified live public native-mainnet tariff or guaranteed percentage saving**. Older marketing and comparison scenarios used approximately **$0.005 per node-hour**, while newer small-expert GCS planning explores **$0.0003 per active external ELM-hour**. These are different units and must not be compared as if each buys a V100-equivalent GPU-hour. See [Pricing Methodology and Status](pricing-methodology.md).
+**Pricing status (October 2026):** There is **no verified live public native-mainnet tariff or guaranteed percentage saving**. Older comparisons used **$0.005 per node-hour**. SuperGenius leadership has selected **$0.0003 per funded processing-hour for the planned ELM-job bridge** (not yet implemented or a customer API tariff); **whether a job funds one pooled hours budget or separate per-ELM allocations remains undecided**. The implemented generic-processing path instead estimates work and converts its USD quote to GNUS for escrow. These units cannot be treated as equivalent V100 GPU-hours. See [Pricing Methodology and Status](pricing-methodology.md).
 
 ## Historical hourly-provider comparison (not current quotes)
 
