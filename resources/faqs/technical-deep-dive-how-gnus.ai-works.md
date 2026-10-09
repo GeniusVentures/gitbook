@@ -1,108 +1,75 @@
-> **Status and source note (October 2026):** This FAQ includes historical and illustrative statements written before mainnet implementation was complete. The native SuperGenius mainnet implementation is now complete, while **public activation is held** for GCS, Genius AI Boss, and other launch applications. Dates, token economics, consensus rules, audit claims, expected prices, node counts, and performance figures below may be obsolete. Use the [current Platform Status](../../about-gnus.ai/release-status.md), [Master Architecture](../../technical-information/MASTER_ARCHITECTURE.md), and [Tokenomics](../../about-gnus.ai/features-and-benefits/tokenomics.md) for current references. A quoted historical claim is not a verified production result.
-
 # Technical Deep Dive: How GNUS.ai Works
 
-### 1. How does GNUS.ai enable users in emerging markets to offset device costs by contributing to the AI network through apps?
+> **Reviewed October 9, 2026.** This FAQ replaces outdated statements about token rewards, mainnet dates, guaranteed savings, audits, and network consensus. **SuperGenius mainnet implementation is complete, but its public native mainnet has not launched.** GCS and the OpenAI-compatible gateway have specified and in-progress components, not a verified public production service. See [Platform Status](../../about-gnus.ai/release-status.md), [Tokenomics](../../about-gnus.ai/features-and-benefits/tokenomics.md), and [Pricing Methodology](../../about-gnus.ai/features-and-benefits/pricing-methodology.md). Source-level behavior, operational readiness, and public availability are different claims.
 
-GNUS.ai allows users in emerging markets to earn $GNUS tokens by sharing idle device computing power, primarily GPU resources, through a decentralized AI network. The GNUS SDK integrates into apps, games, and platforms, enabling participation without technical expertise. Users can convert tokens into fiat currency, in-app purchases, or other cryptocurrencies to offset costs of devices like smartphones, laptops, or IoT gadgets. For example, while using apps on Android, iOS, Windows, macOS, or consoles like Xbox and PlayStation, idle resources process AI/ML workloads such as data analysis or model training. This passive income stream makes devices more affordable in regions where upfront costs are high. The mobile-first design ensures low-power devices contribute efficiently, broadening access to AI compute and reducing reliance on costly cloud services.
+### 1. How could participants in emerging markets offset device costs by contributing compute through apps?
 
-### 2. What are the key differences between GNUS.ai's Cognitive Mining and traditional proof-of-work mining, particularly in AI-focused rewards?
+GNUS.ai aims to let eligible devices contribute useful processing capacity through applications and SDK integrations. A future public contributor program **may** compensate accepted work in GNUS under published program rules. It is **not** accurate to describe public node earnings, fiat conversion, or device-cost offsets as currently available or guaranteed. Earnings would depend on eligibility, useful work completed, local energy and data costs, token liquidity, applicable law, and the program's payment terms.
 
-GNUS.ai’s documentation doesn’t explicitly use “Cognitive Mining” but describes a system combining decentralized GPU mining with federated learning, where devices process AI/ML tasks instead of cryptographic puzzles. Key differences from traditional proof-of-work (PoW) mining, like Bitcoin’s hash computations, include:
+The platform targets multiple device classes, but support for a specific phone, console, or operating system requires a compatible SDK/runtime and tests. An integration design is not proof that every device can execute every AI model.
 
-* **Purpose and Output**: PoW secures blockchains with no utility beyond consensus. GNUS.ai processes AI/ML workloads like model training or inference, producing tangible outputs for developers and enterprises.
-* **Resource Utilization**: PoW relies on specialized hardware (e.g., ASICs), consuming significant energy inefficiently. GNUS.ai uses idle GPUs across devices (desktops, mobiles, IoT) for federated learning, training models locally without sharing raw data to preserve privacy.
-* **AI-Focused Rewards**: GNUS.ai rewards are based on AI contribution quality and volume, with 80% of $GNUS tokens allocated to developers and users, 10% burned for scarcity, and 10% retained by the network. PoW rewards are fixed per block, tied to speculative value rather than utility.
-* **Efficiency and Sustainability**: GNUS.ai leverages underutilized resources, using zero-knowledge proofs for secure validation, unlike PoW’s energy-intensive, non-productive computation.
+### 2. How does GNUS useful-work processing differ from traditional proof-of-work mining?
 
-This shifts mining from speculative to AI-driven utility, aligning rewards with machine learning contributions.
+GNUS is designed to connect computation to application workloads—such as inference and other processing—rather than requiring every provider to perform the same hash puzzle. **Useful processing does not by itself secure a ledger or prove a result correct.** Consensus, job-result verification, incentives, and settlement have separate roles.
 
-### 3. What challenges in scaling AI does GNUS.ai address through its distributed web interface and cryptocurrency conversion system?
+Historical descriptions of an **80% / 10% / 10%** reward split and a **fixed 10% processing burn** must not be treated as current rules. The native [`BurnConfig` source](https://github.com/GeniusVentures/SuperGenius/blob/develop/src/account/BurnConfig.hpp) defines a **100-basis-point (1%) genesis default** and quorum-controlled updates; EVM bridge and token-conversion burns are separate. No default establishes an actual public-network payout rate before activation.
 
-Scaling AI involves challenges like device variability, data privacy, workload distribution, payment accessibility, and network reliability. GNUS.ai addresses these through its distributed web interface and cryptocurrency conversion system:
+### 3. What scaling problems does GNUS address, and where does GCS fit?
 
-* **Workload Distribution and Scalability**: The web interface divides AI/ML tasks into time-based subtasks, distributed via libP2P pub/sub protocols, allowing devices to contribute at varying GPU levels (e.g., 10% or 0.0001%). Future private networks will use the JSON compute specification for intelligent task allocation based on device capabilities.
-* **Device Variability and Reliability**: Federated learning enables local task processing, preserving privacy and managing performance differences via load balancing and parity checks for result validation.
-* **Payment Accessibility**: The conversion system supports fiat-to-$GNUS exchanges, reducing barriers in emerging markets and enabling payments in any currency via smart contracts on the Super Genius blockchain, with bridging to Layer 1 chains (e.g., Ethereum, Polygon, Solana) secured by zk-SNARK proofs and Solidity verification.
-* **Resilience and Cost Efficiency**: The distributed file system with encrypted uploads ensures uptime, while low CapEx/OpEx compared to centralized clusters (e.g., xAI’s 100k GPU setup) offers competitive pricing without massive infrastructure.
+Three distinct responsibilities matter:
 
-These features create a scalable, accessible network that grows with user participation, overcoming centralized AI limitations.
+- **GCS** plans cognitive work, chooses small specialist Expert Language Models (ELMs), applies memory and privacy policy, and checks answers. It may run locally or privately without sending work to public workers.
+- **SuperGenius** owns its native processing queue, processor selection, peer-to-peer transport, trust rules, and GNUS settlement for eligible distributed jobs.
+- **EVM token contracts and bridging** move or represent value on supported chains. They do not prove that a particular fiat on-ramp, payment partner, or cross-chain service is available.
 
-### 4. How does GNUS.ai handle performance and reliability variability across devices, from high-end GPUs to low-power mobiles?
+The planned GCS-to-SuperGenius ELM bridge specifies **one funded native job with multiple ELM work items**, not a new native scheduler for each expert. The bridge remains specified but unfinished; see [GCS developer bridge](https://gcs.gnus.ai/developer-api-and-compute-bridge/) and [SuperGenius issue #369](https://github.com/GeniusVentures/SuperGenius/issues/369).
 
-GNUS.ai manages device variability with a mobile-first SDK and adaptive networking system for heterogeneous environments:
+### 4. How will GNUS handle varying hardware and unreliable nodes?
 
-* **Task Allocation**: Workloads are sliced by time and distributed via libP2P pub/sub, allowing flexible GPU utilization (e.g., 10% for bursts, 0.0001% for minimal impact). This supports high-end GPUs and low-power mobiles or IoT, with future private networks using the JSON compute specification for capability-based allocation.
-* **Low-Power Efficiency**: Federated learning processes tasks locally, minimizing bandwidth and energy use. Idle CPU/GPU cycles are used without disrupting user experience (e.g., during gaming). Mobile Neural Networks (MNN) optimize model execution on edge devices.
-* **Reliability**: Parity checks and zero-knowledge proofs verify results for accuracy and uptime. Unreliable nodes face reputation slashing, while reliable ones earn more $GNUS. The “Always Available” design redistributes failed tasks, ensuring 99%+ uptime.
-* **Compatibility**: The SDK supports Windows, macOS, Linux, Android, iOS, Xbox, PlayStation, and IoT, with automatic scaling to prevent overload. Testnet phases incorporate community feedback to optimize performance.
+The architecture has workload descriptions, processing queues, SDK boundaries, and result-checking components. Hardware limits still matter: a model fitting into device storage does not guarantee that its RAM use, thermal behavior, speed, or accuracy are acceptable. Features such as automatic failover and variable device contribution require end-to-end testing on named devices and workloads.
 
-This approach enables broad participation without compromising network integrity.
+There is **no published matched-workload evidence here** for a **99%+ uptime guarantee**, universal mobile/console support, or guaranteed privacy from federated learning alone. Do not treat parity checks, cryptographic proofs, and semantic accuracy checks as interchangeable.
 
-### 5. Your vision states “no high is high enough.” What does the ultimate high look like: GNUS.ai as a cheaper AWS or an invisible layer powering apps, games, and devices?
+### 5. Is GNUS.ai simply a cheaper GPU-cloud provider?
 
-GNUS.ai’s vision, per founder Kenneth Hurley (@SuperGeniusEth), is to empower individuals over corporations with a collaborative ecosystem. The ultimate high is becoming an invisible layer powering apps, games, and devices, rather than just a cheaper AWS. While GNUS.ai offers 80% cost savings through low CapEx/OpEx, its goal is ubiquity: integrating the SDK into billions of devices for passive earning, like electricity powers homes. This makes AI a shared utility, enabling breakthroughs like cancer research via idle resources, with token burns and rewards sustaining the economy. It’s about seamless AI access, not just cost reduction.
+No. The intended product is **a modular cognitive system backed by optional distributed compute**. GCS selects experts, memory, tools, and checks for a request; eligible work may run on devices owned by participants, or entirely within a private or local deployment.
 
-### 6. How does GNUS.ai’s networking system orchestrate complex AI/ML workloads across diverse devices while ensuring uptime, resilience, and accuracy?
+Lower cost is a design goal, **not a demonstrated fixed 70–90% saving** across workloads. Compare matched precision, device utilization, model quality, end-to-end latency, network traffic, and operating costs before making a numerical claim. The [pricing page](../../about-gnus.ai/features-and-benefits/pricing-methodology.md) separates historical node-hour assumptions, the implemented native estimated-work escrow, and a planned ELM-hour rate.
 
-GNUS.ai’s networking system uses federated learning, smart routing, and blockchain verification for workload orchestration:
+### 6. How are jobs routed, checked, and settled?
 
-* **Orchestration**: Tasks are divided into time-based subtasks, distributed via libP2P pub/sub, enabling devices to process at varying GPU levels (e.g., 10% or 0.0001%). Real-time adaptation uses MNN for efficient model loading, with future private networks leveraging the JSON compute specification for capability-based division.
-* **Device Adaptation**: The SDK supports cross-platform compatibility, with federated learning enabling local training to reduce bandwidth. Load balancing prioritizes idle resources to avoid disruption.
-* **Uptime and Resilience**: The “Always Available” architecture redistributes tasks from failing nodes. The 10% $GNUS token burn per compute cycle increases value by 11.1%, functioning like automated staking. Nodes vote on consensus using reputation (e.g., Genesis transaction: 1,000,000 reputation, AI processing: 1 reputation, bridging/archiving: 10,000 reputation), with a 2/3 reputation points voting system. The Super Genius blockchain ensures fast, secure transactions, with bridging to Layer 1 chains (e.g., Ethereum, Polygon, Solana) secured by zk-SNARK proofs and Solidity verification.
-* **Accuracy**: Parity checks, zero-knowledge proofs, and cryptographic commitments ensure tamper-proof results, with rewards tied to verified contributions.
+GCS decides **what cognitive work** to perform. For eligible distributed execution, SuperGenius chooses processors and schedules native SubTasks. These are not interchangeable with the GCS planning layer. The native general-processing path can quote estimated work and reserve GNUS escrow; the GCS ELM-hour bridge is **not** yet a deployed billing path.
 
-This creates a scalable network for complex workloads like LLM training across diverse devices.
+Keep four different forms of checking separate: **ledger consensus** authorizes network state; **execution integrity (EIS)** aims to check whether distributed work was carried out according to its specification; **cognitive verification** evaluates the usefulness or factual quality of an answer; **settlement** accounts for accepted work. Neither equal hashes from different GPU vendors nor a proof that computation ran automatically guarantees the answer is correct. The current [GCS Execution Integrity System design](https://github.com/GeniusVentures/GeniusCognitiveSystem/blob/main/docs/architecture/execution-integrity-system.md) is a specification; cross-hardware conformance evidence must be documented separately.
 
-### 7. Beyond cost savings, does GNUS.ai aim to shift AI control from corporations, and is it about cheaper compute or broader empowerment?
+### 7. How do users, developers, and the token economy benefit?
 
-GNUS.ai seeks to democratize AI control, moving power from corporations with billion-dollar CapEx (e.g., xAI’s 100k GPU clusters) to individuals. While offering 70-80% cost savings through low OpEx and idle resource use, it prioritizes:
+The aim is to let developers build applications using locally owned, private, or network-provided compute, with an eventual incentive for eligible third-party providers. The native SuperGenius ledger uses **1 GNUS = 1,000,000 Minions** internally ([`TokenAmount.hpp`](https://github.com/GeniusVentures/SuperGenius/blob/develop/src/account/TokenAmount.hpp)); EVM contracts can use different token precisions.
 
-* **Decentralized Infrastructure**: GNUS.ai uses global idle GPUs, reducing reliance on centralized providers and risks like insolvency.
-* **User and Developer Empowerment**: Participants earn $GNUS, fostering collaboration. Federated learning preserves privacy, and the SDK enables indie developers and emerging market users to access AI.
-* **Sustainable Tokenomics**: The 10% token burn per compute cycle increases value by 11.1%, with 80% of rewards to users, creating incentives unlike corporate models. Monte Carlo simulations on Machinations.io predict token appreciation.
-* **Broader Impact**: Open AI for research (e.g., protein folding) promotes ethical access. Founder Kenneth Hurley calls this a movement for community control, not just affordability.
+There is **no guaranteed contributor return, token appreciation, margin, or fixed burn-induced price increase**. Historical Monte Carlo simulations and projected token prices were scenarios rather than measured investment outcomes. Buying GNUS does not buy shares in Genius Ventures.
 
-Cheaper compute is a byproduct of empowering users to shape AI’s future.
+### 8. What protects against Sybil attacks and bad validators?
 
-### 8. How does GNUS.ai prevent Sybil attacks where one entity creates fake nodes to gain disproportionate rewards or manipulate the network?
+The current SuperGenius code distinguishes a **genesis-reviewed trusted-peer registry**, changes authorized by that registry's quorum policy, and the separate [`ValidatorRegistry`](https://github.com/GeniusVentures/SuperGenius/blob/develop/src/blockchain/ValidatorRegistry.hpp) for consensus roles and weighted votes. [`TrustedPeerRegistry`](https://github.com/GeniusVentures/SuperGenius/blob/develop/src/trustedpeer/TrustedPeerRegistry.hpp) is **not** equivalent to an unrestricted 'any node votes based on earned reputation' rule. Each threshold applies to its own decision; do not replace the code's distinct policies with a universal 2/3 reputation vote.
 
-GNUS.ai prevents Sybil attacks through a security framework in its system architecture (US Patent 11,451,393 B2, covering the distributed computing and cryptotoken payment system). Tokenomics, simulated on Machinations.io, ensure fairness. Key measures include:
+These controls form part of a threat model, not proof that Sybil attacks cannot succeed. Earlier claims about device fingerprinting, mandatory IP diversity, guaranteed slashing, or specific DAO voting thresholds need separately verified implementations and policies before being presented as active protections.
 
-* **Reputation-Based Security**: Any node can join, with security via a reputation system. Nodes vote on consensus based on transactions processed (e.g., Genesis transaction: 1,000,000 reputation, AI processing: 1 reputation, bridging/archiving: 10,000 reputation). A 2/3 reputation points voting system ensures reputable nodes dominate. Fake nodes risk reputation slashing if detected, reducing Sybil attack influence.
-* **Zero-Knowledge Proofs and Verification**: zk-SNARKs and parity checks validate contributions, preventing fake nodes from earning rewards.
-* **Identity Systems**: Device fingerprinting, IP diversity checks, and on-chain verification (via ERC-20/1155 tokens) detect anomalies. The Super Genius blockchain handles secure transactions, with bridging to Layer 1 chains (e.g., Ethereum, Polygon, Solana) secured by zk-SNARK proofs and Solidity verification.
-* **Economic Disincentives**: Rewards are proportional to verified output, with 10% token burn per transaction for scarcity, increasing value by 11.1% per cycle. Sybil attempts are uneconomical due to reputation slashing and verification overhead.
-* **GNUS.ai DAO Governance**: The soon-to-launch GNUS.ai DAO uses GNUS Governance Tokens on an Ethereum-compatible blockchain for decentralized decision-making. Proposals, such as token transfers or supply increases, require a 50% quorum of total token voting power and a 2/3 majority of votes cast, ensuring community oversight to prevent Sybil attacks.
+### 9. How can a beginner join as a compute provider?
 
-These mechanisms maintain a fair, resilient network. For updates, check docs.gnus.ai or Telegram (t.me/geniustokens).
+**A general public native-mainnet contributor enrollment and rewards program has not launched.** Check [official platform status](../../about-gnus.ai/release-status.md), published download links, supported-device requirements, and program terms before installing software or committing hardware. Do not rely on old instructions claiming a guaranteed testnet reward, current exchange conversion, or a historical 2025/early-2026 start date.
 
-### 9. How can a beginner join as a compute provider, and are there guides to help?
+### 10. Has GNUS.ai been audited, and how are funds protected?
 
-Becoming a compute provider is simple for beginners, using the Genius Wallet software. Steps include:
+The [Contracts page](../contracts.md) publishes a **Solidproof smart-contract audit dated February 24, 2024**. That report has its own scope and date; it is **not evidence of a completed third-party audit of the entire C++ node, bridge deployment, GCS, or current operational network**. The prior claim of *two* publicly posted third-party contract audits is not supported by the audit listing reviewed here.
 
-1. **Sign Up and Download**: Visit gnus.ai or docs.gnus.ai to download the Genius Wallet app (Windows, macOS, Linux, Android, iOS). It’s an easy installer, requiring no blockchain expertise. Join the public Testnet via the sign-up form (Phase 3 testers earn real $GNUS).
-2. **Install and Connect**: Run the wallet, create a secure account (supports MetaMask), and connect your device. The app detects idle GPU/CPU resources and joins the network.
-3. **Contribute and Earn**: Use apps or games with the GNUS SDK to share power passively. The wallet manages task allocation and rewards $GNUS based on contributions, viewable in the dashboard.
-4. **Guides and Support**: Resources include:
-   * Tutorials in docs.gnus.ai’s FAQ and “How Does It Work?” sections.
-   * YouTube videos (e.g., Super Genius Chronicles by CEO Kenneth Hurley).
-   * Telegram community (t.me/geniustokens) for support, with testers noting minimal resource impact.
-   * GitHub repo for advanced users, but beginners use the wallet.
+Security depends on the specific contract, wallet, key custody, network configuration, and code being run. Neither use of an ERC standard nor references to zero-knowledge proofs establish that all transactions, prompts, or user data are encrypted or private. Additional independent audits, deployment-specific threat models, and published test results remain diligence items.
 
-Public SuperGenius mainnet has not yet launched. Check current official onboarding instructions, reward eligibility, and program terms before joining; the former Q4 2025 mainnet target is obsolete.
+### 11. Is a dedicated physical GNUS.ai device planned?
 
-### 10. Has GNUS.ai undergone security audits, and how are funds kept secure?
+The publicly documented direction emphasizes software that uses existing hardware. No current, verified product launch, specifications, price, or availability for a dedicated GNUS device were established in the references reviewed for this FAQ. Future hardware plans, if any, require a separate announcement.
 
-GNUS.ai prioritizes security with robust mechanisms and testing during Testnet phases, including bug bounties via GitHub. Key features include:
+---
 
-* **Smart Contract Security**: Built on the ERC-2535 Diamond Standard for modular contracts (fungible $GNUS ERC-20 and ERC-1155 NFTs), using burn-on-mint and facet-based logic to isolate risks. The Super Genius blockchain ensures secure transactions, with bridging to Layer 1 chains (e.g., Ethereum, Polygon, Solana) secured by zk-SNARK proofs and Solidity verification.
-* **Privacy and Verification**: zk-SNARKs enable privacy-preserving federated learning, with secure 2FA via TOTP and encrypted transactions using SSL/public keys.
-* **Fund Protection**: The 10% token burn per compute cycle increases value by 11.1%, with tokens held in non-custodial wallets. Distributed nodes eliminate single points of failure.
-* **Audits and Roadmap**: GNUS.ai completed two third-party smart contract audits, with results on docs.gnus.ai. Internal C++ code audits are ongoing, and a comprehensive third-party audit is planned before a planned mainnet launch (the historical Q4 2025 target has passed) to validate the Super Genius blockchain and SDK integrations. Phase 3 Testnet (live since July 2025) includes public stress-testing, with community bug bounties via GitHub enhancing security. The GNUS.ai DAO, launching soon, strengthens governance, and partnerships like Volume for automated payments add trust.
+**Authoritative references:** [Platform Status](../../about-gnus.ai/release-status.md) · [Tokenomics](../../about-gnus.ai/features-and-benefits/tokenomics.md) · [Pricing Methodology](../../about-gnus.ai/features-and-benefits/pricing-methodology.md) · [Master Architecture](../../technical-information/MASTER_ARCHITECTURE.md) · [GCS architecture](https://gcs.gnus.ai/) · [Contracts and audit](../contracts.md).
 
-Funds are secured via user-controlled wallets and on-chain transparency. Check docs.gnus.ai or Telegram for audit details.
-
-### 11. Is a physical GNUS.ai device planned soon?
-
-Based on GNUS.ai’s roadmap and announcements (up to September 2025), no dedicated physical device is planned. The focus is software-driven, using existing hardware (smartphones, PCs, consoles, IoT) via the GNUS SDK and Genius Wallet for accessibility. The roadmap (docs.gnus.ai) described a historical Q4 2025 mainnet target and SDK integrations (200+ apps/games), and ecosystem growth. Founder Kenneth Hurley emphasizes partnerships for mobile/IoT GPUs (e.g., Volume on Paloma Blockchain), enhancing existing devices. Future demand may lead to optimized hardware, but currently, it’s about software leveraging user-owned devices. Check Telegram or X for updates.
+*This page describes architecture, stated project decisions, and limits of published evidence. It does not provide legal, tax, or investment advice.*
