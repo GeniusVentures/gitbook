@@ -21,7 +21,7 @@
 #### Rewards
 
 * Eligible contributors may receive GNUS under future activated public-network program rules; public native network rewards are not yet available.
-* When your device helps with AI calculations, you earn GNUS tokens, which you can use to buy things in apps or convert into other cryptocurrency.
+* If a future public contributor program launches, rewards will depend on eligible compute work and published program terms. Using GNUS in apps or exchanging it for other tokens would depend on available services and markets; neither is a currently available public-network reward benefit.
 
 #### Compatibility
 
