@@ -1,6 +1,6 @@
 # GNUS.ai Pricing Methodology and Status
 
-**Pricing-status reference — October 2026.** This page separates historical prices and throughput models from a proposed lightweight-GCS cost assumption. **It is not a rate card, offer of service, approved payout schedule, or production benchmark.** Native SuperGenius mainnet code is complete; public mainnet has **not launched**. The GCS OpenAI-compatible gateway is a planned v1.1 Phase 6 interface, not a live retail API.
+**Pricing-status reference — October 2026.** This page distinguishes implemented general-processing GNUS escrow quotes, the owner-set **future ELM-job hourly rate**, and historical compute comparisons. **It is not a rate card, offer of service, approved payout schedule, or production benchmark.** Native SuperGenius mainnet code is complete; public mainnet has **not launched**. The GCS OpenAI-compatible gateway is a planned v1.1 Phase 6 interface, not a live retail API.
 
 ## Four different pricing units and contexts
 
@@ -8,7 +8,7 @@
 | --- | --- | --- | --- |
 | Native SuperGenius processing-job escrow | **$5 × 10^-13 per estimated FLOP** ($0.005 per 10 billion estimated FLOPs) | Implemented work estimate, converted to GNUS at the current GNUS/USD price and held in escrow | **Implemented** funding path; underlying work-unit semantics need validation; not an hourly rate or public GCS API tariff |
 | Older GNUS cost and xAI-cluster comparisons | **$0.005** | Assumed *node-hour* processing/payout in those historical scenarios | **Historical illustrative assumption**, not a verified active node reward or current API rate |
-| October 2026 lightweight GCS planning | **$0.0003** | Proposed compute-only cost per **active external ELM-hour** | **Provisional planning assumption**; not approved API retail price or node reward |
+| Owner-resolved ELM Job Bridging design (2026-08-26) | **$0.0003** | Fixed funding rate per **processing-hour** for a future `elm_processing` job; one pooled budget or separate ELM allocations to be decided | **Agreed engineering rate**, tracked in open [SuperGenius #369](https://github.com/GeniusVentures/SuperGenius/issues/369), **not yet implemented ELM billing or API retail pricing** |
 | [GNUS AI Pricing Comparison, Feb 2026](https://github.com/GeniusVentures/gnus-ai-pricing) | e.g. 200 FP32 and 2,200 blended | Modeled **effective TFLOPS per $1/hour**; other modes express cost per 1,000 effective TFLOPS | Comparative **scenario**, not measured network performance or an API billing rate |
 
 The native estimator is **already called during processing-job submission**, not merely a theoretical pricing constant: [`GeniusNode::ProcessImage()`](https://github.com/GeniusVentures/SuperGenius/blob/develop/src/account/GeniusNode.cpp#L3121-L3210) uses [`GetProcessCost()`](https://github.com/GeniusVentures/SuperGenius/blob/develop/src/account/GeniusNode.cpp#L3252-L3300) to fetch the GNUS/USD quote, compute required minions, check available funds, then **call `HoldEscrow()` before enqueuing**. [`TransactionManager`](https://github.com/GeniusVentures/SuperGenius/blob/develop/src/transaction/TransactionManager.cpp#L1087-L1315) handles escrow and results-based payout. Public native mainnet and the future OpenAI-compatible gateway remain separate activation/implementation questions.
@@ -28,9 +28,9 @@ Thus the source rate is **$0.005 per 10 billion assumed FLOPs**, or per 500 mill
 
 **Source-unit issue requiring validation:** [`SGProcessingManager::ParseBlockSize()`](https://github.com/GeniusVentures/SGProcessingManager/blob/91021875491925e08c26e1d3ffedbe5815f3871d/src/processingbase/ProcessingManager.cpp#L1242-L1265) sums `dimensions.block_len`, **not measured elapsed hours, total bytes processed, or actual FLOPs**. The [processing JSON guide](https://github.com/GeniusVentures/SGProcessingManager/blob/91021875491925e08c26e1d3ffedbe5815f3871d/doc/processing-json-guide.md) defines that same field as **patch depth** for `texture3D` processing; other processors use patch length. This may make the assumed 20-FLOPs-per-byte factor dimensionally incorrect for some workload types. Validate units and test across chunk count, formats, and model types before reporting a measured per-work rate.
 
-The existing GNUS-denominated **native job funding** should inform the future GCS API adapter, whose request-to-execution accounting policy has not yet been implemented or approved.
+The existing GNUS-denominated **native general-processing job funding** is the base mechanism for the planned ELM extension, not proof that its hourly pricing has been implemented.
 
-No authoritative, final pricing decision has been identified that supersedes all these references. A new customer price needs an explicit unit definition, performance evidence, what expenses it includes, billing policy, and a published approval.
+**What was decided:** On August 26, 2026, SuperGenius project leadership resolved the conflicting `0.0003 cents/hour` wording to **$0.0003 per processing-hour** in [INGEST-CONFLICTS.md](https://github.com/GeniusVentures/SuperGenius/blob/develop/.planning/INGEST-CONFLICTS.md). The [Phase 13 roadmap](https://github.com/GeniusVentures/SuperGenius/blob/develop/.planning/ROADMAP.md) specifies that exact rate for ELM bridging through existing GNUS escrow and the native queue, while [SGProcessingManager #17](https://github.com/GeniusVentures/SGProcessingManager/issues/17) owns the runtime. Both issues remain open. **The engineering funding rate is decided; the implementation, pooled-versus-per-ELM aggregation, and customer-facing API rate are not.**
 
 ## The $1 compute comparison: formulas and limits
 
@@ -55,22 +55,24 @@ The February 2026 model uses **60% utilization** for the listed rental GPUs. Its
 
 Use **the same precision, workload, actual sustained utilization, total billable time, and system boundary** for comparisons. Hardware peak rates, hypothetical node-equivalents, quantization differences, and historical marketplace prices are not interchangeable. End-to-end inference cost also depends on memory, bandwidth, communication, model size, and scheduling.
 
-## Lightweight ELM compute assumption (not a price list)
+## Fixed ELM processing-hour design rate (not deployed API pricing)
 
-For GCS architecture planning only, the current suggested **external ELM compute-only** assumption is:
+The canonical engineering decision for **planned** funded `elm_processing` jobs is **$0.0003 per processing-hour**. This is a chosen **native ELM funding rate**, *not* the existing general-processing USD-per-estimated-FLOP quote above, an implemented ELM runtime, or a public OpenAI-compatible API retail price.
 
 ```text
-external_ELM_cost_USD
-  = 0.0003 * SUM(external ELM active seconds / 3600)
+planned ELM job escrow, USD-equivalent
+  = 0.0003 * funded_processing_hours
+
+estimated GNUS to reserve
+  = planned USD-equivalent / market price (USD per GNUS)
+    [quote timing, rounding and actual billing policy pending]
 ```
 
-The expected ordinary cognitive workflow would use **zero to approximately three external ELMs** as needed, not run three dedicated workers continuously. This is an expectation, not a verified or enforced maximum.
+One API-level request may fund **one** SuperGenius job containing multiple `elms[]` work items. Zero to approximately three external ELMs is an ordinary workload expectation, not a fixed maximum or automatic threefold charge. The planning record permits either **one pooled processing-hour allowance** or **per-ELM hour allocations**; the charging interpretation has not been selected.
 
-Examples using the proposed unit: one external ELM active for one hour = **$0.0003**; three external ELMs each active for one hour = **$0.0009**; three external ELMs each active for one minute = **$0.000015**.
+For illustration, **one minute of total pooled funded work** costs **$0.000005**. **Only if** three ELMs are allocated and charged one minute each is the compute funding **$0.000015**. These are mathematical illustrations of the planned fixed rate, not transaction receipts, actual marginal cost benchmarks, or customer quotes. Model download is included as work in the owner-approved Phase 13 scope; how to track idle/parallel time, cancellations, overruns and refunds still needs tests and policy.
 
-These costs **exclude** potentially chargeable Semantic Core computation, data transfer, memory/retrieval, verification, queuing/retries, operations, node compensation policies, margin, taxes, token conversion, and any minimum charge. Native SuperGenius jobs **already escrow GNUS** at market-quoted prices; the proposed GCS API still needs an explicit mapping from API/ELM usage to the existing native payment mechanism or another approved policy.
-
-The higher-level [GCS OpenAI-compatible API Router](https://gcs.gnus.ai/openai-compatible-api-router-and-gcs-job-queue/) may eventually charge by tokens, requests, subscriptions or resource budgets, but **no one of those retail models is committed here**.
+The future GCS API may add costs for memory, verification, network, operations and margin. It can present token/request/subscription usage to customers, but its final retail price and mapping to native GNUS escrow remain undecided. The [OpenAI-compatible API Router](https://gcs.gnus.ai/openai-compatible-api-router-and-gcs-job-queue/) is planned, not live.
 
 ## Historical comparisons and token claims
 
