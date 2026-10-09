@@ -22,7 +22,7 @@ Three distinct responsibilities matter:
 - **SuperGenius** owns its native processing queue, processor selection, peer-to-peer transport, trust rules, and GNUS settlement for eligible distributed jobs.
 - **EVM token contracts and bridging** move or represent value on supported chains. They do not prove that a particular fiat on-ramp, payment partner, or cross-chain service is available.
 
-The planned GCS-to-SuperGenius ELM bridge specifies **one funded native job with multiple ELM work items**, not a new native scheduler for each expert. The bridge remains specified but unfinished; see [GCS developer bridge](https://gcs.gnus.ai/developer-api-and-compute-bridge/) and [SuperGenius issue #369](https://github.com/GeniusVentures/SuperGenius/issues/369).
+The planned GCS-to-SuperGenius ELM bridge specifies **one funded native job with multiple ELM work items**, not a new native scheduler for each expert. The bridge remains specified but unfinished; see [GCS developer bridge specification](https://github.com/GeniusVentures/GeniusCognitiveSystem/blob/main/docs/architecture/developer-api-and-compute-bridge.md) and [SuperGenius issue #369](https://github.com/GeniusVentures/SuperGenius/issues/369).
 
 ### 4. How will GNUS handle varying hardware and unreliable nodes?
 
