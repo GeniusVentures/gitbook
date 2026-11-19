@@ -140,9 +140,7 @@ Future<PlaybackLease> resolveEntitlement(String assetId) { ... }
 widget reads a view model, renders it, and dispatches a typed command. All
 state transitions happen in the C++ core and arrive as typed events.
 
-**Required:** State management is `provider` with immutable view models.
-Avoid adding heavier frameworks (bloc, riverpod, getx) — one pattern
-workspace-wide.
+**Required:** Use the current application/workstream's approved state-management pattern consistently. For Genius AI Boss and its Cubit-based component templates, use `flutter_bloc` **Cubit** with immutable state and `hydrated_bloc` where persistence is needed. Do not introduce new Riverpod, GetX, or event-based Bloc code into Cubit-only modules. Keep widgets limited to display, user intent, and listening to state; use repository interfaces for data access. Legacy modules may need a planned migration; do not quietly add another state framework.
 
 **Recommended:** Keep widgets small; extract a new widget before a build
 method exceeds a screen of code, same spirit as the C++ function-size rule.
@@ -154,10 +152,14 @@ the cheapest Flutter performance win and costs nothing.
 
 ## 3. Generated Dart
 
-FFI bindings and schema-driven Dart are generated (ffigen / Jinja2) and are
-never committed. Do not hand-edit generated files — change the template or
-the config and regenerate. Generated files carry the source-schema and
-generator-version header, same as generated C++.
+FFI bindings and schema-driven Dart are generated (ffigen / Jinja2). **Required:**
+Do not hand-edit generated files. Change the source schema, template, generator,
+or configuration, then regenerate. Prefer outputs in isolated build directories
+rather than the shared source checkout. A project may commit generated output
+only when its published workflow explicitly requires it and CI proves that the
+committed output matches the generator and sources. Generated files must carry
+source-schema and generator-version information where the generator supports it.
+Domain behavior belongs in separately owned services, never in generated clients.
 
 ---
 
