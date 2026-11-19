@@ -53,10 +53,7 @@ ninja
 ninja install
 ```
 
-`build/` is the **cmaketemplate** submodule shared by all repos. Its
-`build/<Platform>/CMakeLists.txt` is the configure entry point; it sets the
-toolchain, platform variables, and `PROJECT_ROOT`, then includes
-`cmake/CommonBuildParameters.cmake` from the repo, which descends into `src/`.
+`build/` is the [`GeniusVentures/cmaketemplate`](https://github.com/GeniusVentures/cmaketemplate) Git submodule, shared by participating projects. Each `build/<Platform>/CMakeLists.txt` owns the platform entry point and toolchain setup. The submodule's `build/CommonBuildParameters.cmake` delegates via `include(../../cmake/CommonBuildParameters.cmake)` to the **project-owned** `cmake/CommonBuildParameters.cmake`, which wires dependencies and targets under `src/`. This keeps shared build infrastructure separate from project-specific rules. The template also supports architecture-specific build directories, such as `build/Linux/x86_64/Debug/` and `build/Android/arm64-v8a/Debug/`; follow the commands in its README for those targets.
 
 Build order for a fresh machine: `thirdparty` -> `SuperGenius` -> `GeniusSDK`
 -> your app.
@@ -73,7 +70,7 @@ your-app/
   src/
     CMakeLists.txt
     platform/<OS>/platform/Platform.hpp   <- one dir per OS, names match build/<Platform>
-    generated/CMakeLists.txt              <- codegen targets; output regenerates at build time
+    generated/CMakeLists.txt              <- codegen targets; output goes to binary tree
     ffi/                        <- C ABI facade (.h + .cpp)
   tools/ffigen/               <- ffigen yaml configs
   tests/
@@ -83,11 +80,16 @@ Key conventions:
 
 * **Naming**: targets `your_app_*`, include root `include/your_app/`.
 * **C++17** — set in the root cmake for every target.
-* **Platform abstraction**: source does `#include "platform/Platform.hpp"`. The
-  `build/<Platform>/` entry point adds exactly one `src/platform/<OS>/` include
-  dir, so platform knowledge lives in one directory per OS.
-* **Generated code** regenerates under `src/generated/` via CMake stamp-file
-  targets on every build that needs it; the tree stays out of git.
+* **Platform abstraction**: shared source uses a stable include such as
+  `#include "platform/Platform.hpp"` or `#include <platform.h>`. The project-owned
+  CMake rules select **one** matching platform header directory and source set
+  for each target. Do not scatter platform `#ifdef` blocks through common code.
+* **Generated code**: CMake targets regenerate required bindings into the
+  platform-specific binary tree (rather than a shared `src/generated/` checkout
+  directory). Never fix generated output by hand; change the schema, template,
+  or generator first, and verify output in CI.
+* **Source isolation**: a target switch must not rewrite source headers, and
+  no platform build may depend on removing another platform's generated files.
 
 ## 5. Consuming the platform
 
@@ -159,8 +161,9 @@ read the C++ standard first, then the delta.
 
 1. Create `apps/your-app/` with the skeleton above; add the cmaketemplate
    submodule at `build/`.
-2. Set C++17, target naming, and the platform-include selection in
-   `cmake/CommonBuildParameters.cmake`.
+2. Set C++17, target naming, and per-target platform include/source selection
+   in the project's `cmake/CommonBuildParameters.cmake` and `src/CMakeLists.txt`.
+   Keep the `build/` submodule reusable and free of project-specific rules.
 3. Add `src/platform/<OS>/platform/Platform.hpp` for each target OS.
 4. Verify: `cd build/OSX && mkdir Debug && cd Debug && cmake .. -G Ninja
    -DCMAKE_BUILD_TYPE=Debug && ninja && ninja install` on a clean checkout.
