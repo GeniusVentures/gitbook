@@ -38,6 +38,7 @@
   - [How to Build an App on the GeniusNetwork](technical-information/app-howto.md)
   - [Software Engineering Handbook](technical-information/software-engineering-handbook/README.md)
     - [C++ Coding Standards](technical-information/software-engineering-handbook/c++-coding-standards.md)
+    - [Dart / Flutter Coding Standards](technical-information/software-engineering-handbook/dart-coding-standards.md)
     - [Python Coding Standards](technical-information/software-engineering-handbook/python-coding-standards.md)
     - [TypeScript Coding Standards](technical-information/software-engineering-handbook/typescript-coding-standards.md)
     - [Smart Contract Projects](technical-information/software-engineering-handbook/smart-contract-projects.md)
