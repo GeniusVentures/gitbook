@@ -683,28 +683,87 @@ All functions returning `outcome::result<T>` shall be declared `noexcept` unless
 
 ## 10. Platform Abstraction
 
-**Required:** Do not use `#ifdef` OS-specific checks (`WINDOWS`, `OSX`, `ANDROID`, etc.) in source files. Instead, include a `Platform.hpp` header that provides platform-specific abstractions.
+**Required:** Select the platform implementation through the build target, not `#ifdef` or `#elif` trees spread through common source files. Shared source code names **one interface**, and the build supplies exactly one platform implementation. This is compile-time dependency injection and follows the Dependency Inversion Principle.
 
-```cpp
-// Incorrect
-#ifdef WINDOWS
-    // Windows-specific code
-#elif __APPLE__
-    // Mac-specific code
-#endif
+For new C++ modules, use one logical header name with parallel platform trees:
 
-// Correct
-#include "Platform.hpp"
-// Platform.hpp handles the OS-specific includes
+```text
+include/
+  ios/platform.h
+  osx/platform.h
+  linux/platform.h
+  windows/platform.h
+  android/platform.h
+src/
+  shared/app.cpp
+  ios/platform.cpp
+  osx/platform.cpp
+  linux/platform.cpp
+  windows/platform.cpp
+  android/platform.cpp
 ```
 
-Use the build system (CMake) to select per-platform include directories and source files.
+Common code includes the **same** file on every OS:
+
+```cpp
+#include <platform.h>
+```
+
+Every platform-specific `platform.h` must honor the same public declarations. Place the implementations under `src/<platform>/`. Prefer a shared platform-neutral interface when the implementation would otherwise expose OS-specific types. If an existing project uses `#include "platform/Platform.hpp"`, retain that stable spelling and apply this same include-path selection rule.
+
+**Required:** Select exactly one platform-specific include directory and the matching source files for each CMake target. Place these decisions in project-owned CMake files and use `target_include_directories()` / `target_sources()` rather than global `include_directories()` or a shared `-D` macro controlling code branches. For example, after a project-specific CMake file has chosen `_gnus_platform` from its target/toolchain:
+
+```cmake
+# Example target: gnus_core; set _gnus_platform to ios, osx, linux, etc.
+target_include_directories(gnus_core BEFORE PRIVATE
+    "${PROJECT_ROOT}/include/${_gnus_platform}")
+target_sources(gnus_core PRIVATE
+    "${PROJECT_ROOT}/src/${_gnus_platform}/platform.cpp")
+```
+
+The project's CMake code must reject an unsupported target instead of falling back to an arbitrary platform. Do not add several directories containing `platform.h` to the same target's search path. Platform-specific `#ifdef` use may remain *inside* the platform-specific implementation when required by vendor APIs, but do not scatter it through shared code.
+
+### 10.1 Shared `cmaketemplate` with project-owned CMake (Required)
+
+[`GeniusVentures/cmaketemplate`](https://github.com/GeniusVentures/cmaketemplate) is our reusable build framework. Projects such as Genius AI Boss mount it as a Git submodule under `build/`:
+
+```text
+project/
+  build/                                # GeniusVentures/cmaketemplate submodule
+    OSX/CMakeLists.txt
+    iOS/CMakeLists.txt
+    Linux/CMakeLists.txt
+    Android/CMakeLists.txt
+    Windows/CMakeLists.txt
+    CommonBuildParameters.cmake        # forwards into project/../cmake
+  cmake/
+    CommonBuildParameters.cmake        # project-specific dependency/target rules
+  include/
+    osx/platform.h
+    ios/platform.h
+  src/
+    osx/platform.cpp
+    ios/platform.cpp
+    CMakeLists.txt
+```
+
+`build/<Platform>/CMakeLists.txt` handles the platform toolchain and shared compiler options. `build/CommonBuildParameters.cmake` contains the `include(../../cmake/CommonBuildParameters.cmake)` forwarding call, so the repository's own `cmake/CommonBuildParameters.cmake` controls the project without modifying the shared submodule. Put reusable cross-project build logic in `cmaketemplate`; keep project-specific rules in the project.
+
+Use distinct out-of-source binary directories, for example `build/OSX/Debug/`, `build/iOS/Debug/`, `build/Linux/x86_64/Debug/`, and `build/Android/arm64-v8a/Debug/`. These are separate build environments sharing an unchanged source checkout. Do not require developers to delete platform-specific files from the checkout when switching build targets.
+
+### 10.2 Generated source and configure/build boundaries (Required)
+
+**Required:** CMake configuration must not overwrite `.h`, `.hpp`, `.c`, or `.cpp` files in the source checkout to select a platform. Prefer existing platform implementations selected by the target. If a tool needs to generate code (for example, OpenAPI bindings, protocol buffers, or FFI wrappers), write reproducible output under the build/binary directory, declare its dependencies in CMake, and generate it at build time. A small `configure_file()` header is acceptable only when truly required by configuration and written to the binary directory.
+
+**Required:** Never manually patch generated output as the final fix. Update its schema, template, generator or configuration, then regenerate and test. Check in generated code only where a project explicitly requires it and verifies regeneration. The repository must build cleanly for one platform without changing sources needed by another.
+
+**Recommended:** Precompiled headers (PCH) may improve build speed, but are not the platform abstraction. Test the same interface and the platform-specific implementations on each supported target.
 
 ---
 
 ## 11. Includes
 
-**Required:** Use project-root-relative paths for internal includes.
+**Required:** Use project-root-relative paths for internal includes, except for the logical platform header selected through a target-specific include path in §10 (such as `#include <platform.h>`).
 
 ```cpp
 #include "base/logger.hpp"
