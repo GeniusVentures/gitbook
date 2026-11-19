@@ -735,7 +735,7 @@ project/
     Linux/CMakeLists.txt
     Android/CMakeLists.txt
     Windows/CMakeLists.txt
-    CommonBuildParameters.cmake        # forwards into project/../cmake
+    CommonBuildParameters.cmake        # forwards into project/cmake from platform entry point
   cmake/
     CommonBuildParameters.cmake        # project-specific dependency/target rules
   include/
@@ -747,7 +747,7 @@ project/
     CMakeLists.txt
 ```
 
-`build/<Platform>/CMakeLists.txt` handles the platform toolchain and shared compiler options. `build/CommonBuildParameters.cmake` contains the `include(../../cmake/CommonBuildParameters.cmake)` forwarding call, so the repository's own `cmake/CommonBuildParameters.cmake` controls the project without modifying the shared submodule. Put reusable cross-project build logic in `cmaketemplate`; keep project-specific rules in the project.
+`build/<Platform>/CMakeLists.txt` handles the platform toolchain and shared compiler options, then includes `../CommonBuildParameters.cmake`. That helper calls `include(../../cmake/CommonBuildParameters.cmake)`; **CMake resolves this relative path from the calling `build/<Platform>/` source directory**, not from `build/CommonBuildParameters.cmake`. This reaches the repository's `cmake/CommonBuildParameters.cmake`, keeping the project rules outside the shared submodule. Do not invoke the shared helper from another source directory without changing that caller-relative path; for any future redesign, prefer an explicit list-file-relative path. Put reusable cross-project build logic in `cmaketemplate`; keep project-specific rules in the project.
 
 Use distinct out-of-source binary directories, for example `build/OSX/Debug/`, `build/iOS/Debug/`, `build/Linux/x86_64/Debug/`, and `build/Android/arm64-v8a/Debug/`. These are separate build environments sharing an unchanged source checkout. Do not require developers to delete platform-specific files from the checkout when switching build targets.
 
