@@ -51,6 +51,18 @@ Prefer **data-driven design** over code-driven approaches to enhance flexibility
   * **Benefits**: Reduces tight coupling, supports dynamic object creation, and simplifies cross-language integration in blockchain systems.
 * **Application**: Use this approach where possible, especially for systems requiring flexibility (e.g., plugin architectures, API-driven components).
 
+### Cross-Platform Source Isolation (Required)
+
+Select platform implementations in the **build target**, not with OS checks scattered through shared code. This is compile-time dependency injection: shared source names one stable interface, and the build supplies exactly one implementation.
+
+* **One logical include:** In C++, shared code may use `#include <platform.h>` while target-specific include directories supply `include/ios/platform.h`, `include/osx/platform.h`, and equivalents. Each variant must honor the same public contract. Existing projects using a stable `platform/Platform.hpp` include can keep that name and apply the same rule.
+* **One implementation per target:** Keep OS-specific code under directories such as `src/ios/`, `src/osx/`, `src/linux/`, and `src/windows/`. CMake or an IDE project selects the include directory **and** source files. Ordinary source files must not contain nested `#ifdef` trees to select OS APIs.
+* **Target-scoped selection:** Add only one platform header directory to each target, not a global collection of competing header paths. Platform-dependent files must not leak into other targets. Fail the configuration for unsupported targets.
+* **No configure-time platform source rewriting:** Do not generate or overwrite headers or source files in the checkout merely to switch OS, toolchain, or architecture. Platform selection should work by choosing an existing source/include tree. See the [C++ platform abstraction rule](c++-coding-standards.md#10-platform-abstraction).
+* **Separate build trees:** Use isolated binary directories per platform/toolchain/configuration. Switching targets must never require deleting or rewriting the source tree. A precompiled header can speed compilation, but is not required for platform selection.
+
+Keep vendor-specific conditional code inside the platform boundary when unavoidable. Test the common contract on every supported target.
+
 ### Design Pattern Standards
 
 Design patterns from the Gang of Four (GoF) book complement SOLID principles, providing reusable solutions that promote loosely coupled, maintainable code. Use patterns judiciously to support project needs and SOLID goals:
@@ -70,7 +82,12 @@ Use **code generation tools** to accelerate development and ensure consistency a
 * **OpenAPI Specifications**: Define API schemas using OpenAPI (or similar) to generate client/server code for TypeScript, Java, C++, Solidity, etc. This ensures consistent interfaces and reduces manual coding errors.
   * **Example**: Generate TypeScript client code for a REST API or Solidity contract bindings from an OpenAPI spec, speeding up development significantly (up to 10x for cross-language projects).
 * **Benefits**: Promotes standardization, reduces boilerplate, and supports rapid iteration in multi-language environments like blockchain systems.
-* **Best Practices**: Write clear, comprehensive schemas. Validate generated code and customize as needed. Integrate with CI/CD for automation.
+* **Best Practices**: Write clear, comprehensive schemas, keep templates under version control, verify generated code, and use CI/CD to enforce the rules below.
+* **Generator ownership (Required):** Never hand-edit generated output as the lasting fix. Change its source schema, generator or template, and configuration first; regenerate and verify. Generated files that a project checks into Git must match that source exactly. Files that a project ignores must be reproducible on a clean checkout.
+* **Build isolation (Required):** Prefer build-time generation of API bindings, FFI wrappers, and other necessary derived code. Write outputs under the target's binary/build directory, separated by platform, architecture, and configuration where relevant. Do not write platform-dependent generated headers or sources to the shared source tree during `cmake configure`. A small `configure_file()` header is acceptable only when truly needed at configuration time and placed in the binary directory.
+* **Regeneration tests (Required):** CI must verify that the canonical generator can recreate its outputs and that a second run leaves them unchanged. Test generated interfaces, success/failure paths, and relevant platform builds. A source patch without its generator/template change is not complete.
+* **Behavior ownership:** Generated transport/model code must not become the home for business rules. Put those rules in separately owned domain services and expose them through stable interfaces.
+
 
 ### Unit Testing
 
