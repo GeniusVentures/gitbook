@@ -53,7 +53,7 @@ ninja
 ninja install
 ```
 
-`build/` is the [`GeniusVentures/cmaketemplate`](https://github.com/GeniusVentures/cmaketemplate) Git submodule, shared by participating projects. Each `build/<Platform>/CMakeLists.txt` owns the platform entry point and toolchain setup. The submodule's `build/CommonBuildParameters.cmake` delegates via `include(../../cmake/CommonBuildParameters.cmake)` to the **project-owned** `cmake/CommonBuildParameters.cmake`, which wires dependencies and targets under `src/`. This keeps shared build infrastructure separate from project-specific rules. The template also supports architecture-specific build directories, such as `build/Linux/x86_64/Debug/` and `build/Android/arm64-v8a/Debug/`; follow the commands in its README for those targets.
+`build/` is the [`GeniusVentures/cmaketemplate`](https://github.com/GeniusVentures/cmaketemplate) Git submodule, shared by participating projects. Each `build/<Platform>/CMakeLists.txt` owns the platform entry point and toolchain setup and includes `../CommonBuildParameters.cmake`. The template's `build/CommonBuildParameters.cmake` calls `include(../../cmake/CommonBuildParameters.cmake)`. **CMake resolves this literal relative path from the calling `build/<Platform>/` source directory, not from the included helper's own directory**; it therefore reaches the project's `cmake/CommonBuildParameters.cmake`, which wires dependencies and targets under `src/`. The helper depends on that entry-point context and should not be invoked from other source directories without fixing the path. This keeps shared build infrastructure separate from project-specific rules. The template also supports architecture-specific build directories, such as `build/Linux/x86_64/Debug/` and `build/Android/arm64-v8a/Debug/`; follow the commands in its README for those targets.
 
 Build order for a fresh machine: `thirdparty` -> `SuperGenius` -> `GeniusSDK`
 -> your app.
@@ -66,12 +66,23 @@ your-app/
   cmake/
     CommonBuildParameters.cmake   <- project settings; included by build/<Platform>
     GeniusDependencies.cmake      <- locates workspace (GeniusSDK/SuperGenius/thirdparty)
-  include/your_app/           <- public headers, snake_case dir
+  include/
+    your_app/                 <- platform-neutral public headers
+    ios/platform.h            <- same interface, iOS implementation
+    osx/platform.h            <- same interface, macOS implementation
+    linux/platform.h
+    windows/platform.h
+    android/platform.h
   src/
     CMakeLists.txt
-    platform/<OS>/platform/Platform.hpp   <- one dir per OS, names match build/<Platform>
-    generated/CMakeLists.txt              <- codegen targets; output goes to binary tree
-    ffi/                        <- C ABI facade (.h + .cpp)
+    shared/                    <- platform-neutral logic
+    ios/platform.cpp           <- iOS implementation
+    osx/platform.cpp           <- macOS implementation
+    linux/platform.cpp
+    windows/platform.cpp
+    android/platform.cpp
+    generated/CMakeLists.txt   <- codegen targets; output goes to binary tree
+    ffi/                       <- C ABI facade (.h + .cpp)
   tools/ffigen/               <- ffigen yaml configs
   tests/
 ```
@@ -80,10 +91,13 @@ Key conventions:
 
 * **Naming**: targets `your_app_*`, include root `include/your_app/`.
 * **C++17** — set in the root cmake for every target.
-* **Platform abstraction**: shared source uses a stable include such as
-  `#include "platform/Platform.hpp"` or `#include <platform.h>`. The project-owned
-  CMake rules select **one** matching platform header directory and source set
-  for each target. Do not scatter platform `#ifdef` blocks through common code.
+* **Platform abstraction**: new app code uses `#include <platform.h>` against
+  the same interface on every target. The project-owned CMake rules select
+  **one** `include/<platform>/` directory and its matching `src/<platform>/`
+  implementation for each target. Legacy modules already using
+  `#include "platform/Platform.hpp"` may retain that spelling without
+  changing the selection rule. Do not scatter platform `#ifdef` blocks
+  through common code.
 * **Generated code**: CMake targets regenerate required bindings into the
   platform-specific binary tree (rather than a shared `src/generated/` checkout
   directory). Never fix generated output by hand; change the schema, template,
@@ -164,7 +178,9 @@ read the C++ standard first, then the delta.
 2. Set C++17, target naming, and per-target platform include/source selection
    in the project's `cmake/CommonBuildParameters.cmake` and `src/CMakeLists.txt`.
    Keep the `build/` submodule reusable and free of project-specific rules.
-3. Add `src/platform/<OS>/platform/Platform.hpp` for each target OS.
+3. Define the shared platform contract in each `include/<platform>/platform.h`
+   and supply its implementation in `src/<platform>/platform.cpp`.
+   Check that `#include <platform.h>` resolves to exactly one variant per target.
 4. Verify: `cd build/OSX && mkdir Debug && cd Debug && cmake .. -G Ninja
    -DCMAKE_BUILD_TYPE=Debug && ninja && ninja install` on a clean checkout.
 5. Add the C ABI facade + ffigen config (if Flutter), regenerate bindings.
